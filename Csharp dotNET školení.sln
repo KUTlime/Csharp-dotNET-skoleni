@@ -1,0 +1,19 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Základní", "1-Základní", "{90CBDD8A-BC7F-4351-BFC2-3D4971C42890}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Středně pokročilí", "2-Středně pokročilí", "{E41C3370-5B8F-4AD3-AF63-7007CAD60CCD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Pokročilí", "3-Pokročilí", "{2AA68D1D-1465-49DE-9CF7-FECD5F7752B2}"
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C56838BB-E1E2-4597-B4A8-1BA561860DAC}
+	EndGlobalSection
+EndGlobal
