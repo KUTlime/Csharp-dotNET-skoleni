@@ -2,6 +2,15 @@
 
 namespace Selections
 {
+	/*
+    ############################################################################
+    ### Klauzule switch
+    #############################################################################
+     
+	- Nahrazují složité výrazy if/else if/else if/...
+	- Často ve vazbě dohromady s enumem
+
+	*/
 	class SwitchStatement
 	{
 		public enum Color { Red, Green, Blue }

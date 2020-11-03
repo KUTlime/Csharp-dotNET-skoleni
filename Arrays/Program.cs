@@ -6,7 +6,7 @@ namespace Arrays
 	{
 		static void Main(string[] args)
 		{
-			// Jednoduchá definice pole
+			// Jednoduchá deklarace pole
 			Int32[] arrayName;
 
 			// Definice pole o předem známé velikosti, tj. 10 x double.
@@ -55,13 +55,17 @@ namespace Arrays
 			}
 
 			int[] array = { 34, 72, 13, 44, 25, 30, 10 };
-			int[] temp = array;
+			int[] temp = array; // Mělká kopie pole
 			Console.Write("Original Array: ");
 			foreach (var i in array)
 			{
 				Console.Write(i + " ");
 			}
 			Console.WriteLine();
+
+			// Hluboká kopie pole
+			int[] arrayCopy = new int[array.Length];
+			Array.Copy(array, arrayCopy, array.Length);
 
 			// Převrácení pole od konce
 			Array.Reverse(temp); // Musí se volat statická metoda objektu Array.
@@ -84,7 +88,6 @@ namespace Arrays
 			Int32 sum = Sum(512, 720, 250, 567, 889);
 			Console.WriteLine($"Sum is: {sum}");
 
-
 			Console.ReadKey();
 		}
 
@@ -95,21 +98,24 @@ namespace Arrays
 			Int32[,,] m;        // 3D Int32 pole
 
 			// Inicializace 2D pole
-			Int32[,] array34 = new Int32[3, 4] {
+			Int32[,] array34 = new Int32[3, 4]
+			{
 				{0, 1, 2, 3} ,   // Inicializace řádku 0
                 {4, 5, 6, 7} ,   // Inicializace řádku 1
                 {8, 9, 10, 11}   // Inicializace řádku 2
             };
 
 			// Inicializace 2D pole bez syntaktického cukru.
-			var array56 = new[,] {
+			var array56 = new[,]
+			{
 				{0, 1, 2, 3} ,   // Inicializace řádku 0
                 {4, 5, 6, 7} ,   // Inicializace řádku 1
                 {8, 9, 10, 11}   // Inicializace řádku 2
             };
 
 			// Inicializace 2D pole bez syntaktického cukru 2.
-			Int32[,] array78 = {
+			Int32[,] array78 =
+			{
 				{0, 1, 2, 3} ,   // Inicializace řádku 0
                 {4, 5, 6, 7} ,   // Inicializace řádku 1
                 {8, 9, 10, 11}   // Inicializace řádku 2
@@ -151,8 +157,8 @@ namespace Arrays
 			// Dimenziónálně nekonzistentní pole bez syntaktického cukru.
 			Int32[][] scores3 =
 			{
-				new Int32[] { 92, 93, 94 },
-				new Int32[] { 85, 66, 87, 88 },
+				new[] { 92, 93, 94 },
+				new[] { 85, 66, 87, 88 },
 			};
 			Int32 row = 0;
 			Int32 column = 0;

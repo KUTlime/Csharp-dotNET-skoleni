@@ -89,15 +89,17 @@ namespace Classes
 			// volume of box 4
 			Console.WriteLine($"Volume of Box2 : {box4.GetVolume()}");
 
-			var test = new BoxV3[10];
-			test[0] = new BoxV3();
+			var box5 = new BoxV3();
+			var box6 = new BoxV3(10, 0.1, 51.3);
+
+			var box7 = new BoxV4(); // Předá volání do druhého konstruktoru s hodnotami 0,0,0
 
 			Utils.LogPath = @"C:\ProgramData\MyApp\Log";    // Přístup ke statické proměnné
 			Utils.WriteToLog("Test");               // Přístup ke statické funkci
 
-			var utils = new Utils();
-			utils.Prefix = "001_"; // Tady můžeme změnit nestatickou veřejnou proměnnou.
-			utils.WriteToLogFile("Test", "Log.log");
+			var utilsInstance = new Utils();
+			utilsInstance.Prefix = "001_"; // Tady můžeme změnit nestatickou veřejnou proměnnou.
+			utilsInstance.WriteToLogFile("Test", "Log.log");
 
 			Utils2.SomeMethod();
 
@@ -128,15 +130,15 @@ namespace Classes
 
 		public void SetLength(double len)
 		{
-			_length = len;
+			_length = len < 0.0 ? 0 : len;
 		}
 		public void SetBreadth(double bre)
 		{
-			_breadth = bre;
+			_breadth = bre < 0.0 ? 0 : bre;
 		}
 		public void SetHeight(double hei)
 		{
-			_height = hei;
+			_height = hei < 0.0 ? 0 : hei;
 		}
 		public double GetVolume()
 		{
@@ -161,12 +163,12 @@ namespace Classes
 		double _breadth;  // Hloubka
 		double _height;   // Výška
 
-		BoxV3(double length, double breadth, double height)
+		public BoxV3(double length, double breadth, double height)
 		{
 			Console.WriteLine("The box is being build.");
-			_length = length;
-			_breadth = breadth;
-			_height = height;
+			_length = length > 0.0 ? length : 0.0;
+			_breadth = breadth > 0.0 ? breadth : 0.0;
+			_height = height > 0.0 ? height : 0.0;
 		}
 		/*
         BoxV3(double length = 0, double breadth = 0, double height = 0)
@@ -210,6 +212,41 @@ namespace Classes
 		}
 	}
 
+	class BoxV4
+	{
+		double _length;   // Délka
+		double _breadth;  // Hloubka
+		double _height;   // Výška
+
+		public BoxV4(double length, double breadth, double height)
+		{
+			Console.WriteLine("The box is being build.");
+			SetLength(length);
+			SetBreadth(breadth);
+			SetHeight(height);
+		}
+
+		// Zřetězení konstruktorů
+		public BoxV4() : this(0, 0, 0)
+		{}
+
+		public void SetLength(double length)
+		{
+			_length = length > 0.0 ? length : 0.0;
+		}
+		public void SetBreadth(double breadth)
+		{
+			_breadth = breadth > 0.0 ? breadth : 0.0;
+		}
+		public void SetHeight(double height)
+		{
+			_height = height > 0.0 ? height : 0.0;
+		}
+		public double GetVolume()
+		{
+			return _length * _breadth * _height;
+		}
+	}
 
 	// Význam oboru platnosti
 	class Utils

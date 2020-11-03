@@ -12,7 +12,6 @@ namespace Methods
 				return result;
 			}
 
-
 			for (UInt64 i = 2; i <= n; i++)
 			{
 				result *= i;

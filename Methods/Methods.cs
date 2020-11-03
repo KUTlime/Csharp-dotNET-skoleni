@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Methods
 {
@@ -39,7 +40,7 @@ namespace Methods
 		// Povinná metoda každého C# programu.
 		static void Main(string[] args)
 		{
-			/*
+			
             // Lokální proměnné
 
             int a = 100;
@@ -103,7 +104,10 @@ namespace Methods
             // Použití "in" funkce - konstantní parametry u volání funkce
             Console.WriteLine($"Sum of {a} and {b} is {methods.Sum(in a, in b)}");
             Console.WriteLine($"Sum of {a} and {b} is {methods.Sum(a, b)}"); // U volání není nutné použít in, to se doplní samo.
-            */
+
+			methods.PrintNumber(10.12345); // Automaticky se použije 3 desetinná místa, protože to je výchozí hodnota 2. parametru.
+			methods.PrintNumber(10.12345, 2);
+
 
 			Solution.Fibonacci(1000);
 			Solution.Fibonacci(1000, 20);

@@ -146,6 +146,42 @@ namespace Selections
                  return 0;
              }
              */
+
+			if (a == 10)
+			{
+				a = 20;
+			}
+			else if (a == 20)
+			{
+				// Tady mi to už neskočí, protože to skočilo už předtím.
+			}
+
+			if (a == 10)
+			{
+				a = 20;
+			}
+			if (a == 20)
+			{
+				// Tady mi to už ale skočí dovnitř.
+			}
+
+			if (a < 10)
+			{
+				//
+			}
+			else if (a < 20)
+			{
+				// Tady mi to už neskočí, protože to skočilo už předtím.
+			}
+
+			if (a < 10)
+			{
+				//
+			}
+			if (a < 20)
+			{
+				// Tady mi to už ale skočí dovnitř.
+			}
 		}
 	}
 }

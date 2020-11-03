@@ -48,15 +48,6 @@ namespace Encapsulation
         #############################################################################
         */
 
-		// Veřejná třída
-		public class PointTest
-		{
-			// Veřejné proměnné
-			public int x;
-			public int y;
-		}
-
-
 		static void Main(string[] args)
 		{
 			PointTest p = new PointTest();
@@ -70,9 +61,17 @@ namespace Encapsulation
 			//protectedPoint.y = 10;
 
 			var derivedPoint = new DerivedPoint();
+			//derivedPoint.x = 10; // stále nepřístupné
 
 		}
 
+		// Veřejná třída
+		public class PointTest
+		{
+			// Veřejné proměnné
+			public int x;
+			public int y;
+		}
 		// Třída veřejná, ale členská data jsou už protected.
 		public class ProtectedPoint
 		{

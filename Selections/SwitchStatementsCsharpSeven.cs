@@ -6,31 +6,31 @@ namespace Selections
 	class SwitchStatementsCsharpSeven
 	{
 		/*
-            #############################################################################
-            ### switch a mapování typů před a po C# verzi 7.0
-            #############################################################################
-            Před:
-            case constant:
+        #############################################################################
+        ### switch a mapování typů před a po C# verzi 7.0
+        #############################################################################
+        Před:
+        case constant:
 
-            A bool literal, either true or false.
-            Any integral constant, such as an int, a long, or a byte.
-            The name of a declared const variable.
-            An enumeration constant.
-            A char literal.
-            A string literal.
+        A bool literal, either true or false.
+        Any integral constant, such as an int, a long, or a byte.
+        The name of a declared const variable.
+        An enumeration constant.
+        A char literal.
+        A string literal.
 
-            If expr and constant are integral types, the C# equality operator determines whether the expression returns true (that is, whether expr == constant).
-            Otherwise, the value of the expression is determined by a call to the static Object.Equals(expr, constant) method.
+        If expr and constant are integral types, the C# equality operator determines whether the expression returns true (that is, whether expr == constant).
+        Otherwise, the value of the expression is determined by a call to the static Object.Equals(expr, constant) method.
 
 
-            Po (tj. 7.0 a vyšší):
+        Po (tj. 7.0 a vyšší):
 
-            #############################################################################
+        #############################################################################
         */
 
 		static void SwitchStatements()
 		{
-			// Základní funkcionalita před C#7.0
+			// Základní funkcionalita před C# 7.0
 			switch (DateTime.Now.DayOfWeek)
 			{
 				case DayOfWeek.Sunday:
