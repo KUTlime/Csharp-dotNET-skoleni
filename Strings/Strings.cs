@@ -29,8 +29,9 @@ namespace Strings
         Typy stringů (literálů):
         - Klasický, např. "C:\\Windows\\System32"
         - Univerzální (Verbatim), např. @"C:\Windows\System32"
+		- Kompozitně formátovaný, např. Console.WriteLine("Result: {0}", result);
         - Interpolovaný (C# 6 a vyšší), např. $"Výsledek: {result}"
-        - Kompozitně formátovaný, např. Console.WriteLine("Result: {0}", result);
+        
         
         Kompozitní vs. interpolované formátování:
         - String.Format("Name = {0}, hours = {1:hh}", name, DateTime.Now);
@@ -64,14 +65,13 @@ namespace Strings
 			lname = "Zahradník";    // ----||----
 
 			// Spojení stringů
-			char[] letters = { 'H', 'e', 'l', 'l', 'o' };
 			string[] sarray = { "Vítejte", "na", "mém", "školení." };
 			Console.InputEncoding = Encoding.Unicode;
 			Console.OutputEncoding = Encoding.Unicode;
 			Console.WriteLine("Unicode character: \u06B0");
 
 			// Volání funkce (Kompozitně formátovaný string)
-			string multiple = String.Format("0x{0:X} {0:E} {0:N} {0:C}", Int64.MaxValue); // 0x7FFFFFFFFFFFFFFF 9,223372E+018 9 223 372 036 854 775 807,00 9 223 372 036 854 775 807,00 Kč"
+			string multiple = string.Format("0x{0:X} {0:E} {0:N} {0:C}", Int64.MaxValue); // 0x7FFFFFFFFFFFFFFF 9,223372E+018 9 223 372 036 854 775 807,00 9 223 372 036 854 775 807,00 Kč"
 			string multiple2 = $"0x{Int64.MaxValue:X} {Int64.MaxValue:E} {Int64.MaxValue:N} {Int64.MaxValue:C}"; // Interpolovaný string
 
 			// Operátor sčítání stringů
@@ -80,12 +80,13 @@ namespace Strings
 			Console.WriteLine($"Full Name:\t \"{fullname}\"");
 
 			//Použití konstruktoru { 'H', 'e', 'l', 'l','o' };
+			char[] letters = { 'H', 'e', 'l', 'l', 'o' };
 			string greetings = new String(letters);
 			//string greetings2 = new String("asdf"); // Pouze znakové pole
 			Console.WriteLine("Greetings: {0}", greetings);
 
 			//Návratová hodnota z metody
-			string msg = String.Join(" ", sarray);
+			string msg = string.Join(" ", sarray);
 			Console.WriteLine("Message: {0}", msg);
 
 			//Formátování stringů
@@ -132,9 +133,7 @@ namespace Strings
 			// Formátování pomocí operátoru + na více řádků pro lepší čitelnost.
 			// Visual Studio umí při zmáčknutí Enteru v dlouhém řetězci automaticky
 			// přidat + na konec řádku a správně string rozdělit.
-			Console.WriteLine("Test" +
-							  " Test " +
-							  "Test.");
+			Console.WriteLine("Test Test test ");
 			Console.WriteLine("Some very" +
 							  " long text line " +
 							  "which I would " +
@@ -174,6 +173,7 @@ namespace Strings
 			// nl-NL        17-05-18 15:44:55      31.415.926,536
 			//            05/17/2018 15:44:55      31,415,926.536
 
+			System.Threading.Thread.CurrentThread.CurrentCulture = new CultureInfo("en-GB");
 			// Výstup pro UK culture
 			DateTime.UtcNow.ToString("s"); //"2019-02-06T09:33:02"
 			DateTime.UtcNow.ToString("D"); // "06 February 2019"
@@ -204,7 +204,7 @@ namespace Strings
 
 			// Třídění dle švédštiny
 			string originalCulture = CultureInfo.CurrentCulture.Name;
-			Thread.CurrentThread.CurrentCulture = new CultureInfo("sv-SE");
+			System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("sv-SE");
 			Array.Sort(values);
 			DisplayArray(values);
 
@@ -215,7 +215,7 @@ namespace Strings
 			void DisplayArray(string[] arr)
 			{
 				Console.WriteLine("Sorting using the {0} culture:",
-					CultureInfo.CurrentCulture.Name);
+					System.Globalization.CultureInfo.CurrentCulture.Name);
 				foreach (string item in arr)
 					Console.WriteLine("   {0}", item);
 
@@ -230,7 +230,7 @@ namespace Strings
 			string str2 = "This is text";
 
 			// Kulturně agnostické porovnávání stringů
-			if (String.CompareOrdinal(str1, str2) == 0)
+			if (string.CompareOrdinal(str1, str2) == 0)
 			{
 				Console.WriteLine(str1 + " and " + str2 + " are equal.");
 			}
@@ -240,7 +240,7 @@ namespace Strings
 			}
 
 			// Ekvivalent s pomocí přetížení metody Compare.
-			if (String.Compare(str1, str2, StringComparison.Ordinal) == 0)
+			if (string.Compare(str1, str2, StringComparison.Ordinal) == 0)
 			{
 				Console.WriteLine(str1 + " and " + str2 + " are equal.");
 			}
@@ -271,7 +271,7 @@ namespace Strings
 				"And when I reached Jamaica",
 				"I made a stop"};
 
-			str = String.Join("\n", starray);
+			str = string.Join("\n", starray);
 
 			Console.ReadKey();
 		}
