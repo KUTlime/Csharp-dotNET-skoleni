@@ -4,36 +4,39 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Základní", "1 - Základní", "{90CBDD8A-BC7F-4351-BFC2-3D4971C42890}"
+	ProjectSection(SolutionItems) = preProject
+		Binární aritmetika.txt = Binární aritmetika.txt
+	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Středně pokročilí", "2 - Středně pokročilí", "{E41C3370-5B8F-4AD3-AF63-7007CAD60CCD}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Středně pokročilé", "2 - Středně pokročilé", "{E41C3370-5B8F-4AD3-AF63-7007CAD60CCD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Pokročilí", "3 - Pokročilí", "{2AA68D1D-1465-49DE-9CF7-FECD5F7752B2}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Pokročilé", "3 - Pokročilé", "{2AA68D1D-1465-49DE-9CF7-FECD5F7752B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld", "HelloWorld\HelloWorld.csproj", "{6BA9F1B7-55D7-49BA-AAD0-E548E97A73A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloWorld", "HelloWorld\HelloWorld.csproj", "{6BA9F1B7-55D7-49BA-AAD0-E548E97A73A1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - Hello World", "01 - Hello World", "{34ACC3B6-C571-457D-8C9D-C3F6AB579515}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldCsharpNine", "HelloWorldCsharpNine\HelloWorldCsharpNine.csproj", "{7CF31764-D443-48BD-ABCC-54032BAE6D02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloWorldCsharpNine", "HelloWorldCsharpNine\HelloWorldCsharpNine.csproj", "{7CF31764-D443-48BD-ABCC-54032BAE6D02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicSyntax", "BasicSyntax\BasicSyntax.csproj", "{FA0A0292-0246-49FF-839D-FF7B8851D791}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicSyntax", "BasicSyntax\BasicSyntax.csproj", "{FA0A0292-0246-49FF-839D-FF7B8851D791}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - Základní syntaxe", "02 - Základní syntaxe", "{8BF679C3-5A87-4549-B6F2-0FB7117A8AF6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 - Datové typy", "03 - Datové typy", "{E313687B-B622-4422-8907-00B3A1EA4B24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTypes", "DataTypes\DataTypes.csproj", "{D6AC1A4B-DF41-4E81-9D3B-A9A4B7F37BBE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataTypes", "DataTypes\DataTypes.csproj", "{D6AC1A4B-DF41-4E81-9D3B-A9A4B7F37BBE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06 - Výčty", "06 - Výčty", "{4C00F871-67DC-4079-9758-2D91DB18FCEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enums", "Enums\Enums.csproj", "{E669B6BC-F4D3-49F1-91E6-63D1061F5C72}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enums", "Enums\Enums.csproj", "{E669B6BC-F4D3-49F1-91E6-63D1061F5C72}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05 - Konverze", "05 - Konverze", "{C414707C-1BC4-4901-A25A-65C1EE81AEA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeConversions", "TypeConversions\TypeConversions.csproj", "{FFC68287-63B1-450F-B13D-008E8FE98AEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TypeConversions", "TypeConversions\TypeConversions.csproj", "{FFC68287-63B1-450F-B13D-008E8FE98AEC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "12 - Třídy", "12 - Třídy", "{E8E70598-9EEA-4161-AFFE-FA94375B5D90}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "14 - Třídy", "14 - Třídy", "{E8E70598-9EEA-4161-AFFE-FA94375B5D90}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "09 - Textové řetězce", "09 - Textové řetězce", "{5F9708AD-A1A8-428A-B1CE-C94AD205C50E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "12 - Textové řetězce", "12 - Textové řetězce", "{5F9708AD-A1A8-428A-B1CE-C94AD205C50E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 - Proměnné", "04 - Proměnné", "{79E43054-F544-4F80-8F86-31767847B866}"
 EndProject
@@ -41,57 +44,63 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "08 - Literály", "08 - Lite
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07 - Konstanty", "07 - Konstanty", "{F775EF8E-C9F2-4716-98FC-57E3D3DCA6E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Variables", "Variables\Variables.csproj", "{75B97428-EBCB-4DB3-99FB-2F45D52363F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Variables", "Variables\Variables.csproj", "{75B97428-EBCB-4DB3-99FB-2F45D52363F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Constants", "Constants\Constants.csproj", "{C03085A6-49E2-4506-97C5-18775F524356}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Constants", "Constants\Constants.csproj", "{C03085A6-49E2-4506-97C5-18775F524356}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Literals", "Literals\Literals.csproj", "{B7A2FB65-B0F3-4089-A19C-1ACEFA48EEC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Literals", "Literals\Literals.csproj", "{B7A2FB65-B0F3-4089-A19C-1ACEFA48EEC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strings", "Strings\Strings.csproj", "{CE137F9F-5725-4769-A6DF-2955C78720A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Strings", "Strings\Strings.csproj", "{CE137F9F-5725-4769-A6DF-2955C78720A1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10 - Selekce", "10 - Selekce", "{1C00CF29-9A8A-4EDB-8AFE-F22F2331C690}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "11 - Smyčky", "11 - Smyčky", "{4DC63840-E8DD-4A2A-A39F-503FED57C385}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Selections", "Selections\Selections.csproj", "{4527926E-76F8-4DA2-9A35-BA2BC02DDF1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Selections", "Selections\Selections.csproj", "{4527926E-76F8-4DA2-9A35-BA2BC02DDF1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loops", "Loops\Loops.csproj", "{3C7B2BCE-24CF-4686-B9C9-1E713092C22D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Loops", "Loops\Loops.csproj", "{3C7B2BCE-24CF-4686-B9C9-1E713092C22D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Classes", "Classes\Classes.csproj", "{738D48CF-717E-45C9-A4E4-62037BBECD3B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Classes", "Classes\Classes.csproj", "{738D48CF-717E-45C9-A4E4-62037BBECD3B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "13 - Metody", "13 - Metody", "{3491EF73-D030-4FC3-AB9F-7D0B07B713A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Methods", "Methods\Methods.csproj", "{2916FCCD-E497-4068-BB10-3CCFF60E5260}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Methods", "Methods\Methods.csproj", "{2916FCCD-E497-4068-BB10-3CCFF60E5260}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "14 - Zapouzdření", "14 - Zapouzdření", "{285BE93F-2345-43AF-82DC-11FBD3C6F966}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "15 - Zapouzdření", "15 - Zapouzdření", "{285BE93F-2345-43AF-82DC-11FBD3C6F966}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Encapsulation", "Encapsulation\Encapsulation.csproj", "{5DBC50C7-A1FD-4853-9C42-A59D0DE18D11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Encapsulation", "Encapsulation\Encapsulation.csproj", "{5DBC50C7-A1FD-4853-9C42-A59D0DE18D11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncapsulationOtherAssembly", "EncapsulationOtherAssembly\EncapsulationOtherAssembly.csproj", "{D1133DCA-E8E4-4A76-A089-221A7067479F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EncapsulationOtherAssembly", "EncapsulationOtherAssembly\EncapsulationOtherAssembly.csproj", "{D1133DCA-E8E4-4A76-A089-221A7067479F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20 - Dědičnost", "20 - Dědičnost", "{D1BF8A2F-7910-467D-B59F-8498BCAB29E2}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "21 - Dědičnost", "21 - Dědičnost", "{D1BF8A2F-7910-467D-B59F-8498BCAB29E2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "21 - Rozhraní", "21 - Rozhraní", "{CBFE8D2C-D4CE-4602-AA34-773E0EC3AEB7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20 - Rozhraní", "20 - Rozhraní", "{CBFE8D2C-D4CE-4602-AA34-773E0EC3AEB7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "22 - Vlastnosti", "22 - Vlastnosti", "{3A971B9B-5808-4856-A7B1-2C4E07D89C14}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "23 - Mnohotvarost", "23 - Mnohotvarost", "{5D3D6AB7-5F9B-4A01-9583-FAF66D4049A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inheritance", "Inheritance\Inheritance.csproj", "{E2F22602-7DF4-4DF2-B9BB-2B3E9A8B9609}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inheritance", "Inheritance\Inheritance.csproj", "{E2F22602-7DF4-4DF2-B9BB-2B3E9A8B9609}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{3EB10D9C-5081-4228-A9E4-E3F08355342D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interfaces", "Interfaces\Interfaces.csproj", "{3EB10D9C-5081-4228-A9E4-E3F08355342D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Properties", "Properties\Properties.csproj", "{B03365DC-4B8C-45B8-A3DE-646789CDBBEB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Properties", "Properties\Properties.csproj", "{B03365DC-4B8C-45B8-A3DE-646789CDBBEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polymorphism", "Polymorphism\Polymorphism.csproj", "{00EFE930-5307-4871-B3ED-0050B4E981B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Polymorphism", "Polymorphism\Polymorphism.csproj", "{00EFE930-5307-4871-B3ED-0050B4E981B1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "15 - Pole", "15 - Pole", "{74C31105-177D-4028-AE67-422A668D4656}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "16 - Pole", "16 - Pole", "{74C31105-177D-4028-AE67-422A668D4656}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "16 - Kolekce", "16 - Kolekce", "{0CD1A9FC-659A-4F70-8FA4-9B040972666B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "17 - Kolekce", "17 - Kolekce", "{0CD1A9FC-659A-4F70-8FA4-9B040972666B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arrays", "Arrays\Arrays.csproj", "{9A1D2862-465B-4E04-80E3-E3C7355E5C04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arrays", "Arrays\Arrays.csproj", "{9A1D2862-465B-4E04-80E3-E3C7355E5C04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collections", "Collections\Collections.csproj", "{66640D08-35B0-4782-9123-A1A54C19C6B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Collections", "Collections\Collections.csproj", "{66640D08-35B0-4782-9123-A1A54C19C6B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "09 - Operátory", "09 - Operátory", "{7611F299-445C-44EE-B7D1-6D42F0ADB778}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Operators", "Operators\Operators.csproj", "{4B56C00B-2546-4CB1-8C71-EBB495466086}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringsCsharpEight", "StringsCsharpEight\StringsCsharpEight.csproj", "{817E5996-2E1D-48E5-A6F4-DD960AAF9E44}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -187,6 +196,14 @@ Global
 		{66640D08-35B0-4782-9123-A1A54C19C6B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66640D08-35B0-4782-9123-A1A54C19C6B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66640D08-35B0-4782-9123-A1A54C19C6B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B56C00B-2546-4CB1-8C71-EBB495466086}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B56C00B-2546-4CB1-8C71-EBB495466086}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B56C00B-2546-4CB1-8C71-EBB495466086}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B56C00B-2546-4CB1-8C71-EBB495466086}.Release|Any CPU.Build.0 = Release|Any CPU
+		{817E5996-2E1D-48E5-A6F4-DD960AAF9E44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{817E5996-2E1D-48E5-A6F4-DD960AAF9E44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{817E5996-2E1D-48E5-A6F4-DD960AAF9E44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{817E5996-2E1D-48E5-A6F4-DD960AAF9E44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -234,6 +251,9 @@ Global
 		{0CD1A9FC-659A-4F70-8FA4-9B040972666B} = {90CBDD8A-BC7F-4351-BFC2-3D4971C42890}
 		{9A1D2862-465B-4E04-80E3-E3C7355E5C04} = {74C31105-177D-4028-AE67-422A668D4656}
 		{66640D08-35B0-4782-9123-A1A54C19C6B3} = {0CD1A9FC-659A-4F70-8FA4-9B040972666B}
+		{7611F299-445C-44EE-B7D1-6D42F0ADB778} = {90CBDD8A-BC7F-4351-BFC2-3D4971C42890}
+		{4B56C00B-2546-4CB1-8C71-EBB495466086} = {7611F299-445C-44EE-B7D1-6D42F0ADB778}
+		{817E5996-2E1D-48E5-A6F4-DD960AAF9E44} = {5F9708AD-A1A8-428A-B1CE-C94AD205C50E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C56838BB-E1E2-4597-B4A8-1BA561860DAC}
