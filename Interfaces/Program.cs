@@ -9,7 +9,7 @@ namespace Interfaces
     #############################################################################
     
     Dobré vedět:
-    - Rozhraní definuje syntaktický kontrakt mezi rozhraním a třídou, která rozhraní dědí.
+    - Rozhraní definuje syntaktický kontrakt mezi rozhraním a třídou, která rozhraní dědí, tj. implementuje.
     - Jedná se o kontrakt typu Co-Jak.
     - Rozhraní popisuje "Co".
     - Třída, která dědí popisuje "Jak".
@@ -75,7 +75,11 @@ namespace Interfaces
 			{
 				Console.WriteLine(item);
 			}
-
+			Int32[] arrayOfNumbers = new[] { 1, 2, 2, 3, 33, 4, 4, 5, 6, };
+			var listOfNumbers = new List<Int32> { 1, 2, 2, 3, 33, 4, 4, 5, 6, };
+			Utils.PrintDistinct(arrayOfNumbers);
+			Utils.PrintDistinct(listOfNumbers);
+			
 			Console.ReadKey();
 		}
 	}
@@ -159,5 +163,21 @@ namespace Interfaces
 		}
 
 		public string Name { get; set; }
+	}
+
+	class Utils
+	{
+		public static void PrintDistinct(IEnumerable<Int32> array)
+		{
+			var uniqueNumbers = new HashSet<Int32>();
+			foreach (Int32 number in array)
+			{
+				uniqueNumbers.Add(number);
+			}
+			foreach (Int32 number in uniqueNumbers)
+			{
+				Console.WriteLine(number);
+			}
+		}
 	}
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.CSharp.RuntimeBinder;
+using System;
 
 namespace Inheritance
 {
@@ -128,14 +129,13 @@ namespace Inheritance
 		private double _radius = 0; // Buď public nebo udělat nějakou přístupovou metodu.
 
 		public Circle()
-		{
-
-		}
+		{}
 
 		public Circle(double r)
 		{
 			_radius = r;
 		}
+		
 		public override double GetArea()
 		{
 			return Math.PI * _radius * _radius;
@@ -256,4 +256,47 @@ namespace Inheritance
 	//internal sealed class IsoscelesTriangle : Triangle
 	//{
 	//}
+
+
+	namespace AbstractDemo
+	{
+		// Podobný přístup jako přes rozhraní.
+		// Abstraktní metoda může být pouze v abstraktní třídě.
+		// Abstraktní metody musí být implementovány v potomkovi, stejně jako rozhraní.
+		// Nemůžeme ale operovat jako s proměnnou.
+		abstract class Shape
+		{
+			protected double X;
+			protected double Y;
+			public abstract double GetArea();
+
+			public virtual void Print()
+			{ }
+		}
+
+		class Circle : Shape
+		{
+			public Circle(double originX, double originY)
+			{
+				X = originX;
+				Y = originY;
+			}
+			public override double GetArea()
+			{
+				Console.WriteLine("Circle");
+				return 0;
+			}
+
+			public override void Print()
+			{
+				base.Print();
+			}
+
+			public void DoSomething()
+			{
+				Shape shape = new Circle(0, 0);
+				shape.GetArea();
+			}
+		}
+	}
 }
