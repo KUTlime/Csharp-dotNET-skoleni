@@ -18,5 +18,10 @@ namespace Arrays
 	// 6. Napište funkci, která vypíše unikátní hodnoty ze vstupního pole čísel.
 	class Task
 	{
+		static void TaskFive()
+		{
+			Int32[] array = { 1, 1, 2, 2, 3, 3, 4, 5, 5, 6, 6 }; // Tady je 4 jako jedináček
+			Int32[] array2 = { 1,2,3,4,5,6,1,2,4,5,6 };			// Tady je 3 jako jedináček.
+		}
 	}
 }
