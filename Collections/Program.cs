@@ -16,7 +16,7 @@ namespace Collections
 
     Generické:
     - Používají deklaraci generického typu <>
-    - System.Collection.Generic.
+    - System.Collections.Generic.
 
     Negenerické:
     - Vyžadují balení a rozbalování položek, proto neefektivní.
@@ -50,6 +50,12 @@ namespace Collections
 			list2.Add("Zahradník");
 			list2.Add("Zahradník");
 
+			var list3 = new List<string> { "Radek", "Zahradník" };
+			var list4 = new List<string> 
+			{ 
+				"Radek",
+				"Zahradník" 
+			};
 
 			// Slovník
 			var dictionary = new Dictionary<string, string>();
@@ -102,11 +108,15 @@ namespace Collections
 			foreach (char c in someText)
 			{
 				if (!charCounter.ContainsKey(c))
-					charCounter.Add(c, 1);
+				{ 
+					charCounter.Add(c, 1); 
+				}
 				else
+				{
 					// charCounter[c] is of type int,
 					//   c is of type char
 					charCounter[c]++;
+				}
 			}
 
 			Console.WriteLine("Found {0} unique characters", charCounter.Keys.Count);
