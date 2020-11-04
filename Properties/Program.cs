@@ -8,7 +8,7 @@ namespace Properties
     ### Vlastnosti - properties
     #############################################################################
     
-    Vlastnosti významně snižují syntaktický cukr kódu C#, zvyšují zapouzdření a 
+    Vlastnosti významně snižují množství kódu C#, zvyšují zapouzdření a 
     přehledňují kód.
 
     Elegantně řeší následující situaci:
@@ -27,7 +27,7 @@ namespace Properties
 
     Existují tři druhy:
     - Plné vlastnosti (Full property)
-    - Auto vlastnosti (auto property)
+    - Auto vlastnosti (Auto property)
     - Výrazová kostra (Expression-body property), lze uvést spíše jako samostatnou kategorii, viz https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/expression-bodied-members
 
     Dobré vědět:
@@ -99,6 +99,9 @@ namespace Properties
 			var myClass2 = new MyClass2();
 
 			myClass2.Foo1 = Int32.MaxValue;
+
+			var circle = new Circle(10);
+			Console.WriteLine($"Circle area is {circle.Area}");
 
 			Console.ReadKey();
 		}
@@ -210,7 +213,6 @@ namespace Properties
 		// tudíž výchozí hodnoty mají smysl.
 		public EmployeeV2()
 		{
-
 		}
 		// Přetížený konstruktor
 		public EmployeeV2(string firstName, string middleName, string lastName)
@@ -245,6 +247,13 @@ namespace Properties
 
 		// Použití těla výrazu 
 		public Int32 ByteChunkSizeLarge => 4; // Výrazové tělo (expression body).
+		// jsou náhrada za následující kód
+		/*
+		public Int32 ByteChunkSizeLarge()
+		{
+			return 4;
+		}
+		*/
 	}
 
 	// Abstraktní vlastnosti v abstraktní třídě
@@ -317,4 +326,30 @@ namespace Properties
 	{
 
 	}
+
+	// Kalkulované vlastnosti
+	class Circle
+	{
+		double _radius;
+		
+		// Konstruktor jako expression body.
+		public Circle(double radius) => _radius = radius > 0 ? radius : 0.0;
+
+		public double Perimeter { 
+			get 
+			{
+				return 2 * _radius * Math.PI;
+			} 
+		}
+
+		public double Area
+		{
+			get
+			{
+				return _radius * _radius * Math.PI;
+			}
+		}
+	}
+
+
 }
