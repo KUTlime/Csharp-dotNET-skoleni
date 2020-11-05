@@ -149,12 +149,12 @@ namespace Tuples
 			var (first, last) = p;
 
 			// Dekompozice implemntována ve třídy Student formou metody rozšíření
-			var (firstName, lastName, myGrade) = new Student(first: "Radek", "Zahradník", 1.0);
+			var (firstName, lastName, myGrade) = new Student(firstName: "Radek", lastName: "Zahradník", gpa: 1.0);
 
 			// Dekompozice implementována ve třídě Person
-			var (firstName1, lastName2) = new Student(first: "Radek", "Zahradník", 1.0);
+			var (firstName1, lastName2) = new Student(firstName: "Radek", "Zahradník", 1.0);
 
-			var student = new Student(first: "Radek", "Zahradník", 1.0);
+			var student = new Student(firstName: "Radek", lastName: "Zahradník", gpa: 1.0);
 			student.Deconstruct(out first, out last, out myGrade); // Volání metody rozšíření
 			student.Deconstruct(out var first1, out var last2, out var gpa); // Volání metody rozšíření s definicí vlastních argumentů
 			(string name1, string name2, double grade) = student; // Dekompozice přes operátor přiřazení, který si zavolá metodu rozšíření.
