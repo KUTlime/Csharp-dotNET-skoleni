@@ -59,12 +59,18 @@ namespace Exceptions
     7 	System.OutOfMemoryException         Ošetřuje chyby generované při nedostatku paměti.
     8 	System.StackOverflowException       Ošetřuje chyby generované při přetečení zásobníku.
     
-
+	Nebezpečné scénáře:
+	- Zápis/čtení do souboru.
+	- Zápis/čtení ze sítě.
+	- Zápis/čtení z databáze.
+	- Operace s IO zařízení.
 
     Best Practice při výjimkách:
     - Vyhýbejte se výjimkám, pokud je to možné, např. file.CanWrite.
     - Používejte předdefinované .NET výjimky.
     - Nahraďte chybové kódy výjimkami.
+	- Nechytejte výjimky, které nezpracováváte.
+	- Pokud chcete chytat výjimky, které nezpracováváte, např. kvůli logování, používejte throw;
     - Jména vlastních výjimek ukončete slovem Exception.
     - Do vlastních výjimek vložte 3 konstruktory Exception(), Exception(String), Exception(String, Exception).
     - Pište čitelné zprávy pro výjimky. Není to slohové cvičení ani žádost o dotaci na nesmyslný projekt.
@@ -80,7 +86,7 @@ namespace Exceptions
 		{
 
 			DivNumbers d = new DivNumbers();
-			d.division(25, 0); // Vyhození výjimky.
+			d.Division(25, 0); // Vyhození výjimky.
 
 			Temperature temp = new Temperature();
 			try
@@ -112,16 +118,6 @@ namespace Exceptions
 
 				// Zde by se zachytila pouze výjimka SomeSpecificException
 				// a všechny ostatní typy by zůstaly nezachycené.
-			}
-
-			try
-			{
-				// Zde patří kód, kde hrozí vyhození výjimky.
-			}
-			finally
-			{
-				// Zde patří kód, který se má vykonat po bloku try.
-				// Vykoná se vždy, nehledě na vyhození výjimky.
 			}
 
 			try
@@ -202,7 +198,7 @@ namespace Exceptions
 			result = 0;
 		}
 
-		public void division(int num1, int num2)
+		public void Division(int num1, int num2)
 		{
 			try
 			{
@@ -226,14 +222,14 @@ namespace Exceptions
 	// Jméno končí slovem "Exception".
 	public class TempIsZeroException : Exception
 	{
-		public string CustomMessage { get; set; } = String.Empty;
+		public string CustomMessage { get; set; } = "Temperature can't be zero!";
 
 		// Definice schématu tří vlastních konstruktorů.
-		public TempIsZeroException()
+		public TempIsZeroException() : base()
 		{
 		}
 
-		public TempIsZeroException(string message) : base(message)
+		public TempIsZeroException(string message) : this(message, null)
 		{
 		}
 
