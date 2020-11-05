@@ -1,2 +1,2 @@
-# Csharp-dotNET-skoleni
-> Repositář mého C# .NEt školení
+# C# .NET školení
+> Repositář mého C# .NET školení
