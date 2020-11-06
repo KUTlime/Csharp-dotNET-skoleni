@@ -12,11 +12,11 @@ namespace NoteApp.Program
 	 * 5. ✔ Najít text v poznámkách.
 	 * 6. ✔ Zobrazit všechny poznámky.
 	 */
-	class Host
+	internal static class Host
 	{
-		static Notebook _notebook = new Notebook();
+		private static readonly Notebook Notebook = new Notebook();
 
-		static void Main(string[] args)
+		private static void Main(string[] args)
 		{
 			bool @continue = true;
 			do
@@ -52,7 +52,7 @@ namespace NoteApp.Program
 					break;
 				case 7:
 					DeleteNote("Enter note id to delete");
-					break;		
+					break;
 				default:
 					Console.WriteLine("Unknown option. Please repeate enter.");
 					break;
@@ -64,16 +64,16 @@ namespace NoteApp.Program
 		{
 			Console.WriteLine("Please, entry a text to find in notes");
 			string textToFind = Console.ReadLine();
-			_notebook.FindNotesWithText(textToFind);
+			Notebook.FindNotesWithText(textToFind);
 		}
 
 		private static void AppendToNote()
 		{
 			Int32 id = GetMenuItem("Entry note id to append");
 			Console.WriteLine("Entry text to append");
-			string newNoteText = _notebook.GetNoteById(id) + Console.ReadLine();
-			_notebook.DeleteNoteById(id);
-			_notebook.CreateNewNote(newNoteText);
+			string newNoteText = Notebook.GetNoteById(id) + Console.ReadLine();
+			Notebook.DeleteNoteById(id);
+			Notebook.CreateNewNote(newNoteText);
 		}
 
 		private static void OverrideTextNote(string entryOverrideText)
@@ -84,26 +84,26 @@ namespace NoteApp.Program
 
 		private static void DeleteNote(string entryDeleteText)
 		{
-			_notebook.DeleteNoteById(GetMenuItem(entryDeleteText));
+			Notebook.DeleteNoteById(GetMenuItem(entryDeleteText));
 		}
 
 		private static void FindNote()
 		{
-			Console.WriteLine(_notebook.GetNoteById(GetMenuItem("Enter note Id to find")));
+			Console.WriteLine(Notebook.GetNoteById(GetMenuItem("Enter note Id to find")));
 		}
 
 		private static void PrintAllNotes()
 		{
-			_notebook.PrintAllNotes();
+			Notebook.PrintAllNotes();
 		}
 
 		private static void EntryNewNote()
 		{
 			Console.WriteLine("Enter your note text:");
-			_notebook.CreateNewNote(Console.ReadLine());			
+			Notebook.CreateNewNote(Console.ReadLine());
 		}
 
-		static void PrintMenu()
+		private static void PrintMenu()
 		{
 			Console.WriteLine("Press 0 exit");
 			Console.WriteLine("Press 1 to print all notes");
@@ -115,12 +115,12 @@ namespace NoteApp.Program
 			Console.WriteLine("Press 7 to delete note");
 		}
 
-		static Int32 GetMenuItem(string entrytext)
+		private static Int32 GetMenuItem(string entryText)
 		{
 			Int32 result;
 			do
 			{
-				Console.WriteLine(entrytext);
+				Console.WriteLine(entryText);
 			} while (!Int32.TryParse(Console.ReadLine(), out result));
 			return result;
 		}
