@@ -53,7 +53,7 @@ namespace Inheritance
     - C# podporuje sestavování funkcionality pomocí rozhraní (interface).
     
     */
-	static class Program
+	static class Inheritance
 	{
 		static void Main(string[] args)
 		{
@@ -129,13 +129,13 @@ namespace Inheritance
 		private double _radius = 0; // Buď public nebo udělat nějakou přístupovou metodu.
 
 		public Circle()
-		{}
+		{ }
 
 		public Circle(double r)
 		{
 			_radius = r;
 		}
-		
+
 		public override double GetArea()
 		{
 			return Math.PI * _radius * _radius;
@@ -297,6 +297,31 @@ namespace Inheritance
 				Shape shape = new Circle(0, 0);
 				shape.GetArea();
 			}
+		}
+
+		// Poznámka o dědičnosti rozhraní
+		// Rozhraní mohou také dědit jiná rozhraní, čehož můžeme vhodně využít snaze o dodržení
+		// atomických rozhraní, což nám někdy můžeme vhodně pomoci.
+		interface IPerimeter
+		{
+			double GetPerimeter();
+		}
+
+		interface IVolume
+		{
+			double GetVolume();
+		}
+
+		// 2D tvary mají plochu a obvod
+		interface I2DShape : IArea, IPerimeter
+		{
+		}
+
+		// 3D tvary mají plochu a objem,
+		// můžeme s úspěchem recyklovat rozhraní
+		// a přitom jasně definuje 2D/3D objekt.
+		interface I3DShape : IArea, IVolume
+		{
 		}
 	}
 }
