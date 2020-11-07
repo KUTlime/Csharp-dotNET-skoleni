@@ -18,12 +18,10 @@ namespace NoteApp.Program
 
 		private static void Main(string[] args)
 		{
-			bool @continue = true;
 			do
 			{
 				PrintMenu();
-				@continue = ExecuteMenuOption();
-			} while (@continue);
+			} while (ExecuteMenuOption());
 		}
 
 		private static bool ExecuteMenuOption()
