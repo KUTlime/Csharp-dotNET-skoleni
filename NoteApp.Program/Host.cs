@@ -26,7 +26,7 @@ namespace NoteApp.Program
 
 		private static bool ExecuteMenuOption()
 		{
-			switch (GetMenuItem("Enter your choise:"))
+			switch (GetMenuItem("Enter your choice:"))
 			{
 				case 0:
 					return false;
@@ -52,7 +52,7 @@ namespace NoteApp.Program
 					DeleteNote("Enter note id to delete");
 					break;
 				default:
-					Console.WriteLine("Unknown option. Please repeate enter.");
+					Console.WriteLine("Unknown option. Please repeat your choice enter.");
 					break;
 			}
 			return true;
