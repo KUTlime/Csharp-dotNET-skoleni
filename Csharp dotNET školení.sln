@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30611.23
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Základní", "1 - Základní", "{90CBDD8A-BC7F-4351-BFC2-3D4971C42890}"
 	ProjectSection(SolutionItems) = preProject
@@ -126,9 +126,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoggingAppExample", "Loggin
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NoteApp", "NoteApp", "{EDF20B8B-8658-488B-98CA-922CB55D6CA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteApp.Program", "NoteApp.Program\NoteApp.Program.csproj", "{7C7F511C-9D3D-4C47-B3A8-B0D9365E9329}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoteApp.Program", "NoteApp.Program\NoteApp.Program.csproj", "{7C7F511C-9D3D-4C47-B3A8-B0D9365E9329}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteApp.Lib", "NoteApp.Lib\NoteApp.Lib.csproj", "{A6ECFBE2-E4EE-4E2E-90EE-EA5429AD7D03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoteApp.Lib", "NoteApp.Lib\NoteApp.Lib.csproj", "{A6ECFBE2-E4EE-4E2E-90EE-EA5429AD7D03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniqueFileExtensions", "UniqueFileExtensions\UniqueFileExtensions.csproj", "{1A908334-3D44-4DFF-8A4D-A41C06D1A35E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuGetDemo", "NuGetDemo\NuGetDemo.csproj", "{7B270A88-B806-495D-9FD3-808F029CBB3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -264,6 +268,14 @@ Global
 		{A6ECFBE2-E4EE-4E2E-90EE-EA5429AD7D03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6ECFBE2-E4EE-4E2E-90EE-EA5429AD7D03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6ECFBE2-E4EE-4E2E-90EE-EA5429AD7D03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A908334-3D44-4DFF-8A4D-A41C06D1A35E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A908334-3D44-4DFF-8A4D-A41C06D1A35E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A908334-3D44-4DFF-8A4D-A41C06D1A35E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A908334-3D44-4DFF-8A4D-A41C06D1A35E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B270A88-B806-495D-9FD3-808F029CBB3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B270A88-B806-495D-9FD3-808F029CBB3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B270A88-B806-495D-9FD3-808F029CBB3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B270A88-B806-495D-9FD3-808F029CBB3E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -327,6 +339,8 @@ Global
 		{EDF20B8B-8658-488B-98CA-922CB55D6CA5} = {B3E6066E-927D-4581-AB2D-B698A75C56CC}
 		{7C7F511C-9D3D-4C47-B3A8-B0D9365E9329} = {EDF20B8B-8658-488B-98CA-922CB55D6CA5}
 		{A6ECFBE2-E4EE-4E2E-90EE-EA5429AD7D03} = {EDF20B8B-8658-488B-98CA-922CB55D6CA5}
+		{1A908334-3D44-4DFF-8A4D-A41C06D1A35E} = {B3E6066E-927D-4581-AB2D-B698A75C56CC}
+		{7B270A88-B806-495D-9FD3-808F029CBB3E} = {2AA68D1D-1465-49DE-9CF7-FECD5F7752B2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C56838BB-E1E2-4597-B4A8-1BA561860DAC}

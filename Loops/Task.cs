@@ -11,6 +11,7 @@ namespace Loops
 	uživatel nezadá opravdu číslo od 0 do 9.
 	Po platném zadání vytiskněte číslo zpět do konzoly style:
 	"Zadali jste číslo 5".
+	Hodnotu od uživatele přečtete pomocí funkce Console.ReadLine()
 
 	Můžete vhodně využít již předchozí implementace z jiných projektů.
 	*/

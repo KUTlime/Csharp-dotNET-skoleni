@@ -2,7 +2,7 @@
 
 namespace Tuples
 {
-	/*
+    /*
     #############################################################################
     ### Tuple - řazená kolekce (členů)
     #############################################################################
@@ -19,7 +19,7 @@ namespace Tuples
     - Hodnoty, co spolu souvisí.
 
     Syntaxe:
-    (<Datový typ člena> <jméno člena>, <Datový typ člena> <jméno člena>, <Datový typ člena> <jméno člena)
+    ([nepovidnné]<Název člena>: <Datový typ člena> <jméno člena>, [nepovidnné]<Název člena>: <Datový typ člena> <jméno člena>, [nepovidnné]<Název člena>: <Datový typ člena> <jméno člena)
     var (<jméno člena>, <jméno člena>, <jméno člena) // Datový typ je odvozen z datových typů již existujících členů.
 
     Dobré vědět:
@@ -30,7 +30,7 @@ namespace Tuples
 
     #############################################################################
     */
-	class Tuples
+    class Tuples
 	{
 		static void Main(string[] args)
 		{
@@ -60,7 +60,7 @@ namespace Tuples
 			var right1 = (a: 5, b: 10);
 			var rightDiff = (a: 5, b: 10, c: 13);
 			Console.WriteLine(left1 == right1); // vrátí 'true'
-												//Console.WriteLine(left1 == rightDiff); // Neprojde, protože máme jinou kardinalitu tuplů --> jiný počet položek.
+			//Console.WriteLine(left1 == rightDiff); // Neprojde, protože máme jinou kardinalitu tuplů --> jiný počet položek.
 
 			// Tuply a nullable 
 			var left2 = (a: 5, b: 10);

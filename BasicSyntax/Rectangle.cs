@@ -24,6 +24,7 @@ namespace BasicSyntax
 		// členské metody
 		/// <summary>
 		/// Metoda bez návratové hodnoty.
+		/// Metoda be vstupních parameterů.
 		/// </summary>
 		public void AcceptDetails()
 		{ // Začátek metody.
@@ -43,6 +44,8 @@ namespace BasicSyntax
 			// který definuje, co se má vlastně vrátit.
 			return _length * _width;
 		}
+
+		public double GetAreaByExpression() => _length * _width;
 
 		/// <summary>
 		/// Metoda s návhratovou hodnotou a vstupním parametrem.

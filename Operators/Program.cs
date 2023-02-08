@@ -287,12 +287,31 @@ namespace Operators
 
             // Operátor as - bezpečné přetypování na daný datový typ
             Base e = d as Base;
-            if (e != null)
+            if (e is not null)
             {
                 Console.WriteLine(b.ToString());
             }
 
             int* pointer = &a;
+
+            // ?? Operátor propagace nullu
+            // V překladu do srozumitelné češtiny to znamená
+            // že pokud je vlevo null, použij to, co je v pravo.
+            // ?. podmíněný přístup, pokud je něco null, vrať null a funkci nevolej.
+            //    pokud není null, zavolej funkci a vrať návratovou hodnotu.
+            int? test = null;
+            Console.WriteLine(test?.ToString() ?? "It was null");
+
+            // ??= Opetorátor potlačení nullu
+            // Pokud je v proměnné test null, přepiš null hodnotou 42.
+            test ??= 42;
+
+            string str = "RadekZahradník";
+            var R = str[0];
+            var Z = str?[5];
+            var k = str[str.Length - 1];
+            var k1 = str[^1];
+            var adekZ = str[1..5];
         }
 
         /*

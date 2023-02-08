@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "UniqueFileExtensions": {
+      "commandName": "Project",
+      "commandLineArgs": "\"C:\\Users\\Student\\Downloads\" \"D:\\Prezentace\" \"fas:df\\asdfasdf\""
+    }
+  }
+}

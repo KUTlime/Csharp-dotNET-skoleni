@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Namespace
+﻿namespace Namespace
 {
 	/*
     #############################################################################
@@ -33,9 +31,9 @@ namespace Namespace
 	{
 		static void Main(string[] args)
 		{
-			first_space.Foo1 fc = new first_space.Foo1();
-			second_space.Foo1 fc1 = new second_space.Foo1();
-			second_space.Foo2 sc = new second_space.Foo2();
+			FirstNamespace.Foo1 fc = new FirstNamespace.Foo1();
+			SecondNamespace.Foo1 fc1 = new SecondNamespace.Foo1();
+			SecondNamespace.Foo2 sc = new SecondNamespace.Foo2();
 			fc.Func();
 			sc.Func();
 
@@ -47,7 +45,7 @@ namespace Namespace
 		}
 	}
 
-	namespace first_space
+	namespace FirstNamespace
 	{
 		class Foo1
 		{
@@ -57,7 +55,7 @@ namespace Namespace
 			}
 		}
 	}
-	namespace second_space
+	namespace SecondNamespace
 	{
 		class Foo1
 		{

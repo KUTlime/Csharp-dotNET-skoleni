@@ -39,17 +39,17 @@ namespace DataTypes
 			Console.WriteLine(stringType.FullName);
 			Console.WriteLine(doubleType.FullName);
 
-			// Výstup:
-			// System.String
-			// System.Double
+            // Výstup:
+            // System.String
+            // System.Double
 
 
-			// 
-			// #############################################################################
-			// ### 1. Hodnotové datové typy
-			// #############################################################################
+            // 
+            // #############################################################################
+            // ### 1. Hodnotové datové typy
+            // #############################################################################
 
-			/*
+            /*
             Alias | Plný název | Hodnoty
             bool | System.Boolean | 0 .. 255
             byte | System.Byte | 
@@ -73,12 +73,12 @@ namespace DataTypes
 
             */
 
-			/*
+            /*
             XRZ - Rozepsat UInt64 problematiku 
             XRZ - Přeskládat tuto kapitolu pro logičtější koncepci.
             */
 
-			/*
+            /*
             #############################################################################
             ### 2. Referenční datové typy
             #############################################################################
@@ -116,7 +116,7 @@ namespace DataTypes
             i = 47;   // i je teď 47, ale objekt o ukazuje stále na objekt s hodnotou 46
 
             // Automatické zabalení
-            int i = 1964;
+            int i = 1984;
             Console.WriteLine("Favorite numbers: {0}, {1}, {2}", 42, 6, i); // Tři zabalení, která se provedou automaticky.
             #############################################################################
 
@@ -154,7 +154,7 @@ namespace DataTypes
             */
 
 
-			/*
+            /*
             #############################################################################
             ### 3. Ukazatele
             #############################################################################
@@ -166,7 +166,6 @@ i           Int* pointerToInteger;
 
             #############################################################################
             */
-
 
 			int a = 5;
 			Int32 b = a + 2; //OK
@@ -234,7 +233,7 @@ i           Int* pointerToInteger;
              var r = new Rectangle()
              // Tady je jasné, co je r, je to objekt typu Rectangle. 
 
-            var i = 10;
+            int i = 10;
             // Co je i teď? Je to Int32? Je to Int64?
             // Tady to asi uhodneme, ale co třeba:
             var j = 10U;
@@ -250,7 +249,7 @@ i           Int* pointerToInteger;
 				// proto je lepší a syntakticky hezčí to napsat jako String.IsNullOrWhiteSpace
 				// než string.IsNullOrWhiteSpace.
 				// Dáváme tím jasně najevo, že se volá statická funkce, viz kapitola o statice.
-				var isNullOrWhiteSpace = String.IsNullOrWhiteSpace("Test");
+				var isNullOrWhiteSpace = string.IsNullOrWhiteSpace("Test");
 
 				// Pokus o převedení textu z stringu do proměnné typu Int32.
 				// Klíčové slovíčko var se přeloží jako Int32.

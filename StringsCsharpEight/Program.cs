@@ -1,23 +1,17 @@
-﻿using System;
+﻿namespace StringsCsharpEight;
 
-namespace StringsCsharpEight
+class Program
 {
-	class Program
+	static string? test = null;
+	static void Main(string[] args)
 	{
-		static string? test = null;
-		static void Main(string[] args)
-		{
-			Console.WriteLine("Hello World!");
-			GenerateSomeString(test);
-		}
+		Console.WriteLine("Hello World!");
+		GenerateSomeString(test);
+	}
 
-		static string GenerateSomeString(string? entryStr)
-		{
-			if (entryStr == null)
-			{
-				entryStr = string.Empty;
-			}
-			return $"Length is {entryStr.Length}";
-		}
+	static string GenerateSomeString(string? entryStr)
+	{
+		entryStr ??= string.Empty;
+		return $"Length is {entryStr.Length}";
 	}
 }

@@ -1,89 +1,86 @@
-﻿using System;
+﻿namespace Selections;
 
-namespace Selections
-{
-	/*
-    ############################################################################
-    ### Klauzule switch
-    #############################################################################
+/*
+############################################################################
+### Klauzule switch
+#############################################################################
      
-	- Nahrazují složité výrazy if/else if/else if/...
-	- Často ve vazbě dohromady s enumem
+- Nahrazují složité výrazy if/else if/else if/...
+- Často ve vazbě dohromady s enumem
 
-	*/
-	class SwitchStatement
+*/
+class SwitchStatement
+{
+	public enum Color { Red, Green, Blue }
+
+	static void SwitchStatements()
 	{
-		public enum Color { Red, Green, Blue }
+		Int32 caseSwitch = 1;
 
-		static void SwitchStatements()
+		switch (caseSwitch)
 		{
-			Int32 caseSwitch = 1;
+			case 1:
+				Console.WriteLine("Case 1");
+				break;
+			case 2:
+				Console.WriteLine("Case 2");
+				break;
+			default:
+				Console.WriteLine("Default case");
+				break;
+		}
 
-			switch (caseSwitch)
-			{
-				case 1:
-					Console.WriteLine("Case 1");
-					break;
-				case 2:
-					Console.WriteLine("Case 2");
-					break;
-				default:
-					Console.WriteLine("Default case");
-					break;
-			}
-
-			Color c = (Color)(new Random()).Next(0, 3); // Generuji číslo od 0 do 3, přetypuji na enum Color
-														// (viz začátek tohoto souboru) a pak použiji ve switchi.
-			switch (c)
-			{
-				case Color.Red:
-					Console.WriteLine("The color is red");
-					break;
-				case Color.Green:
-					Console.WriteLine("The color is green");
-					break;
-				case Color.Blue:
-					Console.WriteLine("The color is blue");
-					break;
-				default:
-					Console.WriteLine("The color is unknown.");
-					break;
-			}
-			// Ekvivalent k následujícímu kódu:
-			if (c == Color.Red)
-			{
+		Color c = (Color)(new Random()).Next(0, 3); // Generuji číslo od 0 do 3, přetypuji na enum Color
+													// (viz začátek tohoto souboru) a pak použiji ve switchi.
+		switch (c)
+		{
+			case Color.Red:
 				Console.WriteLine("The color is red");
-			}
-			else if (c == Color.Green)
-			{
+				break;
+			case Color.Green:
 				Console.WriteLine("The color is green");
-			}
-			else if (c == Color.Blue)
-			{
+				break;
+			case Color.Blue:
 				Console.WriteLine("The color is blue");
-			}
-			else
-			{
+				break;
+			default:
 				Console.WriteLine("The color is unknown.");
-			}
+				break;
+		}
+		// Ekvivalent k následujícímu kódu:
+		if (c == Color.Red)
+		{
+			Console.WriteLine("The color is red");
+		}
+		else if (c == Color.Green)
+		{
+			Console.WriteLine("The color is green");
+		}
+		else if (c == Color.Blue)
+		{
+			Console.WriteLine("The color is blue");
+		}
+		else
+		{
+			Console.WriteLine("The color is unknown.");
+		}
 
-			// Vícenásobný case a funkce break
-			switch (caseSwitch)
-			{
-				case 1:
-					Console.WriteLine("Case 1");
-					break;
-				case 2:
-					Console.WriteLine("Case 2");
-					break;
-				case 3:
-				case 4:
-					Console.WriteLine("Case 3 || 4");
-					break;
-				default:
-					Console.WriteLine("Default case");
-					break;
-			}
+		// Vícenásobný case a funkce break
+		switch (caseSwitch)
+		{
+			case 1:
+				Console.WriteLine("Case 1");
+				break;
+			case 2:
+				Console.WriteLine("Case 2");
+				break;
+			case 3:
+			case 4:
+				Console.WriteLine("Case 3 || 4");
+				break;
+			default:
+				Console.WriteLine("Default case");
+				break;
 		}
 	}
 }

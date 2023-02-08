@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace ExtensionMethods
+﻿namespace ExtensionMethods
 {
 	/*
 	#############################################################################
@@ -48,7 +44,7 @@ namespace ExtensionMethods
 	}
 }
 
-namespace System
+namespace System.Collections.Generic
 {
 	public static class QueueExtensions
 	{

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Encapsulation
+﻿namespace Encapsulation
 {
 	class Encapsulation
 	{

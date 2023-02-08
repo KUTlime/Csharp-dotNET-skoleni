@@ -1,7 +1,4 @@
-﻿using Microsoft.CSharp.RuntimeBinder;
-using System;
-
-namespace Inheritance
+﻿namespace Inheritance
 {
 	/*
     ############################################################################
@@ -81,7 +78,6 @@ namespace Inheritance
 			// Tisk oblasti - volání příslušné metody.
 			Console.WriteLine("Total area: {0}", area);
 			Console.WriteLine("Total paint cost: ${0}", elipse.GetCost(costPerSquareMeter: 10));
-
 
 			Console.ReadKey();
 		}
@@ -172,7 +168,9 @@ namespace Inheritance
 		private double _cost;
 
 		public Tabletop(double length, double width) : base(length, width) // volání bázového konstruktoru
-		{ }
+		{
+			Console.WriteLine("A ctor of Tabletop.");
+		}
 
 		public double GetCost()
 		{
@@ -295,7 +293,6 @@ namespace Inheritance
 			public void DoSomething()
 			{
 				Shape shape = new Circle(0, 0);
-				shape.GetArea();
 			}
 		}
 

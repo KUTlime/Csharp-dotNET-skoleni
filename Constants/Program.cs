@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Constants
+﻿namespace Constants
 {
 	class Constants
 	{
@@ -48,7 +46,21 @@ namespace Constants
 			// aplikace nastavit na libovolnou hodnotu, kterou si např. přečtene
 			// z nastavení aplikace.
 			public static readonly Int32 servicePort = 50001;
-		}
+
+			// Nepoužívejte hodnoty napřímo, ale vytvořte místo nich pojmenované konstanty,
+			// i kdyby jste je měly použít jenom jedno.
+			const LegalDrinkingAge = 21;
+
+			if(person.Age > 21)
+			{
+				DrinkAlcohol(person);
+			}
+
+			if(person.Age > LegalDrinkingAge)
+			{
+				DrinkAlcohol(person);
+			}
+}
 
 		// Server side
 		public class WhatToAvoid
