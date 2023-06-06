@@ -17,7 +17,7 @@ Dva typy:
 Int16 a = Int16.MaxValue; // Tady ještě žádná konverze neprobíhá.
 Int32 b = a;              // Tady už proběhne implicitní konverze z Int16 na Int32.
 
-//Int16 c = b; //error CS0266: Cannot implicitly convert type 'int' to 'short'. An explicit conversion exists (are you missing a cast?)
+// Int16 c = b; //error CS0266: Cannot implicitly convert type 'int' to 'short'. An explicit conversion exists (are you missing a cast?)
 Int16 cExplicit = (Int16)b;
 
 

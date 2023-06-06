@@ -129,12 +129,12 @@ Po (tj. 7.0 a vyšší):
 		// a pattern matching funkce.
 		var newGrade = points switch
 		{
-            var n when n < 50 => 'F',
-			var n when (n >= 50 && n < 60) => 'E',
-			var n when (n >= 60 && n < 70) => 'D',
-			var n when (n >= 70 && n < 80) => 'C',
-			var n when (n >= 80 && n < 90) => 'B',
-			var n when (n >= 90) => 'A',
+            int n when n < 50 => 'F',
+			int n when (n >= 50 && n < 60) => 'E',
+			int n when (n >= 60 && n < 70) => 'D',
+			int n when (n >= 70 && n < 80) => 'C',
+			int n when (n >= 80 && n < 90) => 'B',
+			int n when (n >= 90) => 'A',
             _ => ' '
 		};
 

@@ -19,7 +19,7 @@ class IfStatement
 		}
 		Console.WriteLine("value of a is : {0}", a);
 
-		if (a < 20) // Mezery za if je nepovinná
+		if(a < 20) // Mezery za if je nepovinná
 		{
 			/* pokud je podmínka true, provede se následující kód */
 			Console.WriteLine("a is less than 20");
@@ -32,7 +32,7 @@ class IfStatement
                 // Tohle neklapne.
                 // Závorky za if jsou naopak povinné.
             }
-            */
+        */
 
 		// If-Else klauzule
 		a = 100;
@@ -88,11 +88,14 @@ class IfStatement
 		if (a == 10)
 			Console.WriteLine("Value of a is 10");
 
+        // Úpsorná varianta č.3 #NotABestPractice
+        if (a == 10) Console.WriteLine("Value of a is 10");
 
 
-		// Zanořená klauzule if
 
-		a = 100;
+        // Zanořená klauzule if
+
+        a = 100;
 		int b = 200;
 
 		// Test na hodnotu 100

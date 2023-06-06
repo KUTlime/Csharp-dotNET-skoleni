@@ -17,7 +17,8 @@ enum Days { Sun, Mon, tue, Wed, thu, Fri, Sat };
 // Klasická definice enum
 // Tento enum bude vnitřně používat Int32
 // Sun = 0,
-// Mon = 1, ...
+// Mon = 1,
+// ...
 // Sat = 6
 enum Days { Sun, Mon, Tue, Wed, Thu, Fri, Sat };
 

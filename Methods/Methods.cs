@@ -14,24 +14,34 @@ Použití metody vyžaduje:
 - Zavolání funkce
 
 Definice:
-<modifikátory přístupu> <návratový typ> <Jméno> (<Seznam parametrů>) 
+<modifikátor přístupu> <static> <návratový typ> <Jméno> (<Seznam parametrů>) 
 {
     Tělo metody
     Práce s parametry
     Příprava návratové hodnoty
 }
 
-    Seznam parametrů při definici:
-([parametr 1]: <modifikátor přístupu> <datový typ> <název hodnoty>, [parametr 2]: <modifikátor přístupu> <datový typ> <název hodnoty>)
+Definice výrazová těla:
+<modifikátor přístupu> <static> <návratový typ> <Jméno> (<Seznam parametrů>) => právě 1 instrukce;
+
+Seznam parametrů při definici:
+(<modifikátor parametru> <datový typ> <název parametru>, <modifikátor parametru> <datový typ> <název parametru>)
 
 
 Seznam parametrů při volání:
-[parametr 1]: <(nepovinné) název definice parametru>: <modifikátor přístupu> <název hodnoty>, [parametr 2]: <(nepovinné) název definice parametru>: <modifikátor přístupu> <datový typ> <název hodnoty>
+[název parametru 1]: <modifikátor argumentu> <argument1 >, [název parametru 2]: <modifikátor argumentu> <argument 2>
 
-public Int32 Sum(firstOperand: ref a, secondOperand: ref b) {...}
+Definice:
+public Int32 Sum(ref firstOperand, ref secondOperand) {...}
+
+Volání:
+int c = Sum(ref a, ref b) {...}
+
+Volání s názvem parametrů:
+int c = Sum(firstOperand: ref a, secondOperand: ref b) {...}
 #############################################################################
 */
-class Methods
+class Program
 {
 	// Povinná metoda každého C# programu.
 	static void Main(string[] args)
@@ -44,69 +54,69 @@ class Methods
 		SolutionNew.Fibbonaci(2);
 		SolutionNew.Fibbonaci(3);
 		SolutionNew.Fibbonaci(10);
-        // Lokální proměnné
+		// Lokální proměnné
 
-        int a = 100;
-            int b = 200;
-            var methods = new Methods();
-            int ret = methods.FindMax(a, b);
-            int ret2 = FindMaxStatic(a, b);
-            int ret3 = methods.FindMax(num1: a, num2: b); // Přidány názvy parametrů.
-            Console.WriteLine(format: "Message: {0}", arg0: 10);
-            Console.WriteLine(format: "Message: {0}", arg0: 10); // Mezera nehraje roli.
-            Console.WriteLine(format: "Message: {0}", 10); // Vynechání lze, ale až od C# 7.3 a vyšší.
-            Console.WriteLine(arg0: 10, format: "Message: {0}"); // Pořadí u pojmenovaných argumentů taktéž nehraje roli.
+		int a = 100;
+		int b = 200;
+		var methods = new Methods();
+		int ret = methods.FindMax(a, b);
+		int ret2 = Methods.FindMaxStatic(a, b);
+		int ret3 = methods.FindMax(num1: a, num2: b); // Přidány názvy parametrů.
+		Console.WriteLine(format: "Message: {0}", arg0: 10);
+		Console.WriteLine(format: "Message: {0}", arg0: 10); // Mezera nehraje roli.
+		Console.WriteLine(format: "Message: {0}", 10); // Vynechání lze, ale až od C# 7.3 a vyšší.
+		Console.WriteLine(arg0: 10, format: "Message: {0}"); // Pořadí u pojmenovaných argumentů taktéž nehraje roli.
 
-            Console.WriteLine("Max value is : {0}", ret);
+		Console.WriteLine("Max value is : {0}", ret);
 
-            Console.WriteLine("Factorial of 7 is : {0}", methods.Factorial(7));
-            Console.WriteLine("Factorial of 8 is : {0}", methods.Factorial(8));
+		Console.WriteLine("Factorial of 7 is : {0}", methods.Factorial(7));
+		Console.WriteLine("Factorial of 8 is : {0}", methods.Factorial(8));
 
 
-            Console.WriteLine("Before swap, value of a : {0}", a);
-            Console.WriteLine("Before swap, value of b : {0}", b);
+		Console.WriteLine("Before swap, value of a : {0}", a);
+		Console.WriteLine("Before swap, value of b : {0}", b);
 
-            // Volání swap funkce
-            methods.Swap(a, b);
+		// Volání swap funkce
+		methods.Swap(a, b);
 
-            Console.WriteLine("After swap, value of a : {0}", a);
-            Console.WriteLine("After swap, value of b : {0}", b);
+		Console.WriteLine("After swap, value of a : {0}", a);
+		Console.WriteLine("After swap, value of b : {0}", b);
 
-            methods.Swap(ref a, ref b);
-            //methods.SwapRef(a, b); // Nelze
-            methods.SwapRef(ref a, ref b); // ref povinné, protože je v definici.
+		methods.Swap(ref a, ref b);
+		//methods.SwapRef(a, b); // Nelze
+		methods.SwapRef(ref a, ref b); // ref povinné, protože je v definici.
 
-            Console.WriteLine("Befora SwapOut, value of a: {0}, value of b : {1}", a, b);
-            methods.SwapOut(ref a, ref b, out a, out b);
-            Console.WriteLine("After SwapOut, value of a: {0}, value of b : {1}", a, b);
+		Console.WriteLine("Befora SwapOut, value of a: {0}, value of b : {1}", a, b);
+		methods.SwapOut(ref a, ref b, out a, out b);
+		Console.WriteLine("After SwapOut, value of a: {0}, value of b : {1}", a, b);
 
-            Console.WriteLine("After ref swap, value of a : {0}", a);
-            Console.WriteLine("After ref swap, value of b : {0}", b);
+		Console.WriteLine("After ref swap, value of a : {0}", a);
+		Console.WriteLine("After ref swap, value of b : {0}", b);
 
-            Console.WriteLine("Before method call, value of a : {0}", a);
+		Console.WriteLine("Before method call, value of a : {0}", a);
 
-            
-            methods.GetSomeValue(out a);
 
-            Console.WriteLine("After method call, value of a : {0}", a);
+		methods.GetSomeValue(out a);
 
-            methods.GetValues(out a, out b);
-            Console.WriteLine("After method call, value of a : {0}", a);
-            Console.WriteLine("After method call, value of b : {0}", b);
+		Console.WriteLine("After method call, value of a : {0}", a);
 
-            Int32 c;
-            Int32 d;
-            methods.GetValues(out c, out d);
-            Console.WriteLine("After method call, value of a : {0}", c);
-            Console.WriteLine("After method call, value of b : {0}", d);
+		methods.GetValues(out a, out b);
+		Console.WriteLine("After method call, value of a : {0}", a);
+		Console.WriteLine("After method call, value of b : {0}", b);
 
-            methods.GetValues(out Int32 e, out var f);
-            Console.WriteLine("After method call, value of a : {0}", e);
-            Console.WriteLine("After method call, value of b : {0}", f);
+		Int32 c;
+		Int32 d;
+		methods.GetValues(out c, out d);
+		Console.WriteLine("After method call, value of a : {0}", c);
+		Console.WriteLine("After method call, value of b : {0}", d);
 
-            // Použití "in" funkce - konstantní parametry u volání funkce
-            Console.WriteLine($"Sum of {a} and {b} is {methods.Sum(in a, in b)}");
-            Console.WriteLine($"Sum of {a} and {b} is {methods.Sum(a, b)}"); // U volání není nutné použít in, to se doplní samo.
+		methods.GetValues(out Int32 e, out var f);
+		Console.WriteLine("After method call, value of a : {0}", e);
+		Console.WriteLine("After method call, value of b : {0}", f);
+
+		// Použití "in" funkce - konstantní parametry u volání funkce
+		Console.WriteLine($"Sum of {a} and {b} is {methods.Sum(in a, in b)}");
+		Console.WriteLine($"Sum of {a} and {b} is {methods.Sum(a, b)}"); // U volání není nutné použít in, to se doplní samo.
 
 		methods.PrintNumber(10.12345); // Automaticky se použije 3 desetinná místa, protože to je výchozí hodnota 2. parametru.
 		methods.PrintNumber(10.12345, 2);
@@ -117,7 +127,10 @@ class Methods
 
 		Console.ReadLine();
 	}
+}
 
+class Methods
+{
 	// Jednoduchá veřejná funkce
 	public Int32 FindMax(Int32 num1, Int32 num2)
 	{
@@ -177,10 +190,10 @@ class Methods
 	// Několika násobný výstup z funkce
 	// Klíčové slovo out říká kompilátoru,
 	// že proměnná bude inicializována později.
-	public Int32 GetSomeValue(out Int32 x)
+	public bool GetSomeValue(out Int32 x)
 	{
 		x = 5;
-		return x;
+		return true;
 	}
 
 	// Definice swap funkce (prohození) pomocí ref a out parametrů.

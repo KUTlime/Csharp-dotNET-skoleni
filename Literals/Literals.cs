@@ -24,10 +24,18 @@ class Literals
 		Int64 value13 = 30L; // Int64
 		UInt64 value14 = 30ul; // unsigned long hodnota -> UInt64
 
+        // Nebo ještě lépe
+        int value15 = 20; // Int32
+        uint value16 = 30u; // unsigned Int32
+        uint value17 = 30U; // unsigned Int32
+        long value18 = 30l; // Int64
+        long value19 = 30L; // Int64
+        ulong value20 = 30ul; // unsigned long hodnota -> UInt64
 
-		// Celočíselné hodnoty můžeme zadávat opravdu různě:
 
-		Int32 Int32Value1 = 90_946;
+        // Celočíselné hodnoty můžeme zadávat opravdu různě:
+
+        Int32 Int32Value1 = 90_946;
 		Console.WriteLine(Int32Value1);
 
 		Int32 Int32Value2 = 0x0001_6342;
@@ -78,10 +86,10 @@ class Literals
 
 		// Malé kombo, kdy bereme string tak jak je a
 		// do něj vkládáme ještě další textový řetězec.
-		Console.WriteLine($@"C:\{str1}\test");
+		Console.WriteLine(@$"C:\{str1}\test");
 
 		// Surové string literály
-		Console.WriteLine("""" {"text": "SomeText with "" "}"""");
+		Console.WriteLine(""" {"text": "SomeText with "" "}""");
 
         // Výstup:
         // Hello!

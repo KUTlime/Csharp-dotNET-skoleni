@@ -9,21 +9,21 @@ namespace DataTypes
 
 	// Překled aliasů zabudovaných datových typů
 	// Pokud je použito klíčové s Bool
-	//bool System.Boolean
-	//byte System.Byte
-	//sbyte System.SByte
-	//char System.Char
-	//decimal System.Decimal
-	//double System.Double
-	//float System.Single
-	//int System.Int32
-	//uint System.UInt32
-	//long System.Int64
-	//ulong System.UInt64
-	//object System.Object
-	//short System.Int16
-	//ushort System.UInt16
-	//string System.String
+	// bool System.Boolean
+	// byte System.Byte
+	// sbyte System.SByte
+	// char System.Char
+	// decimal System.Decimal
+	// double System.Double
+	// float System.Single
+	// int System.Int32
+	// uint System.UInt32
+	// long System.Int64
+	// ulong System.UInt64
+	// short System.Int16
+	// ushort System.UInt16
+	// object System.Object
+	// string System.String
 
 	static class DataTypes
 	{

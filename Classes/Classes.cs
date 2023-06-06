@@ -10,7 +10,7 @@ class Classes
 #############################################################################
 ### Třídy - uživatelem definované datové typy
 #############################################################################
-Zápis třídy:
+Definice třídy:
 <úroveň přístupu> <Oblast platnosti> class JménoTřídy
 {
 	// členské proměnné
@@ -117,7 +117,7 @@ class Box
 
 	public double GetVolume()
 	{
-		return Breadth * Height * Height;
+		return Breadth * Height * Length;
 	}
 }
 
@@ -197,16 +197,16 @@ class BoxV3
 
 	public void SetLength(double len)
 	{
-		_length = len;
+		_length = len > 0.0 ? len : 0.0;
 	}
 	public void SetBreadth(double bre)
 	{
-		_breadth = bre;
-	}
+		_breadth = bre > 0.0 ? bre : 0.0;
+    }
 	public void SetHeight(double hei)
 	{
-		_height = hei;
-	}
+		_height = hei > 0.0 ? hei : 0.0;
+    }
 	public double GetVolume()
 	{
 		return _length * _breadth * _height;

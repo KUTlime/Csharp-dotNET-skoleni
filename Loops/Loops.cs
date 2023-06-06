@@ -122,6 +122,13 @@ foreach (var item in list2)
     Console.WriteLine(item);
 }
 
+byte[] byteArray = new byte[10];
+foreach (var item in byteArray)
+{ 
+    Console.WriteLine(item); 
+}
+
+
 var list2D = new List<List<string>>()
 {
     new List<string> { "Radek", "Eva", "Dušana", "Svatopluk", "Zdeněk" },

@@ -174,7 +174,7 @@ Escape sekvence:
 
 		System.Threading.Thread.CurrentThread.CurrentCulture = new CultureInfo("en-GB");
 		// Výstup pro UK culture
-		DateTime.UtcNow.ToString("s"); //"2019-02-06T09:33:02"
+		DateTime.UtcNow.ToString("s"); // "2019-02-06T09:33:02"
 		DateTime.UtcNow.ToString("D"); // "06 February 2019"
 		DateTime.UtcNow.ToString("d"); // "06/02/2019"
 		DateTime.UtcNow.ToString("F"); // "06 February 2019 09:33:55"

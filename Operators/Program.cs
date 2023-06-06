@@ -196,7 +196,7 @@ namespace Operators
             c = a | b;             /* 61 = 0011 1101 */
             Console.WriteLine("Line 2 - Value of c is {0}, binary: {1}", c, Convert.ToString(c, 2));
 
-            // Bitový exkluzivní NEBO (XOR)
+            // Bitové exkluzivní NEBO (XOR)
             c = a ^ b;             /* 49 = 0011 0001 */
             Console.WriteLine("Line 3 - Value of c is {0}, binary: {1}", c, Convert.ToString(c, 2));
 
