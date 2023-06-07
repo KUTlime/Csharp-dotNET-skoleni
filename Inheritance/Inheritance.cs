@@ -54,7 +54,7 @@
 	{
 		static void Main(string[] args)
 		{
-			Circle circle = new Circle();
+			Shape circle = new Circle();
 
 			circle.SetOriginX(5.0);
 			circle.SetOriginY(0.0);
@@ -120,8 +120,8 @@
 
 	// Odvozená třída
 	// Kružnice
-	class Circle : Shape
-	{
+	class Circle : Shape /* : IArea */
+    {
 		private double _radius = 0; // Buď public nebo udělat nějakou přístupovou metodu.
 
 		public Circle()
@@ -138,7 +138,7 @@
 		}
 	}
 
-	class Rectangle : Shape
+	class Rectangle : Shape /* : IArea */
 	{
 		//členské proměnné
 		protected double Length;

@@ -1,9 +1,5 @@
 ﻿namespace Classes;
 
-static class Test2
-{
-	public static int Test { get; } = 0;
-}
 class Classes
 {
 /*
@@ -250,6 +246,10 @@ class BoxV4
 }
 
 // Význam oboru platnosti
+static class Test2
+{
+    public static int Test { get; } = 0;
+}
 class Utils
 {
 	public static string LogPath = @"C:\Program Data\MyApp\Log"; // Lze nastavovat zvenčí.
@@ -293,30 +293,9 @@ public static class Utils2
 	{
 	}
 
-	//public void SomeNonStaticMethod()
-	//{
-	//}
-}
-
-class CallingConstructorDemo
-{
-	private Int32 _someValue1 = 0;
-	private Int32 _someValue2 = 0;
-	private Int32 _someValue3 = 0;
-
-	// Volání přetíženého konstruktoru s pomocí slova this
-	public CallingConstructorDemo() : this(0, 0, 0)
+	/*public void SomeNonStaticMethod()
 	{
-		Console.WriteLine("A default constructor.");
-	}
-
-	// Tento konstruktor bude opravdu zavolán při volání výchozí konstruktoru.
-	public CallingConstructorDemo(Int32 someValue1, Int32 someValue2, Int32 someValue3)
-	{
-		_someValue1 = someValue1;
-		_someValue2 = someValue2;
-		_someValue3 = someValue3;
-	}
+	}*/
 }
 
 class MetadataPublisher
@@ -404,7 +383,7 @@ class MetadataPublisher
 			InputOne = iputOne;
 			InputTwo = inputTwo;
 			InputThree = inputThree;
-			InputFour = inputFour
+			InputFour = inputFour;
 		}
 	}
 }
@@ -419,14 +398,5 @@ class Response
     public class WithErrorExit
     {
         public int Code { get; } = 1;
-    }
-}
-
-class Test
-{
-	void Demo()
-	{
-        _ = Response.WithErrorExit.Code;
-		_ = Response.WithSuccessfulExit.Code;
     }
 }

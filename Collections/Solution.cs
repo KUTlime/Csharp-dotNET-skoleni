@@ -31,20 +31,25 @@ namespace Collections
 			return true;
 		}
 
-		public static void PrintDistinct(Int32[] array)
+		public static Int32[] GetDistinct(Int32[] array)
 		{
 			var uniqueNumbers = new HashSet<Int32>();
 			foreach (Int32 number in array)
 			{
 				uniqueNumbers.Add(number);
 			}
-			foreach (Int32 number in uniqueNumbers)
-			{
-				Console.WriteLine(number);
-			}
+			return uniqueNumbers.ToArray();
 		}
 
-		public static Int32 FindSingleton(Int32[] array)
+        public static void PrintDistinct(Int32[] uniqueNumbers)
+        {
+		    foreach (Int32 number in uniqueNumbers)
+            {
+                Console.WriteLine(number);
+            }
+        }
+
+        public static Int32 FindSingleton(Int32[] array)
 		{
 			// Musíme ošetřit, když pole je prázdné.
 			if (array.Length == 0)
@@ -91,9 +96,7 @@ namespace Collections
 			throw new ArgumentException("Entry array is in unknow state.");
 		}
 
-		public static bool IsPalindrome(string str)
-		{
-			return str.Equals(new string(str.ToCharArray().Reverse().ToArray()));
-		}
+		public static bool IsPalindrome(string str) =>
+			str.Equals(new string(str.Reverse().ToArray()));
 	}
 }

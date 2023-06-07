@@ -85,7 +85,6 @@ static class Program
 
 		Int32 sum = Sum(512, 720, 250, 567, 889);
 		Console.WriteLine($"Sum is: {sum}");
-
 		Console.ReadKey();
 	}
 
@@ -142,11 +141,11 @@ static class Program
 		Int32[][] scores = new Int32[5][];
 		for (Int32 i = 0; i < scores.Length; i++)
 		{
-			scores[i] = new Int32[4];
+			scores[i] = new Int32[i];
 		}
 
 		// Dimenziónálně nekonzistentní pole
-		Int32[][] scores2 = new Int32[][]
+		var scores2 = new Int32[][]
 		{
 			new Int32[] { 92, 93, 94 },
 			new Int32[] { 85, 66, 87, 88, 89 },

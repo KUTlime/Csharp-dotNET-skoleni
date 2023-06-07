@@ -26,7 +26,8 @@
 
         Protected:
         - Chráněný přístup
-        - Limitovaný pouze v rámci samotné třídy a třídy dědící v 1. generaci z chráněné třídy.
+        - Limitovaný pouze v rámci samotné třídy a třídy dědící z chráněné třídy, ale ne zvenčí.
+		- Předek s protected -> Potomek 1. generace (stále vidí protected) -> Potomek 2. generace (nevidí protected)
         
         Internal:
         - Interní přístup
@@ -98,7 +99,23 @@
 
 				Console.ReadKey();
 			}
+			void NonStaticmethod()
+			{
+				x = 10;
+				y = 15;
+			}
 		}
+
+		class SecondGenerationPoint : DerivedPoint
+		{
+            void NonStaticmethodNew()
+            {
+                x = 10; // stále přistupuji na x v Protected Point
+                y = 15;
+				var point = new ProtectedPoint();
+				//point.x = 10; // Přístup zvenčí, skrze novou instanci, což je něco jiné.
+            }
+        }
 
 		// Interní, tj. přístupná v rámci stejné knihovny (assembly)
 		internal class InternalPoint

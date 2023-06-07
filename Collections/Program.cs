@@ -41,6 +41,7 @@ static class Program
 			Console.WriteLine(item.GetType());
 		}
 
+		// Definice seznamu s konkrétní přednastavenou hodnotou na 10.
 		var list1 = new List<string>(10);
 
 		list2.Remove("Radek");
@@ -52,15 +53,16 @@ static class Program
 		var list4 = new List<string> 
 		{ 
 			"Radek",
-			"Zahradník" 
+			"Zahradník"
 		};
-
-		var fixedSizeList = ArrayList.FixedSize(new List<string> { "1", "2", "3"});
 
 		// Slovník
 		var dictionary = new Dictionary<string, string>();
-		var dictionary2 = new Dictionary<string, string>(10); // Kapacita pro 10 položek
-															  // Inicializace
+
+		// Kapacita pro 10 položek
+		var dictionary2 = new Dictionary<string, string>(10);
+		
+		// Inicializace
 		Dictionary<string, int> guys = new Dictionary<string, int>
 		{
 			{"Galileo", 1564},
@@ -92,7 +94,8 @@ static class Program
 		}
 
 		newGuys["Galileo"] = 1566; // Bezpečná a jednoduchá variata jak přepsat nebo založit položku ve slovníku.
-								   // Vyzvednutí položky s kontrolou
+		
+		// Vyzvednutí položky s kontrolou
 		Int32 year = 0;
 		if (newGuys.ContainsKey("Galileo"))
 		{
@@ -172,8 +175,6 @@ static class Program
 		bytes.Dequeue();
 		bytes.Dequeue();
 		bytes.Dequeue();
-
-
 	}
 
 	//static ConcurrentDictionary<string, string> customers = new ConcurrentDictionary<string, string>();
