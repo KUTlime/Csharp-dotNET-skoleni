@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace EncapsulationOtherAssembly
+﻿namespace EncapsulationOtherAssembly
 {
-	internal static class Program
+    internal static class Program
 	{
 		static void Main()
 		{

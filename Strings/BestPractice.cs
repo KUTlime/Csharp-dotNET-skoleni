@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace Strings
+﻿namespace Strings
 {
-	class BestPractice
+    class BestPractice
 	{
 		/*
          #############################################################################

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Selections
+﻿namespace Selections
 {
-	/*
+    /*
 	 
 	1. Vytvořte si třídu Solution, a v ní statickou void metodu Main().
 	 
@@ -31,7 +27,7 @@ namespace Selections
 
 	Příklad: Pro vstup 63 metoda vytiskne "You have D".
 	 */
-	class Task
+    class Task
 	{
 	}
 }

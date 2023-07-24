@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Properties
+﻿namespace Properties
 {
-	class Solution
+    class Solution
 	{
 		static IEnumerable<Product> GenerateData()
 		{

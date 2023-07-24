@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace Operators
+﻿namespace Operators
 {
-	class Solution
+    class Solution
     {
         static UInt64 GenerateMultipleOfTwo(UInt16 n)
         {

@@ -1,9 +1,6 @@
-﻿using System;
-
-
-namespace Loops
+﻿namespace Loops
 {
-	/*
+    /*
 	1. Vytvořte si třídu Solution, a v ní statickou void metodu Main().
 	 
 	2. V metodě Main implementujte následující zadání:
@@ -15,7 +12,7 @@ namespace Loops
 
 	Můžete vhodně využít již předchozí implementace z jiných projektů.
 	*/
-	class Task
+    class Task
 	{
 	}
 }

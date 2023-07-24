@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Tuples
+﻿namespace Tuples
 {
-	class Solution
+    class Solution
 	{
 		public static (double Average, double Variance, double Deviation) Stats(IEnumerable<double> arr)
 		{

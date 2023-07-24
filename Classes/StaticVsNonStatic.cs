@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Contracts;
-using System.Text;
-
-namespace Classes
+﻿namespace Classes
 {
-	class StaticVsNonStatic
+    class StaticVsNonStatic
 	{
 		static void Dummy()
 		{

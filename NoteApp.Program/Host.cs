@@ -1,9 +1,8 @@
-﻿using System;
-using NoteApp.Lib;
+﻿using NoteApp.Lib;
 
 namespace NoteApp.Program
 {
-	/* Požadavky na knihovnu
+    /* Požadavky na knihovnu
 	 * 1. ✔ Vložit poznámku.
 	 * 2. ✔ Přepsat poznámku.
 	 * 3. ✔ Připsat text k poznámce.
@@ -12,7 +11,7 @@ namespace NoteApp.Program
 	 * 5. ✔ Najít text v poznámkách.
 	 * 6. ✔ Zobrazit všechny poznámky.
 	 */
-	internal static class Host
+    internal static class Host
 	{
 		private static readonly Notebook Notebook = new Notebook();
 

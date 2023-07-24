@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Classes
+﻿namespace Classes
 {
-	class Solution
+    class Solution
 	{
 		Log _logger;
 

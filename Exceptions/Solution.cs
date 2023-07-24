@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace Exceptions
+﻿namespace Exceptions
 {
-	class Solution
+    class Solution
 	{
 		class MyCustomException : Exception
 		{

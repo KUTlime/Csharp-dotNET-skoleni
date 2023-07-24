@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace Utils
+﻿namespace Utils
 {
-	public interface ILog
+    public interface ILog
 	{
 		void WriteLine(string message);
 		void Write(string message);

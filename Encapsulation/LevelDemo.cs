@@ -1,5 +1,4 @@
 ﻿// https://i.stack.imgur.com/TNtq3.png
-using Encapsulation;
 
 namespace Encapsulation
 {

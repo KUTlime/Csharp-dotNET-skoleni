@@ -1,31 +1,29 @@
-﻿using System;
-
-namespace DataTypes
+﻿namespace DataTypes
 {
-	// C# má tři kategorie proměnných:
-	// 1. Hodnotové (alokace na "stacku" a formou stacku (LIFO)) https://en.wikipedia.org/wiki/Stack-based_memory_allocation
-	// 2. Referenční (alokace na haldě)
-	// 3. Ukazatele (použití pro nespravovaný kód)
+    // C# má tři kategorie proměnných:
+    // 1. Hodnotové (alokace na "stacku" a formou stacku (LIFO)) https://en.wikipedia.org/wiki/Stack-based_memory_allocation
+    // 2. Referenční (alokace na haldě)
+    // 3. Ukazatele (použití pro nespravovaný kód)
 
-	// Překled aliasů zabudovaných datových typů
-	// Pokud je použito klíčové s Bool
-	// bool System.Boolean
-	// byte System.Byte
-	// sbyte System.SByte
-	// char System.Char
-	// decimal System.Decimal
-	// double System.Double
-	// float System.Single
-	// int System.Int32
-	// uint System.UInt32
-	// long System.Int64
-	// ulong System.UInt64
-	// short System.Int16
-	// ushort System.UInt16
-	// object System.Object
-	// string System.String
+    // Překled aliasů zabudovaných datových typů
+    // Pokud je použito klíčové s Bool
+    // bool System.Boolean
+    // byte System.Byte
+    // sbyte System.SByte
+    // char System.Char
+    // decimal System.Decimal
+    // double System.Double
+    // float System.Single
+    // int System.Int32
+    // uint System.UInt32
+    // long System.Int64
+    // ulong System.UInt64
+    // short System.Int16
+    // ushort System.UInt16
+    // object System.Object
+    // string System.String
 
-	static class DataTypes
+    static class DataTypes
 	{
 		static void Main(string[] args)
 		{

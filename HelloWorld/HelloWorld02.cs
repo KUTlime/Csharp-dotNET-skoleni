@@ -1,6 +1,4 @@
-﻿using System;
-
-// Přidání systémové knihovny do aplikace HelloWorld
+﻿// Přidání systémové knihovny do aplikace HelloWorld
 
 // Obor názvů aplikace, veškerý kód mimo klauzule "using" musí skončit zde.
 namespace HelloWorld

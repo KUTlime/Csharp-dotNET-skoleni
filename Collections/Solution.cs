@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace Collections
+﻿namespace Collections
 {
-	class Solution
+    class Solution
 	{
 		public static Int32[] GetPrimes(Int32 upperBound)
 		{

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace NoteApp.Lib
+﻿namespace NoteApp.Lib
 {
-	internal class Note
+    internal class Note
 	{
 		public override string ToString()
 		{

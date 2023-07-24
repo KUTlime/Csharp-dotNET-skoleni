@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace Operators
+﻿namespace Operators
 {
-	class Operators
+    class Operators
     {
         /*
         #############################################################################

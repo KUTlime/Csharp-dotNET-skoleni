@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace Selections
+﻿namespace Selections
 {
-	public class Solution
+    public class Solution
 	{
 		public static bool TaskOne()
 		{

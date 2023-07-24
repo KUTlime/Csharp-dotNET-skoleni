@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ExtensionMethods
+﻿namespace ExtensionMethods
 {
-	public static class Solution
+    public static class Solution
 	{
 		public static IEnumerable<T> DequeueChunk<T>(this Queue<T> queue, int chunkSize)
 		{

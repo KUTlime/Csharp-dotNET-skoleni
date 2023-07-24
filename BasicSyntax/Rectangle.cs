@@ -1,6 +1,4 @@
-﻿using System; // Zahrnutí knihovny System do kódu.
-
-// Definice oboru názvů pro kód.
+﻿// Definice oboru názvů pro kód.
 namespace BasicSyntax;
 
 /// <summary>

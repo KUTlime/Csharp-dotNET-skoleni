@@ -1,9 +1,8 @@
-﻿using System;
-using Utils;
+﻿using Utils;
 
 namespace LoggingAppExample
 {
-	class Program
+    class Program
 	{
 		static void Main(string[] args)
 		{

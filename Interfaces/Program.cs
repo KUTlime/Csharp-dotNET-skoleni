@@ -11,7 +11,7 @@ Dobré vedět:
 - Rozhraní popisuje "Co".
 - Třída, která dědí popisuje "Jak".
 - < C# 8.0 rozhraní neumožňují držet výkonný kód.
-- > C# 8.0 rozhraní budou moci držet výchozí implementaci.
+- >= C# 8.0 rozhraní budou moci držet výchozí implementaci.
 - Rozhraní v .NETu i obecně v kódu C# třetích stran začínají "I".
 
 Rozhraní může obsahovat:
@@ -208,5 +208,36 @@ class SomeTests
 
 		// If all tests were successful
 		return true;
+	}
+}
+
+public interface ITest1
+{
+	public void Test();
+}
+public interface ITest2
+{
+    public void Test();
+}
+
+public class Test : ITest1, ITest2
+{
+    void ITest1.Test()
+    {
+        throw new NotImplementedException();
+    }
+
+    void ITest2.Test()
+    {
+        throw new NotImplementedException();
+    }
+}
+
+public class Demo
+{
+	public void Test()
+	{
+		ITest2 test = new Test();
+		test.Test();
 	}
 }

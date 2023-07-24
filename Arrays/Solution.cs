@@ -1,9 +1,6 @@
-﻿using System;
-using System.Linq;
-
-namespace Arrays
+﻿namespace Arrays
 {
-	class Solution
+    class Solution
 	{
 		public static Int32[] GetPrimes(Int32 upperBound)
 		{
