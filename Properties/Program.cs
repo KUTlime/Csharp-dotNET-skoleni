@@ -26,13 +26,13 @@ public Int32 SomeValue {get; set;};
 Druhy vlastností.
 
 // Vlastnost bez výchozí hodnoty.
-public Int32 SomeValue {get; set;};
+public Int32 SomeValue {get; set;}
 
 // Vlastnost, kterou můžeme číst a zároveň nastavovat, přičemž má výchozí hodnotu.
 public Int32 SomeValue {get; set;} = 0;
 
 // Vlastnost, kterou lze pouze iniciovat a poté již jenom číst.
-public Int32 SomeValue {get; init;} = 0;
+public Int32 SomeValue {get; init;} = 10;
 
 // Vlastnost, která je reálně vypočitávána.
 public DateTime Date => new DateTime(2023,02,02);
@@ -127,22 +127,15 @@ public class PropertiesDemoV1
 	private string _name = "not known";
 	private int _age = 0;
 
-	// Declare a Code property of type string:
+	// Plná vlastnost, ale s textem výrazu (expression body).
 	public string Code
-	{
-		get
-		{
-			return _code;
-		}
-		set
-		{
-			_code = value;
-		}
-	}
-	//vs. public string Code {get; set;}
+    {
+        get => _code;
+        set => _code = value;
+    }
+    //vs. public string Code {get; set;}
 
-	// Declare a Name property of type string:
-	public string Name
+    public string Name
 	{
 		get
 		{
@@ -154,7 +147,7 @@ public class PropertiesDemoV1
 		}
 	}
 
-	// Declare a Age property of type int:
+	// Plná vlastnost (manuálně napsané getry a setry + private field pro age)
 	public int Age
 	{
 		get
@@ -217,7 +210,7 @@ public class Employee
 		LastName = lastName;
 	}
 
-	public string FirstName { get; } //= String.Empty; // Je zbytečné.
+	public string FirstName { get; } = String.Empty; // Je zbytečné.
 	public string MiddleName { get; }
 	public string LastName { get; }
 
@@ -264,12 +257,12 @@ public class AppSettings
 	private Int32 ByteChunkSize { get; set; } = 4; // Private dává smysl pouze pro debugging.
 
 	// Použití těla výrazu 
-	public Int32 ByteChunkSizeLarge => 4; // Výrazové tělo (expression body).
+	public Int32 ByteChunkSizeLarge => 2*4; // Výrazové tělo (expression body).
 	// jsou náhrada za následující kód
 	/*
 	public Int32 ByteChunkSizeLarge()
 	{
-		return 4;
+		return 2*4;
 	}
 	*/
 }
@@ -305,8 +298,8 @@ public class Student : Person
 // Vlastnosti mohou být součástí rozhraní.
 interface IProduct
 {
-	Int32 Cost { get; set; }
-	Int32 StockSupply { get; }
+	int Cost { get; set; }
+    int StockSupply { get; }
 
 }
 
@@ -322,7 +315,7 @@ class Hardware : IProduct
 class Software : IProduct
 {
 	public int Cost { get; set; } = 50;
-	public int StockSupply { get; } = Int32.MaxValue;
+	public int StockSupply { get; } = int.MaxValue;
 }
 
 // Rozhraní jako vlastnost
@@ -353,20 +346,9 @@ class Circle
 	// Konstruktor jako expression body.
 	public Circle(double radius) => _radius = radius > 0 ? radius : 0.0;
 
-	public double Perimeter { 
-		get 
-		{
-			return 2 * _radius * Math.PI;
-		} 
-	}
+    public double Perimeter => 2 * _radius * Math.PI;
 
-	public double Area
-	{
-		get
-		{
-			return _radius * _radius * Math.PI;
-		}
-	}
+    public double Area => _radius * _radius * Math.PI;
 }
 
 class PersonV2
@@ -388,8 +370,8 @@ class PersonV2Demo
 {
 	void SomeMethod()
 	{
-		var person = new PersonV2("radek", "zahradník");
-		var person2 = new PersonV2("radek", "zahradník") { SecondName = "Michal"};
+		var person = new PersonV2("Radek", "Zahradník");
+		var person2 = new PersonV2("Radek", "Zahradník") { SecondName = "Michal"};
 	}
 }
 
@@ -441,6 +423,24 @@ class PersonV3Demo
 
 record PersonV4(string FirstName, string LastName, string? SecondName = null);
 
+class PersonV4Demo
+{
+    void SomeMethod()
+    {
+		var person = new PersonV4("Radek", "Zahradník");
+        var person2 = new PersonV4("Radek", "Zahradník", "Michal");
+
+		// Když chci novou person, která má kompbinované vlastnosti
+		// když tam mám init;
+		var person3 = new PersonV4("Zadek", person.LastName, person2.SecondName);
+
+		var person4 = new PersonV4(person.FirstName, person.LastName, person2.SecondName);
+
+        var person5 = new PersonV4("Radek", "Zahradník") { SecondName = "Michal" };
+        var person6 = person5 with { SecondName = null };
+
+    }
+}
 
 class MemberDemo
 {

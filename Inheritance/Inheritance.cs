@@ -62,7 +62,7 @@ static class Inheritance
 		// Tisk oblasti - volání příslušné metody.
 		Console.WriteLine("Total area: {0}", circle.GetArea());
 
-		Rhomb t = new Rhomb(4.5, 7.5);
+		Rectangle t = new Rhomb(4.5, 7.5);
 		t.Display();
 
 		var triangle = new Triangle();
@@ -228,70 +228,68 @@ public static class TriangleExtensions
 	//{
 	//}
 
-
-	namespace AbstractDemo
+namespace AbstractDemo
+{
+	// Podobný přístup jako přes rozhraní.
+	// Abstraktní metoda může být pouze v abstraktní třídě.
+	// Abstraktní metody musí být implementovány v potomkovi, stejně jako rozhraní.
+	// Nemůžeme ale operovat jako s proměnnou.
+	abstract class Shape
 	{
-		// Podobný přístup jako přes rozhraní.
-		// Abstraktní metoda může být pouze v abstraktní třídě.
-		// Abstraktní metody musí být implementovány v potomkovi, stejně jako rozhraní.
-		// Nemůžeme ale operovat jako s proměnnou.
-		abstract class Shape
-		{
-			protected double X;
-			protected double Y;
-			public abstract double GetArea();
+		protected double X;
+		protected double Y;
+		public abstract double GetArea();
 
-			public virtual void Print()
-			{ }
+		public virtual void Print()
+		{ }
+	}
+
+	class Circle : Shape
+	{
+		public Circle(double originX, double originY)
+		{
+			X = originX;
+			Y = originY;
+		}
+		public override double GetArea()
+		{
+			Console.WriteLine("Circle");
+			return 0;
 		}
 
-		class Circle : Shape
+		public override void Print()
 		{
-			public Circle(double originX, double originY)
-			{
-				X = originX;
-				Y = originY;
-			}
-			public override double GetArea()
-			{
-				Console.WriteLine("Circle");
-				return 0;
-			}
-
-			public override void Print()
-			{
-				base.Print();
-			}
-
-			public void DoSomething()
-			{
-				Shape shape = new Circle(0, 0);
-			}
+			base.Print();
 		}
 
-		// Poznámka o dědičnosti rozhraní
-		// Rozhraní mohou také dědit jiná rozhraní, čehož můžeme vhodně využít snaze o dodržení
-		// atomických rozhraní, což nám někdy můžeme vhodně pomoci.
-		interface IPerimeter
+		public void DoSomething()
 		{
-			double GetPerimeter();
+			Shape shape = new Circle(0, 0);
 		}
+	}
 
-		interface IVolume
-		{
-			double GetVolume();
-		}
+	// Poznámka o dědičnosti rozhraní
+	// Rozhraní mohou také dědit jiná rozhraní, čehož můžeme vhodně využít snaze o dodržení
+	// atomických rozhraní, což nám někdy můžeme vhodně pomoci.
+	interface IPerimeter
+	{
+		double GetPerimeter();
+	}
 
-		// 2D tvary mají plochu a obvod
-		interface I2DShape : IArea, IPerimeter
-		{
-		}
+	interface IVolume
+	{
+		double GetVolume();
+	}
 
-		// 3D tvary mají plochu a objem,
-		// můžeme s úspěchem recyklovat rozhraní
-		// a přitom jasně definuje 2D/3D objekt.
-		interface I3DShape : IArea, IVolume
-		{
-		}
+	// 2D tvary mají plochu a obvod
+	interface I2DShape : IArea, IPerimeter
+	{
+	}
+
+	// 3D tvary mají plochu a objem,
+	// můžeme s úspěchem recyklovat rozhraní
+	// a přitom jasně definuje 2D/3D objekt.
+	interface I3DShape : IArea, IVolume
+	{
 	}
 }
