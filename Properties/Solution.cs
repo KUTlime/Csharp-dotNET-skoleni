@@ -174,5 +174,83 @@
 		Volt24 = 24,
 		Volt12 = 12
 	}
+
+	namespace Solution2
+	{
+		public abstract class Person
+		{
+			public required string FirstName { get; init; }
+
+			public required string LastName { get; init; }
+
+			public string? MiddleName { get; init; }
+
+			public DateTime BirthDate { get; } = DateTime.UtcNow;
+
+			public abstract Sex Sex { get; }
+
+			public byte Age => (byte)((DateTime.UtcNow - BirthDate).Days / 365);
+
+			public byte NumberOfChildren { get; set; }
+
+			public MarigeStatus Status { get; set; }
+
+			public string Addressing 
+			{ 
+				get
+				{
+					if(Sex == Sex.Male)
+					{
+						return "Mr.";
+					}
+					if(Status is MarigeStatus.Single || Status is MarigeStatus.Divorced)
+					{
+						return "Ms.";
+					}
+					return "Mrs.";
+				} 
+			}
+        }
+
+        public class Male : Person
+        {
+			public override Sex Sex => Sex.Male;
+        }
+
+		public abstract record PersonRecord(string FirstName, string LastName, string? MiddleName = null);
+
+		public record MaleRecord(string FirstName, string LastName, string? MiddleName = null) : PersonRecord(FirstName, LastName, MiddleName);
+
+		public class PersonComponent
+		{
+			public static Person ChangeFirstName(Person person, string updatedFirstname) => person.Sex switch
+			{
+				Sex.Male => new Male() { FirstName = updatedFirstname, LastName = person.LastName },
+				_ => throw new InvalidOperationException("Unknown sex."),
+			};
+		}
+
+        public class PersonRecordComponent
+        {
+			public static PersonRecord ChangeFirstName(PersonRecord person, string updatedFirstname) => person.Sex switch
+			{
+				Sex.Male => person with { FirstName = updatedFirstname },
+				_ => throw new InvalidOperationException("Unknown sex."),
+			};
+        }
+
+        public enum Sex
+		{
+			Male = 0,
+			Female = 1,
+		}
+
+        public enum MarigeStatus
+        {
+            Single = 0,
+            Married = 1,
+			Divorced = 2,
+        }
+    }
 }
 
