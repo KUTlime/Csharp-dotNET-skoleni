@@ -1,4 +1,5 @@
-﻿
+﻿using System.IO;
+
 namespace Exceptions;
 
 /*
@@ -12,6 +13,7 @@ Výjimky se řídí těmito klíčovými slovy:
 - Ohraničený {}
 - Zanoření nedává moc smysl, ale lze.
 # catch
+- Ohraničený {}
 - Označuje blok, kam je přesměrován tok programu po vyhození výjimky.
 - Alespoň jeden pro právě jeden blog try.
 - Můžeme chytat různé výjimky podle typu výjimky.
@@ -23,6 +25,15 @@ Výjimky se řídí těmito klíčovými slovy:
 - Dává se až za catch.
 # throw
 - Příkaz pro vyhození výjimky.
+
+# Chování programu (pokud není finally), tak
+- try -> návrat, pokud vše OK.
+- try -> catch -> návrat, pokud nastane výjimka.
+- try -> catch (-> catch ...) -> návrat, pokud nastane výjimka.
+
+# Chování programu (pokud JE finally), tak
+- try -> finally -> návrat, pokud vše OK.
+- try -> catch (-> catch ...) -> finally -> návrat, pokud nastane výjimka.
 
 Syntaxe:
 try 
@@ -40,6 +51,10 @@ catch( ExceptionType e2 )
 catch( ExceptionType eN ) 
 {
     // zpracování chyby
+}
+catch
+{
+    // tady spadne všechno ostatní
 } 
 finally 
 {
@@ -62,6 +77,7 @@ Nebezpečné scénáře:
 - Zápis/čtení ze sítě.
 - Zápis/čtení z databáze.
 - Operace s IO zařízení.
+- Konverze hodnot (string -> číslo, string -> datum)
 
 Best Practice při výjimkách:
 - Vyhýbejte se výjimkám, pokud je to možné, např. file.CanWrite.
@@ -182,7 +198,7 @@ class Exceptions
 		{
 			Console.WriteLine(ex);
 		}
-		catch (Exception ex)
+		catch
 		{
 			// Zachycení všech výjimek.
 		}
@@ -235,7 +251,7 @@ public class TempIsZeroException : Exception
 	{
 	}
 
-	public TempIsZeroException(string message, System.Exception exception) : base(exception.Message, exception)
+	public TempIsZeroException(string message, System.Exception? exception) : base(exception?.Message ?? message, exception)
 	{
 		CustomMessage = message;
 	}
@@ -344,8 +360,11 @@ class FileReader
 internal class FileUtils
 {
 	public static byte[] ReadFromFile(string fileName, int bytes)
-	{
-		throw new NotImplementedException();
+    {
+		using FileStream fs = File.Create(fileName);
+		var buffer = new byte[bytes];
+		fs.Read(buffer, 0, bytes);
+		return buffer;
 	}
 }
 

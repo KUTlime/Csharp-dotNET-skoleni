@@ -4,3 +4,12 @@
 internal class FileScopedNameSpaceDemo
 {
 }
+
+internal class FileScopedNameSpaceDemo1
+{
+}
+
+/*namespace Demo
+{
+
+}*/

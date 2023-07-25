@@ -17,7 +17,7 @@
 			{
 			}
 
-			public MyCustomException(string message, Exception exception) : base(message, exception)
+			public MyCustomException(string message, Exception? exception) : base(message, exception)
 			{
 			}
 
@@ -32,8 +32,8 @@
 			try
 			{
 
-				throw new MyCustomException("Some nonsense from user") { Important = false, };
-				throw new MyCustomException("Hmm, this is weird behaviour...") { Important = true, };
+				throw new MyCustomException("Some nonsense from user") { Important = false };
+				throw new MyCustomException("Hmm, this is weird behaviour...") { Important = true };
 				//Console.WriteLine(); // Nedosažitelný kód.
 			}
 			catch (MyCustomException e) when (e.Important && DateTime.Now.TimeOfDay > e.OfficeOpen &&
@@ -42,7 +42,7 @@
 				Console.WriteLine(e); // Volání přetížené metody ToString()
 				throw;
 			}
-			catch (MyCustomException e)
+			catch
 			{
 			}
 		}

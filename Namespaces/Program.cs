@@ -1,4 +1,4 @@
-﻿namespace Namespace
+﻿namespace Lecture
 {
 	/*
     #############################################################################
@@ -24,11 +24,16 @@
 
     Použití:
     JménoOboruNázvů.JménoPoložky;
+
+	Druhy oborů názvů:
+	- Block scoped (nejstarší)
+	- File scoped (novější)
     #############################################################################
     */
 
-	class Namespaces
+    class Namespaces
 	{
+
 		static void Main(string[] args)
 		{
 			FirstNamespace.Foo1 fc = new FirstNamespace.Foo1();
@@ -37,9 +42,9 @@
 			fc.Func();
 			sc.Func();
 
-			// Použití zanořeného oboru názvů
-			var myClass = new BusinessModels.MyClass();
-			BusinessModels.DbModels.MyClass.SomeFunction();
+			var bCustomer = new Models.Business.Customer();
+			var dto = new Models.DTOs.Customer();
+			var dbEntity = new Models.DatabaseEntities.Customer();
 
 			Console.ReadKey();
 		}
@@ -77,22 +82,30 @@
 
 }
 // Zanořené obory názvů
-namespace BusinessModels
+namespace Models
 {
-	class MyClass
+	namespace Business
 	{
-		public static void SomeFunction()
+		class Customer
 		{
+
 		}
 	}
 
-	namespace DbModels
+	namespace DatabaseEntities
 	{
-		class MyClass
+		class Customer
 		{
 			public static void SomeFunction()
 			{
 			}
+		}
+	}
+
+	namespace DTOs
+	{
+		class Customer
+		{
 		}
 	}
 }

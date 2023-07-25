@@ -1,16 +1,11 @@
 ﻿namespace ExtensionMethods
 {
-	/*
+    /*
 	#############################################################################
 	### Metody rozšíření - extension methods
 	#############################################################################
 	
 	Rozšíření zapečetěných tříd.
-
-	Best Practice:
-	- Umisťujemě do třídy s názvem <Název typu, který rozšiřujeme>Extensions.
-	- Vhodné umístit do stejného jmeného prostoru jako třída, kterou rozšiřujeme.
-	  Díky tomu přidáme třídu, která je rozšiřována i její metody rozšíření skrze jeden using.
 
 	Syntaxe:
 	namespace <Jmenný prostor rozšiřované třídy>
@@ -23,11 +18,18 @@
 	        }
 	    }
 	}
+
+	Best Practice:
+	- Umisťujemě do třídy s názvem <Název typu, který rozšiřujeme>Extensions.
+	- Vhodné umístit do stejného jmeného prostoru jako třída,
+	  kterou rozšiřujeme pokud chceme používat všude.
+	  Díky tomu přidáme třídu, která je rozšiřována i její metody rozšíření skrze jeden using.
+
 	
 
 	#############################################################################
 	*/
-	class ExtensionMethods
+    class ExtensionMethods
 	{
 		static void Main(string[] args)
 		{
