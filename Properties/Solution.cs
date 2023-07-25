@@ -217,11 +217,18 @@
 			public override Sex Sex => Sex.Male;
         }
 
-		public abstract record PersonRecord(string FirstName, string LastName, string? MiddleName = null);
+		public abstract record PersonRecord(string FirstName, string LastName, DateTime BirthDate, string? MiddleName = null)
+		{
+			public abstract Sex Sex { get; }
 
-		public record MaleRecord(string FirstName, string LastName, string? MiddleName = null) : PersonRecord(FirstName, LastName, MiddleName);
+			public byte Age => (byte)((DateTime.UtcNow - BirthDate).Days / 365);
+        };
 
-		public class PersonComponent
+		public record MaleRecord(string FirstName, string LastName, DateTime BirthDate, string? MiddleName = null) : PersonRecord(FirstName, LastName, BirthDate, MiddleName)
+		{
+            public override Sex Sex => Sex.Male;
+        }
+        public class PersonComponent
 		{
 			public static Person ChangeFirstName(Person person, string updatedFirstname) => person.Sex switch
 			{
