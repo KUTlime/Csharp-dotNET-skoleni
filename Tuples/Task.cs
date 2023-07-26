@@ -14,6 +14,12 @@
      *    - směrodatnou odchylku
      *    - rozptyl
      *    a tato data bude vracet formou tuplu (double, double, double)
+     *
+     * 3. Napište metodu rozšíření pro Vaši třídu Person, která vyrobí tuple, kde se předají hodnoty:
+     *    - Jméno
+     *    - Přijmení
+     *    - Datum narození
+     *    a použijte tuto metodu v nějakém testovacím kódu, či programu.
      */
 	}
 }
