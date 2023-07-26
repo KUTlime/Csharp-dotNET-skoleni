@@ -1,5 +1,5 @@
 ﻿namespace LINQ;
-
+class Task { };
 /*
  * 1. Vygenerujte si kolekcí 100 náhodných čísel (int) v rozsahu 1-30.
  *    Nad touto kolekcí udělejte následující LINQ dotazy:

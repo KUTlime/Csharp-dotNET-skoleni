@@ -1,5 +1,14 @@
 ﻿// https://anthonygiretti.com/wp-content/uploads/2022/09/linq-768x762.png
 
+/*
+ * Co je nutné vědět o IEnumerable<T>
+ * - Je to odložené vyhodnocení.
+ * - Vyhodnocujeme zásadně jenom jednou.
+ * - Pokud bychom volali vícekrát nějakou LINQ metodu nad IEnumerable<T>,
+ *   můžeme dostat různé výsledky.
+ *   Proto nejprve materializujeme, ať pracujeme s fixní kolekcí objektů.
+ */
+
 var actors = new List<Person>
 {
     new Person("Radek", "Zahradník", DateTime.UtcNow, false),
