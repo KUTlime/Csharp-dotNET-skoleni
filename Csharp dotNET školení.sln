@@ -134,11 +134,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UniqueFileExtensions", "Uni
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NuGetDemo", "NuGetDemo\NuGetDemo.csproj", "{7B270A88-B806-495D-9FD3-808F029CBB3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestableFizzBuzz", "TestableFizzBuzz\TestableFizzBuzz.csproj", "{7F1913C2-1975-49D6-AD5B-32A32C253843}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestableFizzBuzz", "TestableFizzBuzz\TestableFizzBuzz.csproj", "{7F1913C2-1975-49D6-AD5B-32A32C253843}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestableFizzBuzz.Tests", "TestableFizzBuzz.Tests\TestableFizzBuzz.Tests.csproj", "{C271541F-8D08-455A-9FBD-D09B65860CA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestableFizzBuzz.Tests", "TestableFizzBuzz.Tests\TestableFizzBuzz.Tests.csproj", "{C271541F-8D08-455A-9FBD-D09B65860CA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extensions.Tests", "Extensions.Tests\Extensions.Tests.csproj", "{FC5B6F96-643B-40C1-9BFB-3A6C6A25C503}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Extensions.Tests", "Extensions.Tests\Extensions.Tests.csproj", "{FC5B6F96-643B-40C1-9BFB-3A6C6A25C503}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "28 - LINQ", "28 - LINQ", "{0BBBD078-64DB-4BB2-9F4A-76F981D6F2BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQ", "LINQ\LINQ.csproj", "{FF7F6DCE-F574-4270-8706-B5CB099178E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -294,6 +298,10 @@ Global
 		{FC5B6F96-643B-40C1-9BFB-3A6C6A25C503}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC5B6F96-643B-40C1-9BFB-3A6C6A25C503}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC5B6F96-643B-40C1-9BFB-3A6C6A25C503}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF7F6DCE-F574-4270-8706-B5CB099178E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF7F6DCE-F574-4270-8706-B5CB099178E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF7F6DCE-F574-4270-8706-B5CB099178E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF7F6DCE-F574-4270-8706-B5CB099178E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -362,6 +370,8 @@ Global
 		{7F1913C2-1975-49D6-AD5B-32A32C253843} = {B3E6066E-927D-4581-AB2D-B698A75C56CC}
 		{C271541F-8D08-455A-9FBD-D09B65860CA9} = {B3E6066E-927D-4581-AB2D-B698A75C56CC}
 		{FC5B6F96-643B-40C1-9BFB-3A6C6A25C503} = {DEFC24E1-2C37-4481-B897-EA15948740D1}
+		{0BBBD078-64DB-4BB2-9F4A-76F981D6F2BD} = {E41C3370-5B8F-4AD3-AF63-7007CAD60CCD}
+		{FF7F6DCE-F574-4270-8706-B5CB099178E4} = {0BBBD078-64DB-4BB2-9F4A-76F981D6F2BD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C56838BB-E1E2-4597-B4A8-1BA561860DAC}
