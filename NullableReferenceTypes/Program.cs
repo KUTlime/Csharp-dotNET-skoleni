@@ -59,7 +59,7 @@ _ = stringsToCheck.Select(s => s ?? "asdf");
 
 record Person(string FirstName, string LastName, string? MiddleName = null);
 
-class MyClass
+partial class MyClass
 {
     public static int Sum(int a, int? b)
     {

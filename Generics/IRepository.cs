@@ -5,19 +5,19 @@ interface IEntityId<TId>
     TId Id { get; }
 }
 
-internal interface IRepository<TId, TOut, TCreateIn, TCreate>
-    where TId : IEntityId
+internal interface IRepository<TIentity, TOut, TCreateIn, TCreate, TId>
+    where TIentity : IEntityId<TId>
 {
-    public TOut GetById(TId id);
+    public TOut GetById(TIentity id);
 
     public TCreate Create(TCreateIn createObject);
 }
 
 record Customer();
 record CreateCustomerData();
-record IntId() : IEntityId;
+record IntId(int Id) : IEntityId<int>;
 
-class CustomerRepository : IRepository<IntId, Customer, CreateCustomerData, Customer>
+class CustomerRepository : IRepository<IntId, Customer, CreateCustomerData, Customer, int>
 {
     public Customer Create(CreateCustomerData createObject)
     {
@@ -33,11 +33,11 @@ class CustomerRepository : IRepository<IntId, Customer, CreateCustomerData, Cust
 record Order();
 record CreateOrderData();
 record CreatedOrder();
-record GuidId() : IEntityId;
+record GuidId(Guid Id) : IEntityId<Guid>;
 
 class OrderRepository : 
-    IRepository<GuidId, Order, CreateOrderData, CreatedOrder>,
-    IRepository<IntId, Order, CreateOrderData, CreatedOrder>
+    IRepository<GuidId, Order, CreateOrderData, CreatedOrder, Guid>,
+    IRepository<IntId, Order, CreateOrderData, CreatedOrder, int>
 {
     public CreatedOrder Create(CreateOrderData createObject)
     {
