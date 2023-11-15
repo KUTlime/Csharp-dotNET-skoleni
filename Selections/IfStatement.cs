@@ -81,14 +81,14 @@ class IfStatement
 		// Úsporná varianta č.1
 		if (a == 10) { Console.WriteLine("Value of a is 10"); }
 
-		// Usporná varianta č.2 #NotABestPractice
+		// Úsporná varianta č.2 #NotABestPractice
 		// Vynechání složených závorek {} z ifu.
 		// Pokud je podmínka pravdivá, tak se vykoná pouze a jenom
 		// následující řádek za if
 		if (a == 10)
 			Console.WriteLine("Value of a is 10");
 
-        // Úpsorná varianta č.3 #NotABestPractice
+        // Úsporná varianta č.3 #NotABestPractice
         if (a == 10) Console.WriteLine("Value of a is 10");
 
 

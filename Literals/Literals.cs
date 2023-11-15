@@ -1,5 +1,4 @@
-﻿
-namespace Literals;
+﻿namespace Literals;
 
 class Literals
 {
@@ -62,12 +61,17 @@ class Literals
 		float PiFloat = 314159E-5F;    // Kostrbaté Pi jako float.
 		decimal PiDec = 3.14159m;       // Pí jako decimal.
 		decimal PiDec2 = 3.14159M;
-		//510E          // Neplatné, chybí exponent.
-		//210f          // Neplatné, chybí základ nebo desetinná část.
-		//.e55          // Neplatné, chybí celočíselná hodnota nebo zlomek.
+        //510E          // Neplatné, chybí exponent.
+        //210f          // Neplatné, chybí základ nebo desetinná část.
+        //.e55          // Neplatné, chybí celočíselná hodnota nebo zlomek.
 
-		// String literály
-		string str1 = "Hello!";
+        // Poznámka o zápisu čísel
+        // 3.14
+		// 314E-2 => 314 * 10 ^ (-2) => 314 * 0.01 => 3.14
+		// 31.4E-1=> 31.4 * 10 ^ (-1) => 31.4 * 0.1 => 3.14
+
+        // String literály
+        string str1 = "Hello!";
 		string str2 = @"Hello!"; // Tak, jak je.
 
 		// Espace sekvence
@@ -76,7 +80,14 @@ class Literals
 		Console.WriteLine("Hello!\\Hello!"); // Vložení zpětného lomítka.
 		Console.WriteLine("\"Hello!\""); // Vložení uvozovek do string literálu.
 
-		Console.WriteLine(@" Zpětné lomítko jednouše: \  ");
+        // Výstup:
+        // Hello!
+        // Hello!
+        // Hello!   Hello!
+        // Hello!\Hello!
+        // "Hello!"
+
+        Console.WriteLine(@" Zpětné lomítko jednoduše: \  ");
 		Console.WriteLine(@"Hello!
             Hello!"); // Zalomení řádku.
 
@@ -90,12 +101,6 @@ class Literals
 
 		// Surové string literály
 		Console.WriteLine(""" {"text": "SomeText with "" "}""");
-
-        // Výstup:
-        // Hello!
-        // Hello!
-        // Hello!   Hello!
-        // Hello!\Hello!
-        // "Hello!"
+        // Výstup: {"text": "SomeText with "" "}
     }
 }

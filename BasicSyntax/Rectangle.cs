@@ -20,12 +20,12 @@ public class Rectangle
 	double _width;
 
 	// členské vlastnosti
-	public String Name { get; set; }
+	public string? Name { get; set; }
 
 	// členské metody
 	/// <summary>
 	/// Metoda bez návratové hodnoty.
-	/// Metoda be vstupních parameterů.
+	/// Metoda be vstupních parametrů.
 	/// </summary>
 	public void AcceptDetails()
 	{ // Začátek metody.
@@ -35,7 +35,7 @@ public class Rectangle
 
 
 	/// <summary>
-	/// Metoda s návhratovou hodnotou.
+	/// Metoda s návratovou hodnotou.
 	/// </summary>
 	/// <returns>Návratová hodnota.</returns>
 	public double GetArea()
@@ -49,7 +49,7 @@ public class Rectangle
 	public double GetAreaByExpression() => _length * _width;
 
 	/// <summary>
-	/// Metoda s návhratovou hodnotou a vstupním parametrem.
+	/// Metoda s návratovou hodnotou a vstupním parametrem.
 	/// </summary>
 	/// <returns>Návratová hodnota.</returns>
 	/// <param name="length">A length parameter commentary.</param>
@@ -63,14 +63,14 @@ public class Rectangle
 	/// </summary>
 	public void Display()
 	{
-		Console.WriteLine("Length: {0}", _length);
-		Console.WriteLine("Width: {0}", _width);
-		Console.WriteLine("Area: {0}", GetArea());
+		Console.WriteLine($"Length: {_length}");
+		Console.WriteLine($"Width: {_width}");
+		Console.WriteLine($"Area: {GetArea()}");
 	}
 
 	/*
         /// <summary>
-        /// Multiřádkový komentář.
+        /// Multi řádkový komentář.
         /// </summary>
         public void Display()
         {
@@ -78,7 +78,7 @@ public class Rectangle
             Console.WriteLine($"Width: {_width}");
             Console.WriteLine($"Area: {GetArea()}");
         }
-        */
+    */
 
 	// Přetížení metody z System.Object
 	// Metoda porovnává dva objekty stejného typu a vrátí pravdu/nepravdu,

@@ -1,8 +1,4 @@
-﻿namespace Classes;
-
-class Classes
-{
-/*
+﻿/*
 #############################################################################
 ### Třídy - uživatelem definované datové typy
 #############################################################################
@@ -40,6 +36,11 @@ Dále je dobré vědět:
 #############################################################################
 
 */
+
+namespace Classes;
+
+class Classes
+{
 	static void Main(string[] args)
 	{
 		var callingConstructorDemo = new CallingConstructorDemo();
@@ -152,7 +153,7 @@ class BoxV2
 // Syntaxe destruktoru je následující:
 // ~NázevTřídy()
 // {
-//     // Tělo konstruktoru   
+//     // Tělo destruktoru 
 // }
 class BoxV3
 {
@@ -167,15 +168,7 @@ class BoxV3
 		_breadth = breadth > 0.0 ? breadth : 0.0;
 		_height = height > 0.0 ? height : 0.0;
 	}
-	/*
-        BoxV3(double length = 0, double breadth = 0, double height = 0)
-        {
-            Console.WriteLine("The box is being build.");
-            _length = length;
-            _breadth = breadth;
-            _height = height;
-        }
-        */
+
 	// Explicitní výchozí konstruktor (konstruktor bez parametrů)
 	public BoxV3()
 	{
@@ -246,10 +239,6 @@ class BoxV4
 }
 
 // Význam oboru platnosti
-static class Test2
-{
-    public static int Test { get; } = 0;
-}
 class Utils
 {
 	public static string LogPath = @"C:\Program Data\MyApp\Log"; // Lze nastavovat zvenčí.
@@ -261,21 +250,17 @@ class Utils
 	// Vyžaduje instanci.
 	public void WriteToLogFile(string message, string fileName)
 	{
-		using (var file = new StreamWriter(LogPath + (Prefix + fileName), true))
-		{
-			file.WriteLineAsync(message);
-		}
-	}
+        using var file = new StreamWriter(LogPath + (Prefix + fileName), true);
+        file.WriteLineAsync(message);
+    }
 
 	// Statická metoda uvnitř nestatické třídy.
 	// Lze volat napřímo.
 	public static void WriteToLog(string message)
 	{
-		using (var file = new StreamWriter(LogPath + LogName, true))
-		{
-			file.WriteLineAsync(message);
-		}
-	}
+        using var file = new StreamWriter(LogPath + LogName, true);
+        file.WriteLineAsync(message);
+    }
 }
 
 // Definice plně statické třídy

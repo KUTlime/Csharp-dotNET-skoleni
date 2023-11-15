@@ -66,5 +66,58 @@
 				Console.WriteLine(item);
 			}
 		}
-	}
+
+        public static int[] GetPrimeNumbers(int upperBound)
+        {
+            int[] numbers = new int[upperBound];
+            int a = 0;
+            bool notPrime;
+            for (int i = 2; i <= upperBound; i++)
+            {
+                notPrime = false;
+                for (int j = 2; j < i; j++)
+                {
+                    if (i % j == 0)
+                    {
+                        notPrime = true;
+                        break;
+                    }
+                }
+                if (notPrime == false)
+                {
+                    numbers[a] = i;
+                    a++;
+                }
+            }
+            int[] primeNumbers = new int[a];
+            for (int i = 0; i < a; i++)
+            {
+                primeNumbers[i] = numbers[i];
+            }
+            return primeNumbers;
+        }
+
+        public static int[] GetPrimeNumbersWithList(int upperBound)
+        {
+            var numbers = new List<int>();
+            bool notPrime;
+            for (int i = 2; i <= upperBound; i++)
+            {
+                notPrime = false;
+                for (int j = 2; j < i; j++)
+                {
+                    if (i % j == 0)
+                    {
+                        notPrime = true;
+                        break;
+                    }
+                }
+                if (notPrime == false)
+                {
+                    numbers.Add(i);
+                }
+            }
+            return numbers.ToArray();
+        }
+    }
 }

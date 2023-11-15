@@ -48,12 +48,12 @@ enum Score2 : byte
 }
 
 // Odvozený enum z unsigned datového typu
-enum Gain : UInt16
+enum Gain : ushort
 {
     Weak = 100,
     Medium = 1000,
     Strong = 10000,
-    Max = UInt16.MaxValue,
+    Max = ushort.MaxValue,
 }
 
 // Lze definovat i flagy
@@ -68,6 +68,7 @@ enum SomeFlag
     Friday      = 0b_0001_0000,  // 16
     Saturday    = 0b_0010_0000,  // 32
     Sunday      = 0b_0100_0000,  // 64
+    WorkingDay  = Monday | Tuesday | Wednesday | Thursday | Friday, // 0b_0001_1111 (31)
     Weekend     = Saturday | Sunday // 0b_0110_0000
 }
 
@@ -79,8 +80,8 @@ internal class Enums
         Days day = Days.Sun; // Enumy jsou automaticky všechny statické.
         Console.WriteLine(day); // Vypíše Sun
 
-        Int32 WeekdayStart = (Int32)Days.Mon;  // Přetypování čísla přímo na enum.
-        Int32 WeekdayEnd = (Int32)Days.Fri;    // Ne příliš bezpečný způsob jak vytvořit enum, ale v praxi se bez toho někdy neobejdeme. 
+        int WeekdayStart = (int)Days.Mon;  // Přetypování čísla přímo na enum.
+        int WeekdayEnd = (int)Days.Fri;    // Ne příliš bezpečný způsob jak vytvořit enum, ale v praxi se bez toho někdy neobejdeme. 
 
         Console.WriteLine("Monday: {0}", WeekdayStart);
         Console.WriteLine("Friday: {0}", WeekdayEnd);

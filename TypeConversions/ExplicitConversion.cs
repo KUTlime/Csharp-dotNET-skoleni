@@ -20,7 +20,6 @@ Int32 b = a;              // Tady už proběhne implicitní konverze z Int16 na 
 // Int16 c = b; //error CS0266: Cannot implicitly convert type 'int' to 'short'. An explicit conversion exists (are you missing a cast?)
 Int16 cExplicit = (Int16)b;
 
-
 double d = 5673.74;
 int i;
 

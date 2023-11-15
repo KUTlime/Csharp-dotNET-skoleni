@@ -1,6 +1,4 @@
-﻿
-
-// Deklarace lokální proměnné
+﻿// Deklarace lokální proměnné
 int a = 10;
 
 // Každá smyčka má svůj obor platnosti,

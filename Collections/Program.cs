@@ -40,15 +40,16 @@ static class Program
 			Console.WriteLine(item.GetType());
 		}
 
-		// Definice seznamu s konkrétní přednastavenou hodnotou na 10.
-		var list1 = new List<string>(10);
+        list2.Remove("Radek");
+        Console.WriteLine(list2[1]);
+        list2.Add("Zahradník");
+        list2.Add("Zahradník");
 
-		list2.Remove("Radek");
-		Console.WriteLine(list2[1]);
-		list2.Add("Zahradník");
-		list2.Add("Zahradník");
+        // Definice seznamu s konkrétní přednastavenou hodnotou na 10.
+        var list1 = new List<string>(10);
 
 		var list3 = new List<string> { "Radek", "Zahradník" };
+		// Častěji zapíšeme takto
 		var list4 = new List<string> 
 		{ 
 			"Radek",
@@ -92,7 +93,8 @@ static class Program
 			newGuys.Add("Galileo", 1564);
 		}
 
-		newGuys["Galileo"] = 1566; // Bezpečná a jednoduchá variata jak přepsat nebo založit položku ve slovníku.
+        // Bezpečná a jednoduchá varianta jak přepsat nebo založit položku ve slovníku.
+        newGuys["Galileo"] = 1566;
 		
 		// Vyzvednutí položky s kontrolou
 		Int32 year = 0;
@@ -161,8 +163,6 @@ static class Program
 		stack.Push(0);
 		stack.Pop(); // Vrací a odebírá z kolekce
 		stack.Peek(); // Vrací položku z vrcholu zásobníku, přičemž položka tam zůstane.
-
-
 
 		// Queue
 		// Typ fronty FIFO

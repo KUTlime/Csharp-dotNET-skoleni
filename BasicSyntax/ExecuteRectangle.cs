@@ -13,4 +13,5 @@ r.AcceptDetails(); // Volání členské metody, která je definována v tříd�
 r.Display(); // ------------||----------------
 Console.WriteLine(r.Equals(new Rectangle())); // Použití porovnávací funkce.
 Console.WriteLine(r.Equals(10)); // Vrátí false.
+Console.WriteLine($"Area is: {r.GetArea()}");
 Console.ReadLine();

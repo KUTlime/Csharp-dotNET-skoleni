@@ -5,26 +5,31 @@ static class Program
 	static void Main(string[] args)
 	{
 		// Jednoduchá deklarace pole
-		Int32[] arrayName;
-
+		int[] arrayName;
+		
 		// Definice pole o předem známé velikosti, tj. 10 x double.
 		double[] balance = new double[10];
 
-		// Přístup na 0tou položku, tj. v pořadí první položku
-		// v poli a uložení hodnoty 4500.0.
-		// Kolekce (včetně polí) se indexují v C# od NULY!!!!!!!!!!
-		balance[0] = 4500.0;
+        // Vytvoření dynamického pole s dynamickou velikostí
+        uint.TryParse(Console.ReadLine(), out uint size);
+        var test = new string[size];
+
+        // Přístup na 0tou položku, tj. v pořadí první položku
+        // v poli a uložení hodnoty 4500.0.
+        // Kolekce (včetně polí) se indexují v C# od NULY!!!!!!!!!!
+        balance[0] = 4500.0;
 
 		// Definice pole s inicializací.
 		// Inicializace se provádí dohromady s {}, kde pro oddělení
 		// používáme operátor ",".
-		Int32[] marks = new Int32[] { 99, 98, 92, 97, 95 };
+		int[] marks = new int[] { 99, 98, 92, 97, 95 };
 
 		// To samé, pouze bez syntaktického cukru "new Int32[]",
 		// který je zbytečný.
 		Int32[] marks2 = { 99, 98, 92, 97, 95 };
 
-		double[] balance2 = { 2340.0, 4523.69, 3421.0 };
+		// Od C# 12 můžeme obecně výčtem [ prvek, prvek, prvek, .. ]
+		int[] marks3 = [99, 98, 92, 97, 95];
 
 		Int32[] score = marks; // Inicializace nového pole ukazatelem na jiné pole.
 
@@ -118,9 +123,24 @@ static class Program
             {8, 9, 10, 11}   // Inicializace řádku 2
         };
 
-		// Pole o velikosti 5 řádků, 2 sloupců
-		Int32[,] a = new Int32[5, 2] { { 0, 0 }, { 1, 2 }, { 2, 4 }, { 3, 6 }, { 4, 8 } };
-		Int32 i, j;
+        // Inicializace 3D pole bez syntaktického cukru 2.
+        Int32[,,] array90 =
+		{
+			{
+				{0, 1, 2, 3} ,   // Inicializace řádku 0,0
+				{4, 5, 6, 7} ,   // Inicializace řádku 1,0
+				{8, 9, 10, 11}   // Inicializace řádku 2,0
+			},
+			{
+				{ 0, 1, 2, 3} ,   // Inicializace řádku 0,1
+				{ 4, 5, 6, 7} ,   // Inicializace řádku 1,1
+				{ 8, 9, 10, 11}   // Inicializace řádku 2,1
+			}
+        };
+
+        // Pole o velikosti 5 řádků, 2 sloupců
+        int[,] a = new int[5, 2] { { 0, 0 }, { 1, 2 }, { 2, 4 }, { 3, 6 }, { 4, 8 } };
+        int i, j;
 
 		// Vytištění 2D pole
 		for (i = 0; i < 5; i++)
@@ -135,13 +155,13 @@ static class Program
 	// Pole polí
 	static void JaggedArray()
 	{
-		Int32[,] arr;       // 2D pole
-		Int32[][] grades;   // Pole polí o dimenzi 2
+		int[,] arr;       // 2D pole
+        int[][] grades;   // Pole polí o dimenzi 2
 
-		Int32[][] scores = new Int32[5][];
-		for (Int32 i = 0; i < scores.Length; i++)
+        int[][] scores = new int[5][];
+		for (int i = 0; i < scores.Length; i++)
 		{
-			scores[i] = new Int32[i];
+			scores[i] = new int[i];
 		}
 
 		// Dimenziónálně nekonzistentní pole
@@ -157,7 +177,14 @@ static class Program
 			new[] { 92, 93, 94 },
 			new[] { 85, 66, 87, 88 },
 		};
-		Int32 row = 0;
+
+        // Od C# 12
+        Int32[][] scores4 =
+        [
+            [92, 93, 94],
+            [85, 66, 87, 88],
+        ];
+        Int32 row = 0;
 		Int32 column = 0;
 		foreach (var line in scores3)
 		{

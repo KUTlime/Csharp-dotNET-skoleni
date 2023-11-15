@@ -4,6 +4,7 @@
     //    Funkce tyto prvočísla vrátí jako pole - návratová hodnota. Využijte nové znalosti o kolekcích.
     // 2. Napište funkci, která vypíše unikátní čísla ze vstupního pole čísel. Opět využijte nové znalosti
     //    o kolekcích. Funkce tedy odstraní duplicity, např. pro vstup {1, 1, 2, 3, 4, 4} => {1, 2, 3, 4}.
+    //    public List<int> GetUniqueNumbers(int[] numbers) { ... }
     // 3. Napište metodu, která vrátí PRAVDA, pokud je vstupní textový rětězec palidrom, NEPRAVDA v jiných případech.
     //    Příklady palindromů:
     //    aba
@@ -15,5 +16,14 @@
     //    oko
     class Task
 	{
-	}
+        public static IEnumerable<int> GetUniqueNumbers(int[] numbers)
+        {
+            var hashSet = new HashSet<int>();
+            foreach (var number in numbers)
+            {
+                hashSet.Add(number);
+            }
+            return hashSet;
+        }
+    }
 }
