@@ -65,7 +65,7 @@ Console.WriteLine($"Count with null values: {resultsWithNull.Count()}");
 Console.WriteLine($"Average for not null values: {results.Average()}");
 Console.WriteLine($"Average with null values: {resultsWithNull.Average()}");
 
-// Fitrace a práce s elementy
+// Filtrace a práce s elementy
 actors
     .Where(a => a.IsMarried)
     .ToList()
@@ -115,6 +115,16 @@ actors
 
 actors.IntersectBy(new[] { "Arnold", "Karel" }, a => a.FirstName);
 
+actors
+    .Where(a => a.IsMarried)
+    .IntersectBy(
+        actresses
+            .Where(a => a.IsMarried)
+            .Select(a => a.LastName),
+        a => a.LastName)
+    .ToList()
+    .ForEach(Console.WriteLine);
+
 var cast = actors.Union(actresses);
 
 // Kvantifikace
@@ -137,15 +147,24 @@ wholeCast
     .ForEach(g => Console.WriteLine($"The group where Birth date = {g.Key} has count = {g.Count()}"));
 
 wholeCast
-    .SelectMany(a => a.Select(a => a))  /* tzn. flattening - zploštění několika kolekcí na 1 kolekci téhož typu */
-    .GroupBy(a => new { a.LastName, a.FirstName })
+    .SelectMany(persons => persons.Select(person => person))  /* tzn. flattening - zploštění několika kolekcí na 1 kolekci téhož typu */
+    .GroupBy(person => new { person.LastName, person.FirstName })
     .ToList()
-    .ForEach(g => Console.WriteLine($"The group where ??? date = {g.Key} has count = {g.Count()}"));
+    .ForEach(group => Console.WriteLine($"The group where ??? date = {group.Key} has count = {group.Count()}"));
 
 // Sloučení
 Console.WriteLine("Join by LastName");
 actors
-    .Join(actresses, a => a.LastName, a => a.LastName, (actor, actress) => new { LastName = actor.LastName, ActorFirstName = actor.FirstName, ActressFirstName = actress.FirstName })
+    .Join(
+        actresses,
+        actress => actress.LastName,
+        actor => actor.LastName,
+        (actor, actress) => new 
+        { 
+            LastName = actor.LastName,
+            ActorFirstName = actor.FirstName,
+            ActressFirstName = actress.FirstName 
+        })
     .ToList()
     .ForEach(c => Console.WriteLine($"We have marrige couple with the last name {c.LastName} and names {c.ActorFirstName} & {c.ActressFirstName}"))
     ;
@@ -155,5 +174,14 @@ zipTo1
     .Zip(zipTo2)
     .ToList()
     .ForEach(t => Console.WriteLine($"We have {t.First} for {t.Second}"));
+
+// Materializace
+zipTo1
+    .Zip(zipTo2)
+    .ToDictionary(key => key.First, value => value.Second)
+    .Select(kvp => $"{kvp.Key} = {kvp.Value}")
+    .ToList()
+    .ForEach(Console.WriteLine);
+
 
 record Person(string FirstName, string LastName, DateTime BirthDate, bool IsMarried);

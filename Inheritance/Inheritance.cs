@@ -40,7 +40,7 @@ Syntaxe:
     {
         someValue = 1;               // Přístup do proměnné předka, konkrétně třídy Předek
         someDoubleValue = 1;         // Přístup do proměnné předka, konkrétně třídy Potomek1
-        //someProtectedValue = 1;    // Už nelze
+        someProtectedValue = 1;      // Přístup do proměnné předka
         someOtherDoubleValue = 1;    // Přístup do proměnné předka, konkrétně třídy Potomek1
     }
 }
@@ -48,6 +48,7 @@ Syntaxe:
 Dobré vědě:
 - C# nepodporuje vícenásobnou dědičnost.
 - C# podporuje sestavování funkcionality pomocí rozhraní (interface).
+- V C# můžeme zablokovat dědičnost nějaké třídy slovíčkem sealed.
     
 */
 static class Inheritance
@@ -99,11 +100,11 @@ public interface IPaintCost
 // třída obecného tvaru
 class Shape : IArea
 {
+
+    // Metoda nastavení počátku (těžiště) tvaru do kartézské souřadnice X.
+    public void SetOriginX(double w) => X = w;
     
-	// Metoda nastavení počátku (těžiště) tvaru do kartézké souřadnice X.
-	public void SetOriginX(double w) => X = w;
-    
-	// Metoda nastavení počátku (těžiště) tvaru do kartézké souřadnice Y.
+	// Metoda nastavení počátku (těžiště) tvaru do kartézské souřadnice Y.
 	public void SetOriginY(double h) => Y = h;
 
 	// Souřadnice středu tvaru.
@@ -292,4 +293,47 @@ namespace AbstractDemo
 	interface I3DShape : IArea, IVolume
 	{
 	}
+}
+
+class Demo
+{
+	void Test()
+	{
+		var superClass = new SuperClass();
+		_ = superClass.somePublicField;
+
+		var myClass = new MyClass();
+		_ = myClass.somePublicField;
+	}
+}
+public class SuperClass
+{
+	private int _somePrivateField = 0;
+	protected int someProtectedField = 0;
+	public int somePublicField = 0;
+}
+
+public class MyClass : SuperClass
+{
+	public MyClass() 
+	{
+		someProtectedField = 0;
+		somePublicField = 0;
+	}
+}
+class MyClassNextGen : MyClass
+{
+    MyClassNextGen()
+    {
+        someProtectedField = 0;
+        somePublicField = 0;
+    }
+}
+
+public sealed class MySealedClass
+{
+}
+
+public class SealedDemo /*: MySealedClass*/
+{
 }

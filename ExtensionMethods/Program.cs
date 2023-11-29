@@ -1,34 +1,32 @@
-﻿namespace ExtensionMethods
+﻿/*
+#############################################################################
+### Metody rozšíření - extension methods
+#############################################################################
+
+Rozšíření (zapečetěných) tříd.
+
+Syntaxe:
+namespace <Jmenný prostor rozšiřované třídy>
 {
-    /*
-	#############################################################################
-	### Metody rozšíření - extension methods
-	#############################################################################
-	
-	Rozšíření zapečetěných tříd.
+    public static class <Jméno rozšiřované třídy>Extensions
+    {
+        public static <Návratový typ> <Jméno metody>(this <Datový typ rozšiřované třídy> <Název instance rozšiřované třídy>[,...<Datový typ> <Jméno argumentu>])
+        {
+            ...
+        }
+    }
+}
 
-	Syntaxe:
-	namespace <Jmenný prostor rozšiřované třídy>
-	{
-	    public static class <Jméno rozšiřované třídy>Extensions
-	    {
-	        public static <Návratový typ> <Jméno metody>(this <Datový typ rozšiřované třídy> <Název instance rozšiřované třídy>[,...<Datový typ> <Jméno argumentu>])
-	        {
-	            ...
-	        }
-	    }
-	}
+Best Practice:
+- Umisťujeme do třídy s názvem <Název typu, který rozšiřujeme>Extensions.
+- Vhodné umístit do stejného jmenného prostoru jako třída,
+  kterou rozšiřujeme pokud chceme používat všude.
+  Díky tomu přidáme třídu, která je rozšiřována i její metody rozšíření skrze jeden using.
 
-	Best Practice:
-	- Umisťujemě do třídy s názvem <Název typu, který rozšiřujeme>Extensions.
-	- Vhodné umístit do stejného jmeného prostoru jako třída,
-	  kterou rozšiřujeme pokud chceme používat všude.
-	  Díky tomu přidáme třídu, která je rozšiřována i její metody rozšíření skrze jeden using.
-
-	
-
-	#############################################################################
-	*/
+#############################################################################
+*/
+namespace ExtensionMethods
+{
     class ExtensionMethods
 	{
 		static void Main(string[] args)

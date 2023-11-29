@@ -6,9 +6,10 @@
 #############################################################################
     
 Vlastnosti významně snižují množství kódu C#, zvyšují zapouzdření a 
-přehledňují kód.
+zpřehledňují kód.
 
 Elegantně řeší následující situaci:
+
 private Int32 _someValue = 0;
 public Int32 GetSomeValue()
 {
@@ -34,7 +35,7 @@ public Int32 SomeValue {get; set;} = 0;
 // Vlastnost, kterou lze pouze iniciovat a poté již jenom číst.
 public Int32 SomeValue {get; init;} = 10;
 
-// Vlastnost, která je reálně vypočitávána.
+// Vlastnost, která je reálně vypočítávána.
 public DateTime Date => new DateTime(2023,02,02);
 
 Existují tři druhy:
@@ -149,23 +150,15 @@ public class PropertiesDemoV1
 
 	// Plná vlastnost (manuálně napsané getry a setry + private field pro age)
 	public int Age
-	{
-		get
-		{
-			return _age;
-		}
-		set
-		{
-			_age = value;
-		}
-	}
-	public override string ToString()
-	{
-		return "Code = " + Code + ", Name = " + Name + ", Age = " + Age;
-	}
+    {
+        get => _age;
+        set => _age = value;
+    }
+    public override string ToString() =>
+		"Code = " + Code + ", Name = " + Name + ", Age = " + Age;
 }
 
-// Vlastnostni mohou být i statické.
+// Vlastnosti mohou být i statické.
 class Services
 {
 	public static Int32 UniqueId => 0;
@@ -192,10 +185,8 @@ public class Player
 	// Deklaraci auto vlastností.
 	public int Age { get; set; } = 0;
 
-	public override string ToString()
-	{
-		return "Code = " + Code + ", Name = " + Name + ", Age = " + Age;
-	}
+    public override string ToString() =>
+		"Code = " + Code + ", Name = " + Name + ", Age = " + Age;
 }
 
 // Výchozí hodnota je nadbytečná, pokud proměnné přepisujeme v konstruktoru.
@@ -210,7 +201,7 @@ public class Employee
 		LastName = lastName;
 	}
 
-	public string FirstName { get; } = String.Empty; // Je zbytečné.
+	public string FirstName { get; } = string.Empty; // Je zbytečné.
 	public string MiddleName { get; }
 	public string LastName { get; }
 
@@ -233,16 +224,16 @@ public class EmployeeV2
 		LastName = lastName;
 	}
 
-	public string FirstName { get; } = String.Empty; // Už není zbytečné.
-	public string MiddleName { get; } = String.Empty;
-	public string LastName { get; } = String.Empty;
+	public string FirstName { get; } = "Not given"; // Už není zbytečné.
+	public string MiddleName { get; } = string.Empty;
+	public string LastName { get; } = "Not given";
 
 }
 
 // Definice přístupů u getrů a setrů.
 public class AppSettings
 {
-	// Veřejná vlastnost, kterou ovšem nemůžeme zvenší změnit.
+	// Veřejná vlastnost, kterou ovšem nemůžeme zvenčí změnit.
 	// Změnit ji lze pouze v rámci třídy AppSettings.
 	public Int32 ConnectionPort { get; private set; } = 50000;
 
@@ -289,10 +280,8 @@ public class Student : Person
 	// Proto má na sobě klíčové slovo override.
 	public override int Age { get; set; } = 0;
 
-	public override string ToString()
-	{
-		return "Code = " + Code + ", Name = " + Name + ", Age = " + Age;
-	}
+    public override string ToString() =>
+		"Code = " + Code + ", Name = " + Name + ", Age = " + Age;
 }
 
 // Vlastnosti mohou být součástí rozhraní.
@@ -300,22 +289,28 @@ interface IProduct
 {
 	int Cost { get; set; }
     int StockSupply { get; }
-
 }
 
 // Implementace rozhraní s vlastnostmi
 class Hardware : IProduct
 {
 	// Musíme přidat potřebné vlastnosti s odpovídajícími datovými typy
-	// a odpovídajícími modifikátory přístupu jako v rozhaní.
+	// a odpovídajícími modifikátory přístupu jako v rozhraní.
 	public int Cost { get; set; } = 100;
-	public int StockSupply { get; } = 4; // Absence konstruktoru číní z této vlastnosti readonly pro tuto třídu.
+	public int StockSupply { get; } = 4; // Absence konstruktoru činí z této vlastnosti readonly pro tuto třídu.
 }
 
 class Software : IProduct
 {
 	public int Cost { get; set; } = 50;
 	public int StockSupply { get; } = int.MaxValue;
+}
+
+class Firmware : IProduct
+{
+	public int Cost { get; set; } = 42;
+
+    public int StockSupply { get; private set; } // Taktéž naplňuje kontrakt IProduct.StockSupply
 }
 
 // Rozhraní jako vlastnost
@@ -388,7 +383,7 @@ class PersonV3Demo
 {
     void SomeMethod()
     {
-		var person = new PersonV3 
+		var person = new PersonV3
 		{ 
 			FirstName = "Radek",
 			LastName = "Zahradník"
@@ -400,7 +395,7 @@ class PersonV3Demo
 			SecondName = "Michal" 
 		};
 
-		// Když chci novou person, která má kompbinované vlastnosti
+		// Když chci novou person, která má kombinované vlastnosti
 		// když tam mám init;
 		var person3 = new PersonV3
 		{
@@ -417,7 +412,6 @@ class PersonV3Demo
 
 		var person5 = new PersonV4("Radek", "Zahradník") { SecondName = "Michal" };
 		var person6 = person5 with { SecondName = null };
-
     }
 }
 
@@ -430,7 +424,7 @@ class PersonV4Demo
 		var person = new PersonV4("Radek", "Zahradník");
         var person2 = new PersonV4("Radek", "Zahradník", "Michal");
 
-		// Když chci novou person, která má kompbinované vlastnosti
+		// Když chci novou person, která má kombinované vlastnosti
 		// když tam mám init;
 		var person3 = new PersonV4("Zadek", person.LastName, person2.SecondName);
 

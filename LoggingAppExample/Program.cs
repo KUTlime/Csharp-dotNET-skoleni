@@ -6,7 +6,7 @@ namespace LoggingAppExample
 	{
 		static void Main(string[] args)
 		{
-			ILog dynamicLogger = new ConsoleLogger();
+			ILogger dynamicLogger = new ConsoleLogger();
 			string logType = args[0];
 			switch (logType)
 			{
@@ -24,7 +24,7 @@ namespace LoggingAppExample
 			Log.WriteLine($"Hello world");
 			Log.Write("Hello world");
 
-			ILog logger = Log.LoggerStatic;
+			ILogger logger = Log.LoggerStatic;
 
 			logger.WriteLine("asdf");
 

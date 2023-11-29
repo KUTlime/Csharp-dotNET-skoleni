@@ -31,7 +31,7 @@ var person = new Person("Radek", "Zahradník");
 var source = new[]
 {
     new Person("Radek", "Zahradník"),
-    new Person("Radek", "Zahradník"),
+    new Person("Radek", "Zahradník", "Michal"),
     null
 };
 source.OrderBy(p => p?.MiddleName?.Length);
@@ -54,8 +54,8 @@ var stringsToCheck = new string?[]
 };
 
 _ = stringsToCheck.Select(s => s is null ? "asdfasdf" : s);
-_ = stringsToCheck.Select(s => s ??= "asdf");
 _ = stringsToCheck.Select(s => s ?? "asdf");
+_ = stringsToCheck.Select(s => s ??= "asdf"); // s nahradíme za "asdf"
 
 record Person(string FirstName, string LastName, string? MiddleName = null);
 

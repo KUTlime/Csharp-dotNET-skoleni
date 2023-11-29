@@ -1,4 +1,4 @@
-﻿namespace Polymorphism;
+﻿ namespace Polymorphism;
 
 /*
 #############################################################################
@@ -26,7 +26,7 @@ Dynamické přetěžování:
 - Nelze vytvořit instanci abstraktní třídy.
 - Abstraktní třídu nelze deklarovat jako sealed.
 
-Vituální metody:
+Virtuální metody:
 - Deklarují se klíčovým slovem virtual v předkovi.
 - Potomek může deklarovat stejnojmennou metodu, která buď skrývá nebo rozšiřuje metodu předka.
 - Klíčové slovo new skrývá metodu předka.
@@ -62,8 +62,10 @@ static class Program
 		caller.CallArea(rectangle);
 		caller.CallArea(triangle);
 
+        TestCar.TestCars();
+		TestCar.TestCarsAsBaseClass();
 
-		Console.ReadKey();
+        Console.ReadKey();
 	}
 }
 
@@ -103,7 +105,7 @@ abstract class Shape
 	}
 }
 
-// Obedélní jak potomek tvaru (třídy Shape).
+// Obdélní jak potomek tvaru (třídy Shape).
 class Rectangle : Shape
 {
 
@@ -202,13 +204,13 @@ class Car
 {
 	public virtual void DescribeCar()
 	{
-		Console.WriteLine("Four wheels and an engine.");
+		Console.WriteLine("(Car.DescribeCar) Four wheels and an engine.");
 		ShowDetails();
 	}
 
 	public virtual void ShowDetails()
 	{
-		Console.WriteLine("Standard transportation.");
+		Console.WriteLine("(Car.ShowDetails) Standard transportation.");
 	}
 }
 
@@ -220,7 +222,7 @@ class ConvertibleCar : Car
 {
 	public new void ShowDetails()
 	{
-		System.Console.WriteLine("A roof that opens up.");
+		System.Console.WriteLine("([new] ConvertibleCar.ShowDetails) A roof that opens up.");
 	}
 }
 
@@ -230,7 +232,7 @@ class Minivan : Car
 {
 	public override void ShowDetails()
 	{
-		System.Console.WriteLine("Carries seven people.");
+		System.Console.WriteLine("([override] Minivan.ShowDetails) Carries seven people.");
 	}
 }
 
@@ -243,27 +245,27 @@ public class TestCar
 	// Carries seven people.  
 	public static void TestCars()
 	{
-		Console.WriteLine("\nTestCars");
+        ConvertibleCar convertible = new();
+        var minivan = new Minivan();
+        Console.WriteLine("\nTestCars");
 		Console.WriteLine("----------");
-		ConvertibleCar convertible = new ConvertibleCar();
-		Minivan minivan = new Minivan();
 		convertible.ShowDetails();   // Volání ConvertibleCar.ShowDetails();
 		minivan.ShowDetails();      // Volání Minivan.ShowDetails();
 	}
 
-	// Výstup metody:  
-	// TestCarsAsBaseClass  
-	// ----------  
-	// Standard transportation.  
-	// Carries seven people. 
+    // Výstup metody:  
+    // TestCars  
+    // ----------  
+    // A roof that opens up.
+    // Carries seven people.
 
-	// Slovíčko new nám umožní se dostat k metodě předka, override nikoliv.
-	public static void TestCarsAsBaseClass()
+    // Slovíčko new nám umožní se dostat k metodě předka, override nikoliv.
+    public static void TestCarsAsBaseClass()
 	{
-		Console.WriteLine("\nTestCarsAsBaseClass");
+        Car car = new ConvertibleCar();
+        Car car2 = new Minivan();
+        Console.WriteLine("\nTestCarsAsBaseClass");
 		Console.WriteLine("----------");
-		Car car = new ConvertibleCar();
-		Car car2 = new Minivan();
 		car.ShowDetails();  // Zde dojde k volání Car.ShowDetails() díky klíčovému slovíčku new.
 		car2.ShowDetails(); // Zde dojde k volání Minivan.ShowDetails() díky klíčovému slovíčku overrider.
 	}

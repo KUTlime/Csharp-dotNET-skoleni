@@ -2,28 +2,27 @@
 {
     class Solution
 	{
-		public static (double Average, double Variance, double Deviation) Stats(IEnumerable<double> arr)
+		public static (double Average, double Variance, double Deviation) Stats(IEnumerable<double> values)
 		{
-			double average = 0;
-			double variance = 0;
-			double deviation = 0;
-			UInt64 count = 0;
-
-			// Average
-			foreach (var number in arr)
+            var valueList = values.ToList();
+			
+            double average = valueList.Average();
+			
+            double variance = 0;
+			foreach (var number in valueList)
 			{
-				average += number;
-				count++;
-			}
-			average /= count;
+                variance += Math.Pow(number - average, 2);
+            }            
+            variance /= valueList.Count;
 
-			// Variance
+            double deviation = Math.Sqrt(variance);
 
-			// Deviation
-
-			return (average, variance, deviation);
+            return (average, variance, deviation);
 		}
-	}
+
+        public static (double Average, double Variance, double Deviation) Stats(params double[] values) =>
+            Stats(values);
+    }
 
 	namespace SolutionThree
 	{

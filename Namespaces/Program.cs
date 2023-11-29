@@ -1,36 +1,36 @@
-﻿namespace Lecture
+﻿/*
+#############################################################################
+### Obory názvů - namespace
+#############################################################################
+
+Obory názvů řeší:
+- Konflikty názvů tříd
+- Systém organizování tříd v rámci knihovny.
+
+ Klíčové slovo namespace:
+- Vymezuje konkrétní jeden obor názvů.
+
+Klíčové slovo using:
+- Přidává konkrétní obor názvů do prostředí, kam je vložena.
+
+Syntaxe:
+namespace JménoOboruNázvů {
+    // Kód (třídy, rozhraní, struktury, enumy atd.)
+}
+
+Jeden obor názvů lze zanořit do druhého oboru.
+
+Použití:
+JménoOboruNázvů.JménoPoložky;
+
+Druhy oborů názvů:
+- Block scoped (nejstarší)
+- File scoped (novější)
+#############################################################################
+*/
+
+namespace Lecture
 {
-	/*
-    #############################################################################
-    ### Obory názvů - namespace
-    #############################################################################
-    
-    Obory názvů řeší:
-    - Konflikty názvů tříd
-    - Systém organizování tříd v rámci knihovny.
-     
-     Klíčové slovo namespace:
-    - Vymezuje konkrétní jeden obor názvů.
-
-    Klíčové slovo using:
-    - Přidává konkrétní obor názvů do prostředí, kam je vložena.
-
-    Syntaxe:
-    namespace JménoOboruNázvů {
-        // Kód (třídy, rozhraní, struktury, enumy atd.)
-    }
-
-    Jeden obor názvů lze zanořit do druhého oboru.
-
-    Použití:
-    JménoOboruNázvů.JménoPoložky;
-
-	Druhy oborů názvů:
-	- Block scoped (nejstarší)
-	- File scoped (novější)
-    #############################################################################
-    */
-
     class Namespaces
 	{
 

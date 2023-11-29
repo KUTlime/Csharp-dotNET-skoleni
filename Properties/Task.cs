@@ -22,7 +22,17 @@ namespace Properties
     //- Počet dětí, který má výchozí stav 0.
     //- Stav, kde výchozí stav je svobodný(á)/ženatý(á)/rozvedený(á)
     //- Oslovení(pan, paní, slečna), které bere v potaz výše uvedené reálie.
-        class Task
+    class Task
 	{
-	}
+        public required int MyProperty { get; init; }
+        public required int MyProperty1 { get; init; }
+    }
+
+    class Test
+    {
+        void Demo()
+        {
+            var task = new Task() { MyProperty = 1, MyProperty1 = 10 };
+        }
+    }
 }

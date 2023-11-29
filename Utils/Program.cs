@@ -1,60 +1,59 @@
-﻿namespace Utils
+﻿namespace Utils;
+
+public interface ILogger
 {
-    public interface ILog
+	void WriteLine(string message);
+	void Write(string message);
+}
+
+public class Log : ILogger
+{
+	public ILogger Logger { get; set; } = new ConsoleLogger();
+	public static ILogger LoggerStatic { get; set; } = new ConsoleLogger();
+
+
+	public static void WriteLine(string message)
 	{
-		void WriteLine(string message);
-		void Write(string message);
 	}
 
-	public class Log : ILog
+	void ILogger.Write(string message)
 	{
-		public ILog Logger { get; set; } = new ConsoleLogger();
-		public static ILog LoggerStatic { get; set; } = new ConsoleLogger();
-
-
-		public static void WriteLine(string message)
-		{
-		}
-
-		void ILog.Write(string message)
-		{
-			Logger.Write(message);
-		}
-
-		void ILog.WriteLine(string message)
-		{
-			Logger.WriteLine(message);
-		}
-
-		public static void Write(string message)
-		{
-			Console.Write($"[{DateTime.UtcNow}]: {message}");
-		}
+		Logger.Write(message);
 	}
 
-	public class ConsoleLogger : ILog
+	void ILogger.WriteLine(string message)
 	{
-		public void WriteLine(string message)
-		{
-			Console.WriteLine($"[{DateTime.UtcNow}]: {message}");
-		}
-
-		public void Write(string message)
-		{
-			Console.Write($"[{DateTime.UtcNow}]: {message}");
-		}
+		Logger.WriteLine(message);
 	}
 
-	public class FileLogger : ILog
+	public static void Write(string message)
 	{
-		public void WriteLine(string message)
-		{
-			throw new NotImplementedException();
-		}
+		Console.Write($"[{DateTime.UtcNow}]: {message}");
+	}
+}
 
-		public void Write(string message)
-		{
-			throw new NotImplementedException();
-		}
+public class ConsoleLogger : ILogger
+{
+	public void WriteLine(string message)
+	{
+		Console.WriteLine($"[{DateTime.UtcNow}]: {message}");
+	}
+
+	public void Write(string message)
+	{
+		Console.Write($"[{DateTime.UtcNow}]: {message}");
+	}
+}
+
+public class FileLogger : ILogger
+{
+	public void WriteLine(string message)
+	{
+		throw new NotImplementedException();
+	}
+
+	public void Write(string message)
+	{
+		throw new NotImplementedException();
 	}
 }

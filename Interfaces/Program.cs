@@ -5,7 +5,7 @@
 ### Rozhraní - Interface
 #############################################################################
     
-Dobré vedět:
+Dobré vědět:
 - Rozhraní definuje syntaktický kontrakt mezi rozhraním a třídou, která rozhraní dědí, tj. implementuje.
 - Jedná se o kontrakt typu Co-Jak.
 - Rozhraní popisuje "Co".
@@ -40,8 +40,8 @@ static class Program
 	static void Main(string[] args)
 	{
 		ITransactions t1 = new Transaction("001", "8/10/2012", 78900.00);
-		ITransactions t2 = new BankTrasnaction();
-		ITransactions t3 = new BankTrasnaction();
+		ITransactions t2 = new BankTransaction();
+		ITransactions t3 = new BankTransaction();
 
 		t1 = t2;
 		t3 = new Transaction("002", "2/7/2019", 5000);
@@ -85,12 +85,13 @@ public interface ITransactions
 {
 	// členy rozhraní
 	void ShowTransaction();
+
 	double GetAmount();
 
 	string Name { get; set; }
 }
 
-// Implementace rozhaní
+// Implementace rozhraní
 public class Transaction : ITransactions
 {
 	private string _tCode;
@@ -124,7 +125,7 @@ public class Transaction : ITransactions
 	}
 }
 
-class BankTrasnaction : ITransactions
+class BankTransaction : ITransactions
 {
 	public void ShowTransaction()
 	{

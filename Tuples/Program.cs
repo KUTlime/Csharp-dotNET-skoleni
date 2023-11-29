@@ -1,12 +1,10 @@
-﻿namespace Tuples;
-
-/*
+﻿/*
 #############################################################################
 ### Tuple - řazená kolekce (členů)
 #############################################################################
 
-Dobré vedět:
-- Do C# 6 se jednano o referenční datové typy.
+Dobré vědět:
+- Do C# 6 se jednalo o referenční datové typy.
 - V C# 7.x nová verze tuplů jako hodnotový datový typ.
 - C# 7.2 a vyšší umožňuje nejvyšší možnou flexibilitu práce s tuply.
 
@@ -17,21 +15,26 @@ Význam a použití:
 - Hodnoty, co spolu souvisí.
 
 Syntaxe:
-([nepovidnné]<Název člena>: <Datový typ člena> <jméno člena>, [nepovidnné]<Název člena>: <Datový typ člena> <jméno člena>, [nepovidnné]<Název člena>: <Datový typ člena> <jméno člena)
+
+([nepovinné]<Název člena>: <Datový typ člena> <jméno člena>, [nepovinné]<Název člena>: <Datový typ člena> <jméno člena>, [nepovinné]<Název člena>: <Datový typ člena> <jméno člena)
+(First: "first", Second: "second)
+
 var (<jméno člena>, <jméno člena>, <jméno člena) // Datový typ je odvozen z datových typů již existujících členů.
 
 Dobré vědět:
 - Když chceme převést nebo rozložit uživatelský datový typ na kolekci řazených členů nebo členy samotné, voláme metodu Deconstruct.
-- Metod pro dekonstrukci může být ve třídě více, ale zamezíme tím použití var klíčového slova. Kompliátor totiž nebude
+- Metod pro dekonstrukci může být ve třídě více, ale zamezíme tím použití var klíčového slova. Kompilátor totiž nebude
   vědět, jakou metodu má zavolat, viz příklad níže.
 - Ideální pro použití jako návratové hodnoty z funkce, když potřebujeme předat více než jeden parametr a nechceme vyrábět třídu pro tento účel.
 
 #############################################################################
 */
+namespace Tuples;
 class Tuples
 {
     static void Main(string[] args)
     {
+        // Vytvoření tuple
         // Nepojmenovaný
         var tuple1 = ("one", "two");
         Console.WriteLine(tuple1.Item1); // Item1 zvoleno automaticky, proto nepojmenovaný.
@@ -60,7 +63,7 @@ class Tuples
         var rightDiff = (a: 5, b: 10, c: 13);
         Console.WriteLine(left1 == right1); // vrátí 'true'
         Console.WriteLine(left1 == right11); // vrátí 'true', jména členů jsou ignorovány
-        //Console.WriteLine(left1 == rightDiff); // Neprojde, protože máme jinou kardinalitu tuplů --> jiný počet položek.
+        // Console.WriteLine(left1 == rightDiff); // Neprojde, protože máme jinou kardinalitu tuplů --> jiný počet položek.
 
         // Tuply a nullable 
         var left2 = (a: 5, b: 10);
@@ -148,7 +151,7 @@ class Tuples
         var p = new Person("Althea", "Goodwin");
         var (first, last) = p;
 
-        // Dekompozice implemntována ve třídy Student formou metody rozšíření
+        // Dekompozice implementována ve třídy Student formou metody rozšíření
         var (firstName, lastName, myGrade) = new Student(firstName: "Radek", lastName: "Zahradník", gpa: 1.0);
 
         // Dekompozice implementována ve třídě Person
@@ -162,7 +165,7 @@ class Tuples
         Console.ReadKey();
     }
 
-    // Funkce, která vrací nejpojmenovaný tuple.
+    // Funkce, která vrací nepojmenovaný tuple.
     public static (int, double, string) ReturnUnnamedTuple() => (0, 0.0, "Hello world!");
 
     // Funkce, která vrací pojmenovaný tuple.

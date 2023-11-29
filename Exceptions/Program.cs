@@ -20,7 +20,7 @@ Výjimky se řídí těmito klíčovými slovy:
 - Chytáme od nejvíce specifické výjimky k nejvíce obecné výjimce.
 # finally
 - Blok kódu, který je vykonán vždy, bez ohledu na to, zda výjimka nastala či nikoliv.
-- Vhodné pro zavření souboru, uvazření spojení či připojení na db.
+- Vhodné pro zavření souboru, uzavření spojení či připojení na db.
 - Není povinné.
 - Dává se až za catch.
 # throw
@@ -36,6 +36,7 @@ Výjimky se řídí těmito klíčovými slovy:
 - try -> catch (-> catch ...) -> finally -> návrat, pokud nastane výjimka.
 
 Syntaxe:
+
 try 
 {
     // kód, který může vyhodit výjimku
@@ -91,6 +92,9 @@ Best Practice při výjimkách:
 - Lokalizujte zprávy, pokud je to možné.
 - Předávejte maximum možných informací ve vlastních výjimkách.
 - Používejte návrhový vzor builder při použití stejného druhu výjimky na více místech v rámci třídy.
+- Alternativně používejte Check.Contract(...), Contract.Check(...) metody, které vyhodí výjimky,
+  pokud vložený kontrakt selže.
+- Nepoužívejte výjimky jako goto někam.
 */
 
 
@@ -127,7 +131,7 @@ class Exceptions
 			// Zde musí být kód pro obsluhu výjimek.
 			// Chytejte pouze výjimky, které umíte obsloužit.
 			// Nikdy nechytejte výjimku System.Excetion bez přehození
-			// do vojícího kódu (metoda, která zavolala metodu,
+			// do volajícího kódu (metoda, která zavolala metodu,
 			// ve které výjimka nastala) na konci catch bloku.
 
 			// Zde by se zachytila pouze výjimka SomeSpecificException
@@ -265,7 +269,7 @@ public class Temperature
 	{
 		if (temperature == 0)
 		{
-			throw (new TempIsZeroException("Zero Temperature found"));
+			throw new TempIsZeroException("Zero Temperature found");
 		}
 		else
 		{
@@ -282,13 +286,13 @@ public class EHClass
 	{
 		// Pro spuštění je potřeba nahradit tuto cestu platnou cestou na daném PC.
 		string path = @"c:\users\public\test.txt";
-		System.IO.StreamReader file = new System.IO.StreamReader(path);
+		StreamReader file = new StreamReader(path);
 		char[] buffer = new char[10];
 		try
 		{
 			file.ReadBlock(buffer, index, buffer.Length);
 		}
-		catch (System.IO.IOException e)
+		catch (IOException e)
 		{
 			Console.WriteLine("Error reading from {path}. Message = {e.Message}");
 		}
@@ -326,7 +330,7 @@ class FileReader
 		return results;
 	}
 
-	FileReaderException NewFileIoException()
+	private FileReaderException NewFileIoException()
 	{
 		string description = "My NewFileIOException Description" +
 			"Error at file with name " +
