@@ -17,14 +17,19 @@ Význam a použití:
 Syntaxe:
 
 ([nepovinné]<Název člena>: <Datový typ člena> <jméno člena>, [nepovinné]<Název člena>: <Datový typ člena> <jméno člena>, [nepovinné]<Název člena>: <Datový typ člena> <jméno člena)
-(First: "first", Second: "second)
+(First: "first", Second: "second")
 
 var (<jméno člena>, <jméno člena>, <jméno člena) // Datový typ je odvozen z datových typů již existujících členů.
 
 Dobré vědět:
 - Když chceme převést nebo rozložit uživatelský datový typ na kolekci řazených členů nebo členy samotné, voláme metodu Deconstruct.
-- Metod pro dekonstrukci může být ve třídě více, ale zamezíme tím použití var klíčového slova. Kompilátor totiž nebude
-  vědět, jakou metodu má zavolat, viz příklad níže.
+- Metod pro dekonstrukci může být ve třídě více. Dokud mají jinou kardinalitu (jiný počet out parametrů), budou volány automaticky.
+  Jakmile přidám dvě metody Deconstruct se stejným počtem out parametrů (ale jiné datové typy), nebudu moci použít
+  var (first, second, third) = foo;
+  ale musím určit datové typy proměnných first, second, third, protože kompilátor nebude vědět, jakou metodu má zavolat, viz příklad níže.
+  var (red, green, blue) = color; // record Color(byte Red, byte Green, byte Blue);
+  // a pokud by metod deconstruct bylo více
+  color.Deconstruct(out ColorCoordinate red, out ColorCoordinate green, out ColorCoordinate red);
 - Ideální pro použití jako návratové hodnoty z funkce, když potřebujeme předat více než jeden parametr a nechceme vyrábět třídu pro tento účel.
 
 #############################################################################

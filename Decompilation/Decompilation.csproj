@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IronPdf" Version="2024.2.2" />
+    <PackageReference Include="Moq" Version="4.20.70" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Spans">
+      <HintPath>..\Spans\bin\Debug\net8.0\Spans.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
