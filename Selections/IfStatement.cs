@@ -91,10 +91,7 @@ class IfStatement
         // Úsporná varianta č.3 #NotABestPractice
         if (a == 10) Console.WriteLine("Value of a is 10");
 
-
-
         // Zanořená klauzule if
-
         a = 100;
 		int b = 200;
 

@@ -14,7 +14,8 @@ class Operators
     - Přiřazovací
     - Různé
 
-    a + b | + označuje operátor, {a,b} jsou operandy a celé to označujeme za operaci.
+    a + b
+    + označuje operátor, {a,b} jsou operandy a celé to označujeme za operaci.
 
     Podle počtu operandů:
     - Unární    (1 operand)
@@ -25,6 +26,7 @@ class Operators
 
     static void Main(string[] args)
     {
+        Task.GetPower();
         ArithmeticOperators();
         RelationOperators();
         LogicalOperators();
@@ -71,11 +73,6 @@ class Operators
         // pak se a sníží o 1.
         c = a--; // Ekvivalent: c = a; a = a - 1
         Console.WriteLine("Line 7 - Value of c is {0}, a: {1}", c, a);
-
-        // Prefixová varianta - nejprve se zvyšší a o 1, výsledek se 
-        // uloží do c.
-        c = ++a; // Ekvivalent: a = a + 1; c = a;
-        Console.WriteLine("Line 6 - Value of c is {0}, a: {1}", c, a);
 
         // Prefixová varianta - nejprve se sníží a o 1, výsledek se 
         // uloží do c.
@@ -293,7 +290,7 @@ class Operators
         Derived d = new Derived();
 
         // Operátor as - bezpečné přetypování na daný datový typ
-        Base e = d as Base;
+        var e = d as Base;
         if (e is not null)
         {
             Console.WriteLine(e.ToString());
@@ -318,7 +315,7 @@ class Operators
         var Z = str?[5];
         var k = str[str.Length - 1];
         var k1 = str[^1];
-        var adekZ = str[1..5];
+        var adek = str[1..5];
     }
 
     /*

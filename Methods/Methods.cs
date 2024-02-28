@@ -29,10 +29,10 @@ Seznam parametrů při definici:
 
 
 Seznam parametrů při volání:
-[název parametru 1]: <modifikátor argumentu> <argument1 >, [název parametru 2]: <modifikátor argumentu> <argument 2>
+[název parametru 1]: <modifikátor argumentu> <argument 1>, [název parametru 2]: <modifikátor argumentu> <argument 2>
 
 Definice:
-public Int32 Sum(ref firstOperand, ref secondOperand) {...}
+public Int32 Sum(ref Int32 firstOperand, ref Int32 secondOperand) {...}
 
 Volání:
 int c = Sum(ref a, ref b) {...}
@@ -126,7 +126,10 @@ class Program
 		Solution.Fibonacci(1000, 20);
 
 		Console.ReadLine();
-	}
+
+		Methods.Test(0, 1, 2, 4);
+		Methods.Test(0, fourth: 4);
+    }
 }
 
 class Methods
@@ -137,7 +140,7 @@ class Methods
 		return num1 > num2 ? num1 : num2;
 	}
 
-    // Jednoduchá veřejná funkce (komplaktní
+    // Jednoduchá veřejná funkce (kompaktní)
     public Int32 FindMaxCopmact(Int32 num1, Int32 num2) => num1 > num2 ? num1 : num2;
 
     // Jednoduchá statická veřejná funkce
@@ -155,7 +158,7 @@ class Methods
 			return 1;
 		}
 
-		return Factorial(num - 1) * num;
+		return num * Factorial(num - 1);
 		// Hrozná prasárna pro zásobník volání.
 	}
 
@@ -251,4 +254,7 @@ class Methods
 	{
 		Console.WriteLine($"Number: {number:numberOfDecimalPlaces}");
 	}
+
+	public static void Test(int first = 0, int second = 0, int third = 0, int fourth = 4)
+	{ }
 }

@@ -1,5 +1,5 @@
 ﻿// Definice oboru názvů pro kód.
-namespace BasicSyntax;
+namespace Shapes;
 
 /// <summary>
 /// XML komentář. Velice užitečný pro automatické generování dokumentace ke kódu.

@@ -32,7 +32,7 @@ Typy stringů (literálů):
         
         
 Kompozitní vs. interpolované formátování:
-- string.Format("Name = {0}, hours = {1:hh}", name, DateTime.Now);
+- string.Format("Name = {0}, hours = {1:hh}", name, DateTime.UtcNow);
 - $"Name = {name}, hours = {DateTime.Now:hh}";
 
 Escape sekvence:
@@ -145,7 +145,7 @@ Escape sekvence:
 		string formatString4 = DateTime.Now.ToString("dddd MMMM");
 
 		DateTime waiting = new DateTime(2012, 10, 10, 17, 58, 1);
-		string chat = String.Format("Message sent at {0:t} on {0:D}", waiting);
+		string chat = string.Format("Message sent at {0:t} on {0:D}", waiting);
 		Console.WriteLine("Message: {0}", chat);
 
 		// Formátování data dle kultury

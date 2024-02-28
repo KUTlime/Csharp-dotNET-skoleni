@@ -1,4 +1,4 @@
-﻿// Deklarace lokální proměnné
+﻿// Definice lokální proměnné
 int a = 10;
 
 // Každá smyčka má svůj obor platnosti,
@@ -121,15 +121,15 @@ foreach (var item in list2)
 }
 
 byte[] byteArray = new byte[10];
-foreach (var item in byteArray)
+foreach (var @byte in byteArray)
 { 
-    Console.WriteLine(item); 
+    Console.WriteLine(@byte); 
 }
 
 
 var list2D = new List<List<string>>()
 {
-    new List<string> { "Radek", "Eva", "Dušana", "Svatopluk", "Zdeněk" },
+    new List<string?> { "Radek", "Eva", "Dušana", "Svatopluk", "Zdeněk", null },
     new List<string> { "Klára", "Ondřej" },
     new List<string> { "Michal", "Tomáš" },
     new List<string> { "Dominik", "Věra" },

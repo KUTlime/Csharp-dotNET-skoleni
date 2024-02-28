@@ -43,5 +43,5 @@ if (Int32.TryParse(someValue, out var valueResult))
 {
     value = valueResult;
 }
-var mc = new MyClass();
+
 Console.ReadKey();
