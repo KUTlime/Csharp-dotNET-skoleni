@@ -174,7 +174,10 @@ static class Program
 		bytes.Dequeue();
 		bytes.Dequeue();
 		bytes.Dequeue();
-	}
+
+        // Sorted collections
+        var sortedList = new SortedList<int, string>();
+    }
 
 	//static ConcurrentDictionary<string, string> customers = new ConcurrentDictionary<string, string>();
 	static Dictionary<string, string> customers = new Dictionary<string, string>();

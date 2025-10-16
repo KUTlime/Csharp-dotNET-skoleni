@@ -12,23 +12,39 @@ public class FizzBuzz
 
     public IEnumerable<string> FunctionalImplementation()
         => Enumerable
-            .Range(1, 100)
+            .Range(1, 1_000_000)
             .Select(i => i switch
             {
                 _ when i % 5 == 0 && i % 3 == 0 => "FizzBuzz",
                 _ when i % 3 == 0 => "Fizz",
                 _ when i % 5 == 0 => "Buzz",
-                _ => i.ToString()
+                _ => i.ToString(),
             });
+
+    public IEnumerable<string> FunctionalImplementationParallel()
+        => Enumerable
+           .Range(1, 1_000_000)
+           .AsParallel()
+           .Select(i => i switch
+           {
+               _ when i % 5 == 0 && i % 3 == 0 => "FizzBuzz",
+               _ when i % 3 == 0 => "Fizz",
+               _ when i % 5 == 0 => "Buzz",
+               _ => i.ToString(),
+           });
 
     [Benchmark(Baseline = true)]
     public void ConsumeFunctionalImplementation()
         => FunctionalImplementation().Consume(consumer);
 
+    [Benchmark]
+    public void ConsumeFunctionalImplementationParallel()
+        => FunctionalImplementationParallel().Consume(consumer);
+
     public IEnumerable<string> ListForImplementation()
     {
         var list = new List<string>();
-        for (var i = 1;  i <= 100; i++)
+        for (var i = 1;  i <= 1_000_000; i++)
         {
             if(i % 3 == 0 && i % 5 == 0)
             {
@@ -57,8 +73,8 @@ public class FizzBuzz
 
     public IEnumerable<string> ArrayForImplementation()
     {
-        var array = new string[100];
-        for (var i = 1; i <= 100; i++)
+        var array = new string[1_000_000];
+        for (var i = 1; i <= 1_000_000; i++)
         {
             if (i % 3 == 0 && i % 5 == 0)
             {
@@ -84,10 +100,10 @@ public class FizzBuzz
     public void ConsumeArrayForImplementation()
         => ArrayForImplementation().Consume(consumer);
 
-    public IEnumerable<string> ListWith100PlacesForImplementation()
+    public IEnumerable<string> ListWithPlacesForImplementation()
     {
-        var list = new List<string>(100);
-        for (var i = 1; i <= 100; i++)
+        var list = new List<string>( 1_000_000);
+        for (var i = 1; i <=  1_000_000; i++)
         {
             if (i % 3 == 0 && i % 5 == 0)
             {
@@ -110,12 +126,12 @@ public class FizzBuzz
     }
 
     [Benchmark]
-    public void ConsumeListWith100PlacesForImplementation()
-        => ListWith100PlacesForImplementation().Consume(consumer);
+    public void ConsumeListWithPlacesForImplementation()
+        => ListWithPlacesForImplementation().Consume(consumer);
 
     public IEnumerable<string> YieldForImplementation()
     {
-        for (var i = 1; i <= 100; i++)
+        for (var i = 1; i <=  1_000_000; i++)
         {
             if (i % 3 == 0 && i % 5 == 0)
             {

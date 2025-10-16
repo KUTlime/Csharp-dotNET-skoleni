@@ -1,9 +1,13 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿#if DEBUG
+var record = new MyDebugRecord();
+#endif
 
+#if NET8_0
+
+#endif
 
 #if DEBUG
-record MyDebugRecord();
+record MyDebugRecord;
 #endif
 
 #line hidden

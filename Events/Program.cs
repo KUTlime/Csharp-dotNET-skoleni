@@ -21,6 +21,9 @@ foo.SampleEvent += (sender, args) =>
     }
 };
 
+foo.SampleEvent += Handler;
+foo.SampleEvent -= Handler;
+
 foo.TriggerEvent("Hello Radek");
 
 var foo2 = new FooForEventsWithImmutableEventArgs();
@@ -48,14 +51,17 @@ foo2.SampleEvent += (sender, args) =>
 };
 
 foo2.TriggerEvent("Hello Radek");
+return;
+
+static void Handler(object? sender, SampleEventArgs args)
+{
+    Console.WriteLine($"[{args.TimeStamp}] Message recieved: {args.Message}");
+}
 
 class FooForEvents
 {
     public event EventHandler<SampleEventArgs>? SampleEvent;
 
-    public FooForEvents()
-    {
-    }
     internal void TriggerEvent(string message)
     {
         var sampleEvent = SampleEvent;
