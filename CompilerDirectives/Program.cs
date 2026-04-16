@@ -1,8 +1,13 @@
-﻿Console.WriteLine("Hello, World!");
+﻿#if DEBUG
+var record = new MyDebugRecord();
+#endif
 
+#if NET8_0
+
+#endif
 
 #if DEBUG
-record MyDebugRecord();
+record MyDebugRecord;
 #endif
 
 #line hidden

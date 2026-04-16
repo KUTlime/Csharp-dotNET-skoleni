@@ -12,4 +12,9 @@ a použijte argumenty události.
  */
 internal class Task
 {
+    public event EventHandler<SampleImmutableEventArgs>? SampleEvent;
+
+    // Trigger
+
+    // Použití
 }

@@ -1,22 +1,24 @@
 ﻿using System.Collections;
 
-var test = new Test<string>();
+var test = new MyIterator<string>();
 
 test[2] = "3";
 test[3] = "4";
 
 Console.WriteLine(test[3]);
 
-foreach (var item in test)
+foreach (string item in test)
 {
     Console.WriteLine(item);
 }
 
 test.Where(x => x is not null).ToList().ForEach(Console.WriteLine);
 
-class Test<T> : IEnumerator<T>, IEnumerable<T>
+class MyIterator<T> : IEnumerator<T>, IEnumerable<T>
 {
     private int _currentIndex = -1;
+
+    private bool _disposed;
 
     private T? _firstValue;
 
@@ -74,6 +76,21 @@ class Test<T> : IEnumerator<T>, IEnumerable<T>
 
     public void Dispose()
     {
+        if (this is IDisposable disposable && !_disposed)
+        {
+            _disposed = true;
+            disposable.Dispose();
+        }
+        if (typeof(IDisposable).IsAssignableFrom(typeof(T)))
+        {
+            // T implementuje IDisposable
+            (_firstValue as IDisposable)?.Dispose();
+            (_secondValue as IDisposable)?.Dispose();
+            (_thirdValue as IDisposable)?.Dispose();
+            (_fourthValue as IDisposable)?.Dispose();
+            (_fifthValue as IDisposable)?.Dispose();
+            (_sixthValue as IDisposable)?.Dispose();
+        }
     }
 
     public IEnumerator<T> GetEnumerator() => this;

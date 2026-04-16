@@ -1,4 +1,4 @@
-﻿string sentence = "asd fas 0 1 asdf asdf asdf asdf";
+﻿const string sentence = "asd fas 0 1 asdf asdf asdf asdf";
 Console.WriteLine(CountWords(sentence));
 
 string[] words = ["Ahoj", "Světe", "Hello", "Word"];
@@ -50,7 +50,7 @@ static uint CountWordBeginning(ReadOnlySpan<char> sentence)
 {
     uint numberOfWords = 0;
     bool notInWord = true;
-    foreach (var character in sentence)
+    foreach (char character in sentence)
     {
         if(char.IsLetterOrDigit(character))
         {
@@ -58,7 +58,6 @@ static uint CountWordBeginning(ReadOnlySpan<char> sentence)
             {
                 numberOfWords++;
                 notInWord = false;
-                continue;
             }
             continue;
         }
