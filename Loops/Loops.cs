@@ -127,13 +127,13 @@ foreach (var @byte in byteArray)
 }
 
 
-var list2D = new List<List<string>>()
+var list2D = new List<List<string?>>()
 {
-    new List<string?> { "Radek", "Eva", "Dušana", "Svatopluk", "Zdeněk", null },
-    new List<string> { "Klára", "Ondřej" },
-    new List<string> { "Michal", "Tomáš" },
-    new List<string> { "Dominik", "Věra" },
-    new List<string> { "Tonda", "Honza", "Anička" },
+    new() { "Radek", "Eva", "Dušana", "Svatopluk", "Zdeněk", null },
+    new() { "Klára", "Ondřej" },
+    new() { "Michal", "Tomáš" },
+    new() { "Dominik", "Věra" },
+    new() { "Tonda", "Honza", "Anička" },
 };
 
 foreach (var listOfNames in list2D)

@@ -19,8 +19,14 @@ public class Rectangle
 	/// </summary>
 	double _width;
 
-	// členské vlastnosti
-	public string? Name { get; set; }
+    public Rectangle(double width, double length)
+    {
+        _width = width;
+        _length = length;
+    }
+
+    // členské vlastnosti
+    public string? Name { get; set; }
 
 	// členské metody
 	/// <summary>
@@ -84,11 +90,11 @@ public class Rectangle
 	// Metoda porovnává dva objekty stejného typu a vrátí pravdu/nepravdu,
 	// podle toho, jestli si délka (_length) a šířka (_width) obou obdélníků odpovídá.
 	// (co to je, vysvětleno dále)
-	public override bool Equals(object obj)
+	public override bool Equals(object? obj)
 	{
 		// Z příchozího objektu obj se pokusíme vytvořit objekt typu Rectangle.
 		var rectangle = obj as Rectangle;
-		// Pokud se nám to nepodaří, operátor as nám vrátí null, čili reclangle = null
+		// Pokud se nobj as Rectangleám to nepodaří, operátor as nám vrátí null, čili reclangle = null
 		if (rectangle == null)
 		{
 			// Pokud by se tak stalo, okamžitě vrátíme nepravdu, protože tvzení, že si nejsou rovny.
@@ -97,4 +103,10 @@ public class Rectangle
 		// Tady provedeme samotné srovnání hodnot šířky a délky obou obdélníků.
 		return (_length == rectangle._length && _width == rectangle._width);
 	}
+
+    // Bonus - implicitní operátor
+    public static implicit operator Rectangle((double Width, double Length) dimensions)
+    {
+        return new Rectangle(dimensions.Width, dimensions.Length);
+    }
 }

@@ -6,14 +6,13 @@
 Rozšíření (zapečetěných) tříd.
 
 Syntaxe:
-namespace <Jmenný prostor rozšiřované třídy>
+namespace <Jmenný prostor rozšiřované třídy>;
+
+public static class <Jméno rozšiřované třídy>Extensions
 {
-    public static class <Jméno rozšiřované třídy>Extensions
+    public static <Návratový typ> <Jméno metody>(this <Datový typ rozšiřované třídy> <Název instance rozšiřované třídy>[,...<Datový typ> <Jméno argumentu>])
     {
-        public static <Návratový typ> <Jméno metody>(this <Datový typ rozšiřované třídy> <Název instance rozšiřované třídy>[,...<Datový typ> <Jméno argumentu>])
-        {
-            ...
-        }
+        ...
     }
 }
 
@@ -38,7 +37,7 @@ namespace ExtensionMethods
 			bytes.Enqueue(0);
 
 			// Použití metody rozšíření
-			List<byte> list = bytes.DequeueChunk(2).ToList();
+			List<byte> list = bytes.DequeueChunk(2).Skip(10).Take(5).ToList();
 			byte[] arr = bytes.DequeueChunk(2).ToArray();
 		}
 	}

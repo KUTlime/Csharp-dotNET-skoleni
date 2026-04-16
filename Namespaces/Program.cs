@@ -29,11 +29,15 @@ Druhy oborů názvů:
 #############################################################################
 */
 
+
+using Lecture.TestOne;
+
 namespace Lecture
 {
+	using TestTwo; // Reálně using Lecture.TestTwo obor názvů.
+
     class Namespaces
 	{
-
 		static void Main(string[] args)
 		{
 			FirstNamespace.Foo1 fc = new FirstNamespace.Foo1();
@@ -41,6 +45,7 @@ namespace Lecture
 			SecondNamespace.Foo2 sc = new SecondNamespace.Foo2();
 			fc.Func();
 			sc.Func();
+			var test = new SomeNamespace.FileScopedNameSpaceDemo();
 
 			var bCustomer = new Models.Business.Customer();
 			var dto = new Models.DTOs.Customer();
@@ -107,5 +112,18 @@ namespace Models
 		class Customer
 		{
 		}
+	}
+}
+
+namespace Lecture
+{
+	namespace TestOne
+	{
+		record Test();
+	}
+
+	namespace TestTwo
+	{
+		record Test();
 	}
 }

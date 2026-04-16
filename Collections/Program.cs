@@ -72,9 +72,9 @@ static class Program
 			{"Keaton", 1895}
 		};
 
-		// (C# 6) Initialization with new dictionary initializer
-		Dictionary<string, int> newGuys = new Dictionary<string, int>
-		{
+		// (C# 10) Initialization with new dictionary initializer
+		Dictionary<string, int> newGuys = new()
+        {
 			["Galileo"] = 1564,
 			["Magellan"] = 1480,
 			["Voltaire"] = 1694,
@@ -202,13 +202,14 @@ public class Example
 		// Create a new SortedDictionary of strings, with string keys 
 		// and a case-insensitive comparer for the current culture.
 		SortedDictionary<string, string> openWith =
-			new SortedDictionary<string, string>(StringComparer.CurrentCultureIgnoreCase);
-
-		// Add some elements to the dictionary.
-		openWith.Add("txt", "notepad.exe");
-		openWith.Add("bmp", "paint.exe");
-		openWith.Add("DIB", "paint.exe");
-		openWith.Add("rtf", "wordpad.exe");
+            new(StringComparer.CurrentCultureIgnoreCase)
+            {
+                // Add some elements to the dictionary.
+                { "txt", "notepad.exe" },
+                { "bmp", "paint.exe" },
+                { "DIB", "paint.exe" },
+                { "rtf", "wordpad.exe" }
+            };
 
 		// Try to add a fifth element with a key that is the same 
 		// except for case; this would be allowed with the default
@@ -236,9 +237,7 @@ public class Example
 
 public class MyCustomComparer : IComparer<string>
 {
-	public int Compare(string x, string y)
-	{
-		return String.Compare(x, y, CultureInfo.CreateSpecificCulture("cs-CZ"), CompareOptions.IgnoreCase);
-	}
+    public int Compare(string x, string y) =>
+		string.Compare(x, y, CultureInfo.CreateSpecificCulture("cs-CZ"), CompareOptions.IgnoreCase);
 }
 

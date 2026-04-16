@@ -20,7 +20,7 @@ enum Days { Sun, Mon, tue, Wed, thu, Fri, Sat };
 // Mon = 1,
 // ...
 // Sat = 6
-enum Days { Sun, Mon, Tue, Wed, Thu, Fri, Sat };
+enum Days { Sun, Mon, Tue, Wed, Thu, Fri, Sat }
 
 // Z bajtu odvozený enum, podkladový typ nebude Int32, ale byte.
 // Hodnoty nemusí jít přesně po sobě, ale mohou přeskakovat.
@@ -120,5 +120,19 @@ internal class Enums
 
         Console.ReadKey();
     }
+}
+
+// Typově silnější náhrada za enum
+class Indexes
+{
+    public static DayofWeek Monday = 1;
+    public static DayofWeek Fri = 2;
+}
+
+class DayofWeek
+{
+    public int Value { get; init; }
+
+    public static implicit operator DayofWeek(int value) => new() { Value = value };
 }
 

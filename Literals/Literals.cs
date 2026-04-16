@@ -6,7 +6,7 @@ var value4 = 30l; // Int64
 var value5 = 30L; // Int64
 var value6 = 30ul; // unsigned long hodnota -> UInt64
 var value7 = 0x4B; // Hexadecimální zápis.
-var value8 = 0b0000_1111; // Binární zápis.
+var value8 = 0b_0000_1111; // Binární zápis.
 
 // var + literály není úplně dobrá praxe.
 // Náchylné na chybu. Nahradit:

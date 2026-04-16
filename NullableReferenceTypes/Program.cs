@@ -38,7 +38,7 @@ source.OrderBy(p => p?.MiddleName?.Length);
 
 Customer? customer = null;
 
-customer ?? throw new ArgumentNullException();
+_ = customer ?? throw new ArgumentNullException();
 
 if(customer.Name.Length > 0)
 {

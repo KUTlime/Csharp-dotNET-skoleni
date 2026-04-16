@@ -1,5 +1,6 @@
 ﻿/*
 Uživatelský datový typ nejčastěji tvoříme kvůli zachycení kontextu.
+Detaily: https://stackoverflow.com/questions/64816714/when-to-use-record-vs-class-vs-struct
 
 V C# můžeme vytvořit 3 typy uživatelských datových typů:
 - Třídy (Referenční datový typ)
@@ -19,7 +20,7 @@ Ne -> 2.
 - Je to nějaká skupina hodnot, které spolu souvisí? -> ANO, může být record
 - Jsou tyto hodnoty ideálně neměnné? ANO -> record
 - Chci, aby hodnoty byly primárně neměnné? ANO -> record
-- Obsahuje třída nějakou logiku, metody -> ANO, třídy.
+- Obsahuje třída nějakou logiku, metody -> NE, record.
 Ano -> Vytvořím record.
 Ne -> Vytvořím třídu.
 
@@ -47,6 +48,7 @@ Print(point);
 Print(point2);
 
 var myRecord = new MyRecord();
+MyRecord myRecord2 = new();
 
 var rPoint = new PointRecord(1, 3);
 

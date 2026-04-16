@@ -3,7 +3,7 @@
 ### Třídy - uživatelem definované datové typy
 #############################################################################
 Definice třídy:
-<úroveň přístupu> <Oblast platnosti> class JménoTřídy
+<úroveň přístupu> <static|abstract|partial> class JménoTřídy
 {
 	// členské proměnné
 	<úroveň přístupu> <Oblast platnosti> <datový typ> JménoProměnné;
@@ -19,7 +19,7 @@ Definice třídy:
 	<úroveň přístupu> <Oblast platnosti> <návratový typ> JménoFunkce2(<Seznam parametrů>)
 	{
 		// tělo metody
-	}
+	}<Oblast platnosti>
 	...
 	<úroveň přístupu> <Oblast platnosti> <návratový typ> JménoFunkceN(<Seznam parametrů>)
 	{

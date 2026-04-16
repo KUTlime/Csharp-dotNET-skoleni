@@ -292,7 +292,7 @@ public class EHClass
 		{
 			file.ReadBlock(buffer, index, buffer.Length);
 		}
-		catch (IOException e)
+		catch (IOException e) when (e.HResult == 0x001)
 		{
 			Console.WriteLine("Error reading from {path}. Message = {e.Message}");
 		}

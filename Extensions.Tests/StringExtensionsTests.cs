@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Extensions.Tests;
 
-public static class StringExtensionsTests
+public abstract class StringExtensionsTests
 {
     public class IsValidValueTests
     {

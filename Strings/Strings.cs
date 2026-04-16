@@ -64,7 +64,7 @@ Escape sekvence:
 
 		// Spojení stringů
 		string[] sarray = { "Vítejte", "na", "mém", "školení." };
-        string msg = string.Join(" ", sarray);
+        string msg = string.Join(' ', sarray);
         Console.InputEncoding = Encoding.Unicode;
 		Console.OutputEncoding = Encoding.Unicode;
 		Console.WriteLine("Unicode character: \u06B0");
@@ -258,7 +258,7 @@ Escape sekvence:
 		str = "Last night I dreamt of San Pedro"; // Co se stane, když uděláme toto?
 		str = "Last night I dreamt of San Pedros"; // A teď?
 		Console.WriteLine(str);
-		string substr = str.Substring(startIndex: 23);
+        string substr = str.Substring(startIndex: 23);
 		Console.WriteLine(substr);
 		string substr2 = str.Substring(startIndex: 10, length: 10);
 		Console.WriteLine(substr2);

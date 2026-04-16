@@ -26,7 +26,6 @@ class Operators
 
     static void Main(string[] args)
     {
-        Task.GetPower();
         ArithmeticOperators();
         RelationOperators();
         LogicalOperators();
@@ -34,6 +33,7 @@ class Operators
         AssignmentOperators();
         MiscellaneousOperators();
         OperatorsPrecedense();
+        Solution.RunTests();
     }
 
     static void ArithmeticOperators()
@@ -59,6 +59,8 @@ class Operators
         Console.WriteLine("Line 5 - Value of c is {0}", c);
 
         // Unární aritmetické operátory
+        a++;
+        a--;
 
         // Odstranění syntaktického cukru a = a + 1 => ++a
 
@@ -316,6 +318,7 @@ class Operators
         var k = str[str.Length - 1];
         var k1 = str[^1];
         var adek = str[1..5];
+        var adekZahradní = str[1..^1];
     }
 
     /*

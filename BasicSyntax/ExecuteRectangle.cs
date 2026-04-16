@@ -15,3 +15,5 @@ Console.WriteLine(r.Equals(new Rectangle())); // Použití porovnávací funkce.
 Console.WriteLine(r.Equals(10)); // Vrátí false.
 Console.WriteLine($"Area is: {r.GetArea()}");
 Console.ReadLine();
+
+Rectangle r2 = (1, 2);

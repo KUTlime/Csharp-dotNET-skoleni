@@ -4,6 +4,7 @@ class IfStatement
 {
 	static void Main(string[] args)
 	{
+		IfStatements();
 	}
 
 	static void IfStatements()

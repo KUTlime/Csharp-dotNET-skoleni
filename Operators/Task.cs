@@ -2,6 +2,7 @@
 
 // Navrhněte metodu, která bude vracet UInt64. Jako vstupní parametr
 // bude přebírat n-mocninu 2ky (1. mocnina = 2, 2. mocnina = 4 atd).
+// Metoda bude vrace hodnotu n-mocniny 2ky.
 // Při testování, můžete N-násobek přečíst jako UInt16 = Console.ReadLine()
 // Popřemýšlejte, co mají násobky 2 společné.
 class Task
@@ -15,6 +16,6 @@ class Task
         power = Convert.ToUInt16(input);
     }
 
-    public UInt64 GetPower(UInt16 power) { return (UInt64)2 * power; }
+    public UInt64 GetPower(UInt16 power) => (UInt64)2 * power;
 }
 

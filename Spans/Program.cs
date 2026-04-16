@@ -25,15 +25,21 @@ var readOnlySpan = new ReadOnlySpan<string>(words);
 
 uint CountWords(string? word) => word switch
 {
-    { } str => str switch
+    { Length: > 0 } => word switch
     {
         { Length: 0 } => 0,
-        _ => CountWordBeginning(str),
+        _ => CountWordBeginning(word),
     },
     _ => 0,
 };
 
-uint Something(string number) => number switch
+uint CountWordsV2(string? word) => word switch
+{
+    { Length: > 0 } when !string.IsNullOrWhiteSpace(word) => CountWordBeginning(word),
+    _ => 0,
+};
+
+uint Something(ReadOnlySpan<char> number) => number switch
 {
     "first" => 1,
     "second" => 2,
